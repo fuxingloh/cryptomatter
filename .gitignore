@@ -1,0 +1,26 @@
+# MacOS
+.DS_Store
+
+# IntelliJ
+.idea/*
+!.idea/inspectionProfiles/
+!.idea/dictionaries/
+!.idea/codeStyles/
+!.idea/modules.xml
+!.idea/*.iml
+!.idea/README.md
+
+# NodeJS
+node_modules
+dist
+build
+*.tgz
+coverage
+.nyc_output
+
+# turborepo
+.turbo
+
+# contented
+.contented
+

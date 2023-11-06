@@ -1,0 +1,37 @@
+{
+  "name": "@packages/example",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "url": "git+https://github.com/levaintech/frontmatter"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "preset": "@workspace/jest-preset"
+  },
+  "devDependencies": {
+    "@workspace/jest-preset": "workspace:*",
+    "@workspace/tsconfig": "workspace:*"
+  }
+}
