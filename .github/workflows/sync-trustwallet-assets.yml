@@ -10,12 +10,12 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   main:
     runs-on: ubuntu-latest
+    environment: FRONTMATTER_BOT
     steps:
       - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
 
@@ -36,8 +36,15 @@ jobs:
       - run: pnpm turbo run sync
         working-directory: workspace/sync-trustwallet-assets
 
+      - id: app
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
+        with:
+          app_id: ${{ secrets.FRONTMATTER_BOT_APP_ID }}
+          private_key: ${{ secrets.FRONTMATTER_BOT_PRIVATE_KEY }}
+
       - uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38 # v5.0.2
         with:
+          token: ${{ steps.app.outputs.token }}
           commit-message: 'sync(assets): trustwallet/assets'
           title: 'sync(assets): trustwallet/assets'
           committer: Frontmatter Bot <${{ github.actor }}@users.noreply.github.com>
