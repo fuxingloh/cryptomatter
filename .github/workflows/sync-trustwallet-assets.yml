@@ -2,6 +2,10 @@ name: Sync
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/sync-trustwallet-assets.yml
+      - workspace/sync-trustwallet-assets/**/*
   schedule:
     - cron: '0 0 * * *'
 
@@ -47,8 +51,8 @@ jobs:
           token: ${{ steps.app.outputs.token }}
           commit-message: 'chore(sync): trustwallet/assets'
           title: 'chore(sync): trustwallet/assets'
-          committer: Frontmatter Bot <38789207+frontmatter-bot@users.noreply.github.com>
-          author: Frontmatter Bot <38789207+frontmatter-bot@users.noreply.github.com>
+          committer: Frontmatter Bot <frontmatter-bot@users.noreply.github.com>
+          author: Frontmatter Bot <frontmatter-bot@users.noreply.github.com>
           body: |
             #### What this PR does / why we need it:
 
