@@ -87,7 +87,7 @@ function hasFile(filepath: string): Promise<boolean> {
   );
 }
 
-export class Eip155Sync extends Sync {
+export class Eip155Erc20Sync extends Sync {
   async write(dir: string, info: Partial<Info>): Promise<void> {
     const namespace = this.getNamespace(info);
     await mkdir(`${this.to}/${namespace}`, { recursive: true });
@@ -106,12 +106,12 @@ export class Eip155Sync extends Sync {
         '',
         `# ${info.name}`,
         '',
-        info.description,
+        info.description !== '-' ? info.description : '',
       ].join('\n'),
     );
   }
 
   getNamespace(info: Partial<Info>): string {
-    return info.type!.toLowerCase() + '/' + info.id;
+    return info.id!;
   }
 }

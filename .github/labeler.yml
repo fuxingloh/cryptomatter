@@ -31,11 +31,6 @@ labels:
     matcher:
       title: "^bump(\\(.+\\))?: .+"
 
-  - label: area/workflow
-    sync: true
-    matcher:
-      files: '.github/**'
-
 checks:
   - context: 'Semantic Pull Request'
     description:

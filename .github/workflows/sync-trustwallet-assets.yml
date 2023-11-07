@@ -45,8 +45,8 @@ jobs:
       - uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38 # v5.0.2
         with:
           token: ${{ steps.app.outputs.token }}
-          commit-message: 'sync(assets): trustwallet/assets'
-          title: 'sync(assets): trustwallet/assets'
+          commit-message: 'chore(sync): trustwallet/assets'
+          title: 'chore(sync): trustwallet/assets'
           committer: Frontmatter Bot <${{ github.actor }}@users.noreply.github.com>
           author: Frontmatter Bot <${{ github.actor }}@users.noreply.github.com>
           body: |
