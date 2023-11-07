@@ -1,10 +1,14 @@
 module.exports = [
+  {
+    ignores: ['**/dist/*'],
+  },
   require('@eslint/js').configs.recommended,
   {
     files: ['**/*.ts', '**/*.tsx'],
     plugins: {
       '@typescript-eslint': require('@typescript-eslint/eslint-plugin'),
     },
+    rules: require('@typescript-eslint/eslint-plugin').configs.recommended.rules,
     languageOptions: {
       parser: require('@typescript-eslint/parser'),
     },
