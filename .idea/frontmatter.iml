@@ -5,6 +5,8 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/pnpm-lock.yaml" />
       <excludeFolder url="file://$MODULE_DIR$/.vercel" />
+      <excludeFolder url="file://$MODULE_DIR$/workspace/sync-trustwallet-assets/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/workspace/sync-trustwallet-assets/repo" />
       <excludePattern pattern="*.turbo" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
