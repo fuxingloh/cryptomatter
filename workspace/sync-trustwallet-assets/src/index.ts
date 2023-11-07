@@ -8,15 +8,15 @@ export async function sync(): Promise<void> {
 
   await new Eip155Erc20Sync(
     join(cwd, 'repo/blockchains/ethereum/assets'),
-    join(cwd, '../../packages/eip155/1/erc20'),
+    join(cwd, '../../packages/eip155-1-erc20/frontmatter'),
   ).sync();
   await new Eip155Erc20Sync(
     join(cwd, 'repo/blockchains/polygon/assets'),
-    join(cwd, '../../packages/eip155/137/erc20'),
+    join(cwd, '../../packages/eip155-137-erc20/frontmatter'),
   ).sync();
   await new Eip155Erc20Sync(
     join(cwd, 'repo/blockchains/avalanchec/assets'),
-    join(cwd, '../../packages/eip155/43114/erc20'),
+    join(cwd, '../../packages/eip155-43114-erc20/frontmatter'),
   ).sync();
 }
 
