@@ -44,15 +44,15 @@ export abstract class Sync {
 
   async shouldWrite(dir: string, info: Partial<Info>): Promise<boolean> {
     // Make sure logo.png and info.json exists
-    const fromLogoStats = await stat(`${this.from}/${dir}/logo.png`);
-    const fromInfoStats = await stat(`${this.from}/${dir}/info.json`);
-    if (!fromLogoStats.isFile() || !fromInfoStats.isFile()) return false;
+    const hasFromLogo = await hasFile(`${this.from}/${dir}/logo.png`);
+    const hasFromInfo = await hasFile(`${this.from}/${dir}/info.json`);
+    if (!hasFromLogo || !hasFromInfo) return false;
 
     // If README.md and logo.png do not exist on the other side, write it
     const namespace = this.getNamespace(info);
-    const toLogoStats = await stat(`${this.to}/${namespace}/logo.png`);
-    const toReadmeStats = await stat(`${this.to}/${namespace}/README.md`);
-    if (!toLogoStats.isFile() || !toReadmeStats.isFile()) return true;
+    const hasToLogo = await hasFile(`${this.to}/${namespace}/logo.png`);
+    const hasToReadme = await hasFile(`${this.to}/${namespace}/README.md`);
+    if (!hasToLogo || !hasToReadme) return true;
 
     // Otherwise, allow overwriting if the author is Frontmatter Bot
     const name = await getAuthorName(`${this.to}/${namespace}/README.md`);
@@ -78,6 +78,13 @@ export abstract class Sync {
     }
     return links;
   }
+}
+
+function hasFile(filepath: string): Promise<boolean> {
+  return stat(filepath).then(
+    () => true,
+    () => false,
+  );
 }
 
 export class Eip155Sync extends Sync {
