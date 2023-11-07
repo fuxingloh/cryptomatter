@@ -6,8 +6,7 @@
     "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "lint": "eslint .",
-    "sync": "node dist/index.js",
-    "test": "jest"
+    "sync": "node dist/index.js"
   },
   "lint-staged": {
     "*": [
@@ -18,14 +17,10 @@
       "prettier --write"
     ]
   },
-  "jest": {
-    "preset": "@workspace/jest-preset"
-  },
   "dependencies": {
     "yaml": "^2.3.4"
   },
   "devDependencies": {
-    "@workspace/jest-preset": "workspace:*",
     "@workspace/tsconfig": "workspace:*"
   }
 }
