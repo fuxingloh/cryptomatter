@@ -1,0 +1,10 @@
+{
+  "name": "@workspace/contented-config",
+  "private": true,
+  "type": "module",
+  "main": "./index.mjs",
+  "devDependencies": {
+    "@contentedjs/contented": "^7.1.0",
+    "@contentedjs/contented-pipeline-md": "^7.1.0"
+  }
+}
