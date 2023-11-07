@@ -47,8 +47,8 @@ jobs:
           token: ${{ steps.app.outputs.token }}
           commit-message: 'chore(sync): trustwallet/assets'
           title: 'chore(sync): trustwallet/assets'
-          committer: Frontmatter Bot <${{ github.actor }}@users.noreply.github.com>
-          author: Frontmatter Bot <${{ github.actor }}@users.noreply.github.com>
+          committer: Frontmatter Bot <38789207+frontmatter-bot@users.noreply.github.com>
+          author: Frontmatter Bot <38789207+frontmatter-bot@users.noreply.github.com>
           body: |
             #### What this PR does / why we need it:
 
