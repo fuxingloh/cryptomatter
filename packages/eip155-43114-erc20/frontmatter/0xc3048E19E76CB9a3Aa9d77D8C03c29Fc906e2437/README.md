@@ -1,0 +1,21 @@
+---
+symbol: COMP.e
+decimals: 18
+tags:
+  - defi
+links:
+  - name: website
+    url: https://compound.finance/
+  - name: explorer
+    url: https://snowtrace.io/token/0xc3048E19E76CB9a3Aa9d77D8C03c29Fc906e2437
+  - name: coinmarketcap
+    url: https://coinmarketcap.com/currencies/compound/
+  - name: coingecko
+    url: https://coingecko.com/en/coins/compound-governance-token/
+  - name: twitter
+    url: https://twitter.com/compoundfinance
+---
+
+# Compound
+
+The Avalanche Bridge Wrapped Compound.
