@@ -77,6 +77,15 @@ importers:
 
   website:
     dependencies:
+      '@crypto-frontmatter/eip155-1-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-1-erc20
+      '@crypto-frontmatter/eip155-137-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-137-erc20
+      '@crypto-frontmatter/eip155-43114-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-43114-erc20
       '@heroicons/react':
         specifier: ^2.0.18
         version: 2.0.18(react@18.2.0)

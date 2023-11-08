@@ -19,6 +19,9 @@
     ]
   },
   "dependencies": {
+    "@crypto-frontmatter/eip155-1-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-137-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-43114-erc20": "workspace:*",
     "@heroicons/react": "^2.0.18",
     "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
