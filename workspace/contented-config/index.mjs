@@ -12,71 +12,108 @@ import {
 } from '@contentedjs/contented-pipeline-md';
 import { join } from 'node:path';
 import { copyFile, mkdir } from 'node:fs/promises';
+import { imageSize } from 'image-size';
+import { mkdirSync } from 'fs';
 
-/** @type {import('@contentedjs/contented').ContentedConfig} */
-const config = {
-  processor: {
-    outDir: 'dist',
-    pipelines: [
-      {
-        type: 'Frontmatter',
-        dir: 'frontmatter',
-        pattern: '**/README.md',
-        /**
-         * To reduce complexity,
-         * only enable a subset of plugins for levain-examples to keep the authoring experience simple.
-         */
-        processor: MarkdownPipeline.withProcessor((processor) => {
-          processor
-            .use(remarkGfm)
-            .use(remarkFrontmatter)
-            .use(remarkParse)
-            .use(remarkFrontmatterCollect)
-            .use(remarkFrontmatterResolve)
-            .use(remarkFrontmatterValidate)
-            .use(remarkRehype)
-            .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] })
-            .use(rehypeStringify);
-        }),
-        fields: {
-          symbol: {
-            type: 'string',
-            required: true,
-          },
-          decimals: {
-            type: 'number',
-            required: true,
-          },
-          tags: {
-            type: 'string[]',
-            required: false,
-          },
-          links: {
-            type: 'object',
-            required: false,
-          },
-        },
-        transform: async (fileContent, filePath) => {
-          // Move dist/Frontmatter/*.png to dist
-          // Move logo.png to dist
-          const path = `/${filePath.replace(/\/README\.md$/, '')}`;
-          const pngLogoPath = join(process.cwd(), 'frontmatter', path, 'logo.png');
-          const dir = join(process.cwd(), 'dist', 'Frontmatter');
-          await mkdir(dir, { recursive: true });
-          await copyFile(pngLogoPath, join(dir, fileContent.fileId + '.png'));
+/**
+ * To reduce complexity,
+ * we only enable a subset of plugins for frontmatter to keep the authoring experience simple.
+ */
+const MDProcessor = MarkdownPipeline.withProcessor((processor) => {
+  processor
+    .use(remarkGfm)
+    .use(remarkFrontmatter)
+    .use(remarkParse)
+    .use(remarkFrontmatterCollect)
+    .use(remarkFrontmatterResolve)
+    .use(remarkFrontmatterValidate)
+    .use(remarkRehype)
+    .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] })
+    .use(rehypeStringify);
+});
 
-          // Use Sharp to resize logo.png to 32x32 and 16x16
+/**
+ * @param fileContent {import('@contentedjs/contented').FileContent}
+ * @param filePath {string}
+ * @return {Promise<[{mine: string, path: string}]>}
+ */
+const computeImageField = async (fileContent, filePath) => {
+  const reference = filePath.replace(/\/README\.md$/, '');
+  const pngLogoPath = join('frontmatter', reference, 'logo.png');
+  const imagePath = join('dist', 'Frontmatter', fileContent.fileId + '.logo.png');
+  await copyFile(pngLogoPath, imagePath);
+  const size = imageSize(pngLogoPath);
 
-          return {
-            ...fileContent,
-            path: path,
-            sections: [],
-            headings: [],
-          };
-        },
+  return [
+    {
+      type: 'logo',
+      mine: 'image/png',
+      size: {
+        width: size.width,
+        height: size.height,
       },
-    ],
-  },
+      path: imagePath,
+    },
+  ];
 };
 
-export default config;
+/**
+ * @param options {{caip2: string, namespace: string}}
+ * @return {import('@contentedjs/contented').ContentedConfig}
+ */
+export default function config(options) {
+  mkdirSync(join('dist', 'Frontmatter'), { recursive: true });
+
+  return {
+    processor: {
+      outDir: 'dist',
+      pipelines: [
+        {
+          type: 'Frontmatter',
+          dir: 'frontmatter',
+          pattern: '**/README.md',
+          processor: MDProcessor,
+          fields: {
+            symbol: {
+              type: 'string',
+              required: true,
+            },
+            decimals: {
+              type: 'number',
+              required: true,
+            },
+            tags: {
+              type: 'string[]',
+              required: false,
+            },
+            links: {
+              type: 'object',
+              required: false,
+            },
+            /**
+             * Populated by computeImageField
+             */
+            images: {
+              type: 'object',
+              required: false,
+            },
+          },
+          transform: async (fileContent, filePath) => {
+            const reference = filePath.replace(/\/README\.md$/, '');
+            const caip19 = `${options.caip2}/${options.namespace}:${reference}`;
+            return {
+              ...fileContent,
+              fields: {
+                ...fileContent.fields,
+                images: await computeImageField(fileContent, filePath),
+              },
+              path: caip19,
+              sections: [],
+              headings: [],
+            };
+          },
+        },
+      ],
+    },
+  };
+}

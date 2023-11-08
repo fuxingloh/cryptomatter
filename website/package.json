@@ -25,12 +25,14 @@
     "@heroicons/react": "^2.0.18",
     "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
+    "crypto-frontmatter": "workspace:*",
     "dayjs": "^1.11.10",
     "framer-motion": "10.16.4",
     "html-to-react": "^1.7.0",
     "next": "14.0.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
