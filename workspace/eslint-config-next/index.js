@@ -1,8 +1,11 @@
+const nextPlugin = require('@next/eslint-plugin-next');
+const reactPlugin = require('eslint-plugin-react');
+const hooksPlugin = require('eslint-plugin-react-hooks');
+
 module.exports = [
   {
-    ignores: ['**/dist/*'],
+    ignores: ['**/dist/*', '**/.next/*', '*.config.{mjs,js,ts}'],
   },
-  require('@eslint/js').configs.recommended,
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
@@ -27,11 +30,19 @@ module.exports = [
     },
   },
   {
+    files: ['app/**/*', 'components/**/*'],
     plugins: {
-      'no-only-tests': require('eslint-plugin-no-only-tests'),
+      react: reactPlugin,
+      'react-hooks': hooksPlugin,
+      '@next/next': nextPlugin,
     },
     rules: {
-      'no-only-tests/no-only-tests': 'error',
+      ...reactPlugin.configs['jsx-runtime'].rules,
+      ...hooksPlugin.configs.recommended.rules,
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+      '@next/next/no-img-element': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
     },
   },
   require('eslint-config-prettier'),

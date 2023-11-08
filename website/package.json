@@ -1,0 +1,40 @@
+{
+  "name": "@workspace/website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build --no-lint",
+    "clean": "rm -rf .next",
+    "dev": "next dev",
+    "lint": "eslint .",
+    "start": "next start"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@vercel/analytics": "^1.1.1",
+    "clsx": "^2.0.0",
+    "dayjs": "^1.11.10",
+    "framer-motion": "10.16.4",
+    "html-to-react": "^1.7.0",
+    "next": "14.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/react": "18.2.33",
+    "@workspace/eslint-config-next": "workspace:*",
+    "autoprefixer": "^10.4.16",
+    "tailwindcss": "^3.3.5"
+  }
+}
