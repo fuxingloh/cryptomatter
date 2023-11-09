@@ -33,6 +33,12 @@ export interface FrontmatterContent extends FrontmatterIndex {
   html: string;
 }
 
+export const SupportedCollections = [
+  ['eip155:1', 'erc20'],
+  ['eip155:137', 'erc20'],
+  ['eip155:43114', 'erc20'],
+];
+
 /**
  * Decode CAIP-19 into CAIP-2, Asset TYPE, and Asset REFERENCE
  * @return {[string, string, string]}

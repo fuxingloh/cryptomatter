@@ -1,4 +1,11 @@
-import { FrontmatterIndex, getFrontmatterContent, getFrontmatterIndex } from 'crypto-frontmatter';
+import {
+  decodeCaip19,
+  FrontmatterIndex,
+  getFrontmatterCollection,
+  getFrontmatterContent,
+  getFrontmatterIndex,
+  SupportedCollections,
+} from 'crypto-frontmatter';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { ReactElement } from 'react';
@@ -11,7 +18,17 @@ function asCaip19(caip2: string, asset: string): string {
   return `${decodeURIComponent(caip2)}/${decodeURIComponent(asset)}`;
 }
 
-// TODO(fuxingloh): generateStaticParams
+export async function generateStaticParams(): Promise<Parameters<typeof Page>[0]['params'][]> {
+  return SupportedCollections.flatMap(([caip2, type]) => {
+    return getFrontmatterCollection(caip2, type).map((frontmatter) => {
+      const [caip2, type, reference] = decodeCaip19(frontmatter.path);
+      return {
+        caip2,
+        asset: `${type}:${reference}`,
+      };
+    });
+  });
+}
 
 export async function generateMetadata(props: Parameters<typeof Page>[0]): Promise<Metadata> {
   const baseUrl = process.env.BASE_URL!;
