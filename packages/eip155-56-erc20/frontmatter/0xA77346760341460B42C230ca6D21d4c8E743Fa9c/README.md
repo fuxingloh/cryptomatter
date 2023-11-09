@@ -1,0 +1,33 @@
+---
+symbol: PETS
+decimals: 18
+tags:
+  - nft
+  - defi
+  - staking
+links:
+  - name: website
+    url: https://micropets.io/
+  - name: explorer
+    url: https://bscscan.com/token/0xa77346760341460b42c230ca6d21d4c8e743fa9c
+  - name: coinmarketcap
+    url: https://coinmarketcap.com/currencies/micropets/
+  - name: twitter
+    url: https://twitter.com/MicroPetsBSC
+  - name: telegram
+    url: https://t.me/MicroPets
+  - name: github
+    url: https://github.com/micropets2021
+  - name: whitepaper
+    url: https://micropets.io/uploads/MicroPetsWhitepaper.pdf
+  - name: discord
+    url: https://discord.com/invite/UeMh9AAnfv
+  - name: reddit
+    url: https://reddit.com/r/micropetsbsc/
+  - name: coingecko
+    url: https://coingecko.com/en/coins/micropets
+---
+
+# MicroPets
+
+Meet MicroPets – Home to the cutest NFT’s on the Binance Smart Chain! We’ve taken your favorite memes and packaged them up into adorable pets you can trade or stake. The rarer the MicroPet the better the rewards.
