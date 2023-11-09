@@ -50,12 +50,30 @@ importers:
 
   packages/crypto-frontmatter:
     dependencies:
+      '@crypto-frontmatter/eip155-10-erc20':
+        specifier: '*'
+        version: link:../eip155-10-erc20
+      '@crypto-frontmatter/eip155-1313161554-erc20':
+        specifier: '*'
+        version: link:../eip155-1313161554-erc20
       '@crypto-frontmatter/eip155-137-erc20':
         specifier: '*'
         version: link:../eip155-137-erc20
+      '@crypto-frontmatter/eip155-42161-erc20':
+        specifier: '*'
+        version: link:../eip155-42161-erc20
+      '@crypto-frontmatter/eip155-42220-erc20':
+        specifier: '*'
+        version: link:../eip155-42220-erc20
       '@crypto-frontmatter/eip155-43114-erc20':
         specifier: '*'
         version: link:../eip155-43114-erc20
+      '@crypto-frontmatter/eip155-56-erc20':
+        specifier: '*'
+        version: link:../eip155-56-erc20
+      '@crypto-frontmatter/eip155-8453-erc20':
+        specifier: '*'
+        version: link:../eip155-8453-erc20
     devDependencies:
       '@crypto-frontmatter/eip155-1-erc20':
         specifier: workspace:*
@@ -76,7 +94,43 @@ importers:
         specifier: workspace:*
         version: link:../../workspace/contented-config
 
+  packages/eip155-10-erc20:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.0
+        version: 7.1.0(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
+  packages/eip155-1313161554-erc20:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.0
+        version: 7.1.0(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
   packages/eip155-137-erc20:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.0
+        version: 7.1.0(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
+  packages/eip155-42161-erc20:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.0
+        version: 7.1.0(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
+  packages/eip155-42220-erc20:
     devDependencies:
       '@contentedjs/contented':
         specifier: ^7.1.0
@@ -94,17 +148,53 @@ importers:
         specifier: workspace:*
         version: link:../../workspace/contented-config
 
+  packages/eip155-56-erc20:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.0
+        version: 7.1.0(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
+  packages/eip155-8453-erc20:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.0
+        version: 7.1.0(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
   website:
     dependencies:
       '@crypto-frontmatter/eip155-1-erc20':
         specifier: workspace:*
         version: link:../packages/eip155-1-erc20
+      '@crypto-frontmatter/eip155-10-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-10-erc20
+      '@crypto-frontmatter/eip155-1313161554-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-1313161554-erc20
       '@crypto-frontmatter/eip155-137-erc20':
         specifier: workspace:*
         version: link:../packages/eip155-137-erc20
+      '@crypto-frontmatter/eip155-42161-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-42161-erc20
+      '@crypto-frontmatter/eip155-42220-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-42220-erc20
       '@crypto-frontmatter/eip155-43114-erc20':
         specifier: workspace:*
         version: link:../packages/eip155-43114-erc20
+      '@crypto-frontmatter/eip155-56-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-56-erc20
+      '@crypto-frontmatter/eip155-8453-erc20':
+        specifier: workspace:*
+        version: link:../packages/eip155-8453-erc20
       '@heroicons/react':
         specifier: ^2.0.18
         version: 2.0.18(react@18.2.0)
