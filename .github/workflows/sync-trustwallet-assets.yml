@@ -3,6 +3,8 @@ name: Sync
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - .github/workflows/sync-trustwallet-assets.yml
       - workspace/sync-trustwallet-assets/**/*
