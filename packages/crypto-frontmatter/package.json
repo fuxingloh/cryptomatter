@@ -1,0 +1,41 @@
+{
+  "name": "crypto-frontmatter",
+  "version": "0.0.0",
+  "private": false,
+  "repository": {
+    "url": "git+https://github.com/levaintech/frontmatter"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "preset": "@workspace/jest-preset"
+  },
+  "devDependencies": {
+    "@crypto-frontmatter/eip155-1-erc20": "workspace:*",
+    "@workspace/jest-preset": "workspace:*",
+    "@workspace/tsconfig": "workspace:*"
+  },
+  "peerDependencies": {
+    "@crypto-frontmatter/eip155-1-erc20": "*",
+    "@crypto-frontmatter/eip155-137-erc20": "*",
+    "@crypto-frontmatter/eip155-43114-erc20": "*"
+  }
+}
