@@ -111,9 +111,12 @@ export function getFrontmatterCollection(caip2: string, type: string): Frontmatt
  * @return {FrontmatterIndex | undefined}
  */
 export function getFrontmatterIndex(caip19: string): FrontmatterIndex | undefined {
-  const [caip2, type] = decodeCaip19(caip19);
+  const [caip2, type, reference] = decodeCaip19(caip19);
   const collection = getFrontmatterCollection(caip2, type);
-  const index = collection.find((value: FrontmatterIndex) => value.path === caip19);
+  const index = collection.find((value: FrontmatterIndex) => {
+    const [, , aReference] = decodeCaip19(value.path);
+    return aReference.toLowerCase() === reference.toLowerCase();
+  });
   if (index === undefined) {
     return undefined;
   }
@@ -137,9 +140,12 @@ export function getFrontmatterIndex(caip19: string): FrontmatterIndex | undefine
  * @return {FrontmatterContent | undefined}
  */
 export function getFrontmatterContent(caip19: string): FrontmatterContent | undefined {
-  const [caip2, type] = decodeCaip19(caip19);
+  const [caip2, type, reference] = decodeCaip19(caip19);
   const collection = getFrontmatterCollection(caip2, type);
-  const index = collection.find((value: FrontmatterIndex) => value.path === caip19);
+  const index = collection.find((value: FrontmatterIndex) => {
+    const [, , aReference] = decodeCaip19(value.path);
+    return aReference.toLowerCase() === reference.toLowerCase();
+  });
   if (index === undefined) {
     return undefined;
   }
