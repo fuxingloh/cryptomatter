@@ -22,7 +22,6 @@ it('should getFrontmatterIndex of eip155:1/erc20:0x00000000008943c65cAf789FFFCF9
     type: 'Frontmatter',
     path: 'eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8',
     modifiedDate: expect.any(Number),
-    sections: [],
     fields: {
       title: 'Dharma USD Coin',
       symbol: 'dUSDC',
@@ -45,7 +44,6 @@ it('should getFrontmatterIndex of eip155:1/erc20:0x00000000008943c65cAf789FFFCF9
         },
       ],
     },
-    headings: [],
   });
 });
 
@@ -56,7 +54,6 @@ it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFC
     type: 'Frontmatter',
     path: 'eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8',
     modifiedDate: expect.any(Number),
-    sections: [],
     fields: {
       title: 'Dharma USD Coin',
       symbol: 'dUSDC',
@@ -79,7 +76,6 @@ it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFC
         },
       ],
     },
-    headings: [],
     html: '<h1>Dharma USD Coin</h1>',
   });
 });
