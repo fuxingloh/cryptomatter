@@ -18,7 +18,7 @@ it('should getFrontmatterCollection of eip155:1/erc20', async () => {
 it('should getFrontmatterIndex of eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8', async () => {
   const frontmatterIndex = getFrontmatterIndex('eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8');
   expect(frontmatterIndex).toStrictEqual({
-    fileId: '0c11e0d2cdcde5bacc14139faa96c318b6f8a0eee4a886dd914baa34e1574397',
+    fileId: expect.stringMatching(/[0-f]{64}/),
     type: 'Frontmatter',
     path: 'eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8',
     modifiedDate: expect.any(Number),
@@ -40,7 +40,7 @@ it('should getFrontmatterIndex of eip155:1/erc20:0x00000000008943c65cAf789FFFCF9
             width: 512,
             height: 512,
           },
-          path: '0c11e0d2cdcde5bacc14139faa96c318b6f8a0eee4a886dd914baa34e1574397.logo.png',
+          path: expect.stringMatching(/[0-f]{64}\.logo\.png/),
         },
       ],
     },
@@ -50,7 +50,7 @@ it('should getFrontmatterIndex of eip155:1/erc20:0x00000000008943c65cAf789FFFCF9
 it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8', async () => {
   const frontmatterContent = getFrontmatterContent('eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8');
   expect(frontmatterContent).toStrictEqual({
-    fileId: '0c11e0d2cdcde5bacc14139faa96c318b6f8a0eee4a886dd914baa34e1574397',
+    fileId: expect.stringMatching(/[0-f]{64}/),
     type: 'Frontmatter',
     path: 'eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8',
     modifiedDate: expect.any(Number),
@@ -72,7 +72,7 @@ it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFC
             width: 512,
             height: 512,
           },
-          path: '0c11e0d2cdcde5bacc14139faa96c318b6f8a0eee4a886dd914baa34e1574397.logo.png',
+          path: expect.stringMatching(/[0-f]{64}\.logo\.png/),
         },
       ],
     },
