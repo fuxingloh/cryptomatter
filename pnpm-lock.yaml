@@ -49,6 +49,13 @@ importers:
         version: 5.2.2
 
   packages/crypto-frontmatter:
+    dependencies:
+      '@crypto-frontmatter/eip155-137-erc20':
+        specifier: '*'
+        version: link:../eip155-137-erc20
+      '@crypto-frontmatter/eip155-43114-erc20':
+        specifier: '*'
+        version: link:../eip155-43114-erc20
     devDependencies:
       '@crypto-frontmatter/eip155-1-erc20':
         specifier: workspace:*

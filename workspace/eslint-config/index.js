@@ -34,5 +34,10 @@ module.exports = [
       'no-only-tests/no-only-tests': 'error',
     },
   },
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
   require('eslint-config-prettier'),
 ];

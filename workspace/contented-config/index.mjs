@@ -40,9 +40,10 @@ const MDProcessor = MarkdownPipeline.withProcessor((processor) => {
 const computeImageField = async (fileContent, filePath) => {
   const reference = filePath.replace(/\/README\.md$/, '');
   const pngLogoPath = join('frontmatter', reference, 'logo.png');
-  const imagePath = join('dist', 'Frontmatter', fileContent.fileId + '.logo.png');
-  await copyFile(pngLogoPath, imagePath);
   const size = imageSize(pngLogoPath);
+
+  const imagePath = fileContent.fileId + '.logo.png';
+  await copyFile(pngLogoPath, join('dist', 'Frontmatter', imagePath));
 
   return [
     {

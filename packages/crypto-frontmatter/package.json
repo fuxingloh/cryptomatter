@@ -34,6 +34,8 @@
     "@workspace/tsconfig": "workspace:*"
   },
   "peerDependencies": {
-    "@crypto-frontmatter/eip155-1-erc20": "*"
+    "@crypto-frontmatter/eip155-1-erc20": "*",
+    "@crypto-frontmatter/eip155-137-erc20": "*",
+    "@crypto-frontmatter/eip155-43114-erc20": "*"
   }
 }
