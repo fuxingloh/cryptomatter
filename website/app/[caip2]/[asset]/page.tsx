@@ -5,6 +5,7 @@ import type { ReactElement } from 'react';
 
 import { ContentedProse } from '@/components/contented/ContentedProse';
 import { FrontmatterImage } from '@/components/contented/FrontmatterImage';
+import { loadHighlighter, ShikiHighlighter } from '@/components/contented/ShikiHighlighter';
 
 function asCaip19(caip2: string, asset: string): string {
   return `${decodeURIComponent(caip2)}/${decodeURIComponent(asset)}`;
@@ -49,6 +50,8 @@ export default async function Page(props: {
     return notFound();
   }
 
+  const highlighter = await loadHighlighter();
+
   return (
     <main className="flex h-full min-w-0 flex-grow flex-col">
       <div className="flex-auto pb-48">
@@ -58,7 +61,27 @@ export default async function Page(props: {
 
         <ContentedProse html={frontmatterContent.html} />
 
-        <pre>{JSON.stringify(frontmatterContent, null, 2)}</pre>
+        <div className="border-mono-800 group/json mt-8 rounded border">
+          <header className="bg-mono-950 text-mono-500 relative flex items-center justify-between rounded-t border-b px-4 py-2 text-sm">
+            <div>FrontmatterContent.json</div>
+            <div>
+              <button>
+                <div className="block group-focus-within/json:hidden">▲</div>
+                <div className="hidden group-focus-within/json:block">▼</div>
+              </button>
+              <span className="absolute inset-0 hidden cursor-pointer group-focus-within/json:block" />
+            </div>
+          </header>
+
+          <div tabIndex={1}>
+            <ShikiHighlighter
+              className="max-h-40 overflow-hidden px-4 py-3 text-sm group-focus-within/json:max-h-full group-focus-within/json:overflow-x-auto"
+              highlighter={highlighter}
+              code={JSON.stringify(frontmatterContent, null, 2)}
+              language="json"
+            />
+          </div>
+        </div>
       </div>
     </main>
   );

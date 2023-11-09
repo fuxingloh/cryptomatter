@@ -14,10 +14,10 @@ export interface FrontmatterImage {
 }
 
 export interface FrontmatterIndex {
-  fileId: string;
-  type: string;
   path: string;
+  fileId: string;
   modifiedDate: number;
+  type: string;
   fields: {
     symbol: string;
     decimals: number;
@@ -89,7 +89,19 @@ export function getFrontmatterCollection(caip2: string, type: string): Frontmatt
 export function getFrontmatterIndex(caip19: string): FrontmatterIndex | undefined {
   const [caip2, type] = decodeCaip19(caip19);
   const collection = getFrontmatterCollection(caip2, type);
-  return collection.find((value: FrontmatterIndex) => value.path === caip19);
+  const index = collection.find((value: FrontmatterIndex) => value.path === caip19);
+  if (index === undefined) {
+    return undefined;
+  }
+
+  // Remove unused fields
+  return {
+    path: index.path,
+    fileId: index.fileId,
+    modifiedDate: index.modifiedDate,
+    type: index.type,
+    fields: index.fields,
+  };
 }
 
 /**
@@ -108,5 +120,13 @@ export function getFrontmatterContent(caip19: string): FrontmatterContent | unde
     return undefined;
   }
 
-  return requireCryptoFrontmatter(caip2, type, index.fileId + '.json');
+  const content = requireCryptoFrontmatter(caip2, type, index.fileId + '.json');
+  return {
+    path: content.path,
+    fileId: content.fileId,
+    modifiedDate: content.modifiedDate,
+    type: content.type,
+    fields: content.fields,
+    html: content.html,
+  };
 }

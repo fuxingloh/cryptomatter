@@ -1,0 +1,12 @@
+pre.ShikiHighlighter code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+pre.ShikiHighlighter code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  @apply mr-5 inline-block w-4 text-right;
+  color: rgba(115, 138, 148, 0.4);
+  direction: rtl;
+}

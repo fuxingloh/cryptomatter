@@ -22,9 +22,11 @@ export default function RootLayout(props: { children: ReactNode }): ReactElement
       <head>
         <ThemeScript />
       </head>
-      <body className="text-mono-300 mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8 xl:px-10">
+      <body className="text-mono-300 mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 xl:px-10">
         <NavigationIndicator />
-        <header className="flex items-center justify-between py-6">Header</header>
+        <header className="flex items-center justify-between py-6">
+          <div className="text-mono-200 text-lg font-semibold">Crypto Frontmatter</div>
+        </header>
         {props.children}
         <Analytics />
       </body>
