@@ -28,9 +28,7 @@ export abstract class Sync {
   ) {}
 
   async sync() {
-    const dirs = await readdir(this.from);
-    // TODO(fuxingloh): Limit to first 100 files for testing
-    for (const dir of dirs.slice(0, 100)) {
+    for (const dir of await readdir(this.from)) {
       const info = JSON.parse(
         await readFile(`${this.from}/${dir}/info.json`, {
           encoding: 'utf-8',

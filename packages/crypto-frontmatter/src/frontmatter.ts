@@ -35,8 +35,14 @@ export interface FrontmatterContent extends FrontmatterIndex {
 
 export const SupportedCollections = [
   ['eip155:1', 'erc20'],
+  ['eip155:10', 'erc20'],
+  ['eip155:56', 'erc20'],
   ['eip155:137', 'erc20'],
+  ['eip155:8453', 'erc20'],
+  ['eip155:42161', 'erc20'],
+  ['eip155:42220', 'erc20'],
   ['eip155:43114', 'erc20'],
+  ['eip155:1313161554', 'erc20'],
 ];
 
 /**
@@ -67,10 +73,22 @@ export function requireCryptoFrontmatter(caip2: string, type: string, path: stri
   switch (`${caip2}/${type}`) {
     case 'eip155:1/erc20':
       return require('@crypto-frontmatter/eip155-1-erc20/dist/Frontmatter/' + path);
+    case 'eip155:10/erc20':
+      return require('@crypto-frontmatter/eip155-10-erc20/dist/Frontmatter/' + path);
+    case 'eip155:56/erc20':
+      return require('@crypto-frontmatter/eip155-56-erc20/dist/Frontmatter/' + path);
     case 'eip155:137/erc20':
       return require('@crypto-frontmatter/eip155-137-erc20/dist/Frontmatter/' + path);
+    case 'eip155:8453/erc20':
+      return require('@crypto-frontmatter/eip155-8453-erc20/dist/Frontmatter/' + path);
+    case 'eip155:42161/erc20':
+      return require('@crypto-frontmatter/eip155-42161-erc20/dist/Frontmatter/' + path);
+    case 'eip155:42220/erc20':
+      return require('@crypto-frontmatter/eip155-42220-erc20/dist/Frontmatter/' + path);
     case 'eip155:43114/erc20':
       return require('@crypto-frontmatter/eip155-43114-erc20/dist/Frontmatter/' + path);
+    case 'eip155:1313161554/erc20':
+      return require('@crypto-frontmatter/eip155-1313161554-erc20/dist/Frontmatter/' + path);
     default:
       throw new Error(`Unknown CAIP-2: ${caip2} and Asset TYPE: ${type}`);
   }
