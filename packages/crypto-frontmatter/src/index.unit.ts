@@ -3,7 +3,7 @@ import { expect, it } from '@jest/globals';
 import { getFrontmatterCollection, getFrontmatterContent, getFrontmatterIndex } from './index';
 
 it('should getFrontmatterCollection of eip155:1/erc20', async () => {
-  const collection = await getFrontmatterCollection('eip155:1', 'erc20');
+  const collection = getFrontmatterCollection('eip155:1', 'erc20');
   expect(collection).toStrictEqual(
     expect.arrayContaining([
       expect.objectContaining({
@@ -16,7 +16,7 @@ it('should getFrontmatterCollection of eip155:1/erc20', async () => {
 });
 
 it('should getFrontmatterIndex of eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8', async () => {
-  const frontmatterIndex = await getFrontmatterIndex('eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8');
+  const frontmatterIndex = getFrontmatterIndex('eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8');
   expect(frontmatterIndex).toStrictEqual({
     fileId: expect.stringMatching(/[0-f]{64}/),
     type: 'Frontmatter',

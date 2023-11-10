@@ -1,10 +1,10 @@
 import {
   FrontmatterIndex,
   getFrontmatterCollection,
+  getFrontmatterContent,
   getFrontmatterIndex,
   SupportedCollections,
 } from 'crypto-frontmatter';
-import { getFrontmatterContent } from 'crypto-frontmatter/content';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { ReactElement } from 'react';

@@ -75,6 +75,18 @@ export default function config(options) {
           pattern: '**/README.md',
           processor: MDProcessor,
           fields: {
+            caip2: {
+              type: 'string',
+              resolve: () => {
+                return options.caip2;
+              },
+            },
+            namespace: {
+              type: 'string',
+              resolve: () => {
+                return options.namespace;
+              },
+            },
             symbol: {
               type: 'string',
               required: true,
@@ -85,11 +97,15 @@ export default function config(options) {
             },
             tags: {
               type: 'string[]',
-              required: false,
+              resolve: (value) => {
+                return value ?? [];
+              },
             },
             links: {
               type: 'object',
-              required: false,
+              resolve: (value) => {
+                return value ?? [];
+              },
             },
             /**
              * Populated by computeImageField
@@ -110,8 +126,6 @@ export default function config(options) {
               type: fileContent.type,
               fields: {
                 ...fileContent.fields,
-                caip2: options.caip2,
-                namespace: options.namespace,
                 images: await computeImageField(fileContent, filePath),
               },
               html: fileContent.html,

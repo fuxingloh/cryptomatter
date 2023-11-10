@@ -30,9 +30,9 @@ export interface FrontmatterIndex {
     decimals: number;
     title?: string;
     description?: string;
-    tags?: string[];
-    links?: FrontmatterLink[];
-    images?: FrontmatterImage[];
+    tags: string[];
+    links: FrontmatterLink[];
+    images: FrontmatterImage[];
   };
 }
 
