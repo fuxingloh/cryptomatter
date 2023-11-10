@@ -102,15 +102,19 @@ export default function config(options) {
           transform: async (fileContent, filePath) => {
             const reference = filePath.replace(/\/README\.md$/, '');
             const caip19 = `${options.caip2}/${options.namespace}:${reference}`;
+            // Remove all non-essential fields
             return {
-              ...fileContent,
+              path: caip19,
+              fileId: fileContent.fileId,
+              modifiedDate: fileContent.modifiedDate,
+              type: fileContent.type,
               fields: {
                 ...fileContent.fields,
+                caip2: options.caip2,
+                namespace: options.namespace,
                 images: await computeImageField(fileContent, filePath),
               },
-              path: caip19,
-              sections: [],
-              headings: [],
+              html: fileContent.html,
             };
           },
         },
