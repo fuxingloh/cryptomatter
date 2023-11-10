@@ -18,18 +18,21 @@ function asCaip19(caip2: string, asset: string): string {
 }
 
 export async function generateStaticParams(): Promise<Parameters<typeof Page>[0]['params'][]> {
-  return SupportedCollections.flatMap(([caip2, type]) => {
-    return getFrontmatterCollection(caip2, type).map((frontmatter) => {
+  const params: Parameters<typeof Page>[0]['params'][] = [];
+  for (const [caip2, type] of SupportedCollections) {
+    const collection = await getFrontmatterCollection(caip2, type);
+    for (const frontmatter of collection) {
       const [caip2, asset] = frontmatter.path.split('/');
-      return { caip2, asset };
-    });
-  });
+      params.push({ caip2, asset });
+    }
+  }
+  return params;
 }
 
 export async function generateMetadata(props: Parameters<typeof Page>[0]): Promise<Metadata> {
   const baseUrl = process.env.BASE_URL!;
   const caip19 = asCaip19(props.params.caip2, props.params.asset);
-  const frontmatterIndex: FrontmatterIndex | undefined = getFrontmatterIndex(caip19);
+  const frontmatterIndex: FrontmatterIndex | undefined = await getFrontmatterIndex(caip19);
   if (frontmatterIndex === undefined) {
     return notFound();
   }

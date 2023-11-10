@@ -1,5 +1,6 @@
 'use client';
-import { FrontmatterIndex, requireCryptoFrontmatter } from 'crypto-frontmatter';
+import type { FrontmatterIndex } from 'crypto-frontmatter';
+import { requireCryptoFrontmatter } from 'crypto-frontmatter/require';
 import Image from 'next/image';
 import type { ReactElement } from 'react';
 

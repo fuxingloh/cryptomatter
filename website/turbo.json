@@ -3,8 +3,7 @@
   "extends": ["//"],
   "pipeline": {
     "build": {
-      "inputs": ["app/**", "components/**", "lib/**", "next.config.js"],
-      "outputs": [".next/**", "!.next/cache/**"],
+      "cache": false,
       "dependsOn": ["^build"]
     },
     "dev": {
