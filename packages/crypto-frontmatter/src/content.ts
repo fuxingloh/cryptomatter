@@ -2,7 +2,13 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 
 import { decodeCaip19 } from './caip19';
-import { FrontmatterContent, FrontmatterIndex, getFrontmatterCollection } from './index';
+import { FrontmatterIndex, getFrontmatterCollection } from './index';
+
+export interface FrontmatterContent extends FrontmatterIndex {
+  html: string;
+  caip2: string;
+  namespace: string;
+}
 
 /**
  * Get FrontmatterContent using CAIP-19, returns undefined if not found

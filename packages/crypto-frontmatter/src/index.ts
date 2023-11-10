@@ -17,8 +17,6 @@ export interface FrontmatterImage {
 
 export interface FrontmatterIndex {
   path: string;
-  caip2: string;
-  namespace: string;
   fileId: string;
   modifiedDate: number;
   type: string;
@@ -31,10 +29,6 @@ export interface FrontmatterIndex {
     links?: FrontmatterLink[];
     images?: FrontmatterImage[];
   };
-}
-
-export interface FrontmatterContent extends FrontmatterIndex {
-  html: string;
 }
 
 export const SupportedCollections = [
