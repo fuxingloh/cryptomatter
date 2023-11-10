@@ -23,6 +23,8 @@ it('should getFrontmatterIndex of eip155:1/erc20:0x00000000008943c65cAf789FFFCF9
     path: 'eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8',
     modifiedDate: expect.any(Number),
     fields: {
+      caip2: 'eip155:1',
+      namespace: 'erc20',
       title: 'Dharma USD Coin',
       symbol: 'dUSDC',
       decimals: 8,

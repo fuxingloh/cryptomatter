@@ -8,10 +8,10 @@ it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFC
     fileId: expect.stringMatching(/[0-f]{64}/),
     type: 'Frontmatter',
     path: 'eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8',
-    caip2: 'eip155:1',
-    namespace: 'erc20',
     modifiedDate: expect.any(Number),
     fields: {
+      caip2: 'eip155:1',
+      namespace: 'erc20',
       title: 'Dharma USD Coin',
       symbol: 'dUSDC',
       decimals: 8,
