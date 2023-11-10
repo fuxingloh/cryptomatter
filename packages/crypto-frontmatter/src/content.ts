@@ -6,8 +6,6 @@ import { FrontmatterIndex, getFrontmatterCollection } from './index';
 
 export interface FrontmatterContent extends FrontmatterIndex {
   html: string;
-  caip2: string;
-  namespace: string;
 }
 
 /**

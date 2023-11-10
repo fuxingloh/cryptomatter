@@ -21,6 +21,8 @@ export interface FrontmatterIndex {
   modifiedDate: number;
   type: string;
   fields: {
+    caip2: string;
+    namespace: string;
     symbol: string;
     decimals: number;
     title?: string;

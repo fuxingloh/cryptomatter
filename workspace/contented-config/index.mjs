@@ -105,13 +105,13 @@ export default function config(options) {
             // Remove all non-essential fields
             return {
               path: caip19,
-              caip2: options.caip2,
-              namespace: options.namespace,
               fileId: fileContent.fileId,
               modifiedDate: fileContent.modifiedDate,
               type: fileContent.type,
               fields: {
                 ...fileContent.fields,
+                caip2: options.caip2,
+                namespace: options.namespace,
                 images: await computeImageField(fileContent, filePath),
               },
               html: fileContent.html,

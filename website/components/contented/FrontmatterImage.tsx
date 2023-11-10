@@ -11,7 +11,7 @@ export function FrontmatterImage(props: { frontmatter: FrontmatterIndex; type: '
 
   return (
     <Image
-      src={requireCryptoFrontmatter(props.frontmatter.caip2, props.frontmatter.namespace, image.path)}
+      src={requireCryptoFrontmatter(props.frontmatter.fields.caip2, props.frontmatter.fields.namespace, image.path)}
       alt={`${props.frontmatter.fields.symbol} ${props.type}`}
       width={image.size.width}
       height={image.size.height}
