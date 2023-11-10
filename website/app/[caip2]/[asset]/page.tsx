@@ -1,11 +1,10 @@
 import {
-  decodeCaip19,
   FrontmatterIndex,
   getFrontmatterCollection,
-  getFrontmatterContent,
   getFrontmatterIndex,
   SupportedCollections,
 } from 'crypto-frontmatter';
+import { getFrontmatterContent } from 'crypto-frontmatter/content';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { ReactElement } from 'react';
@@ -21,11 +20,8 @@ function asCaip19(caip2: string, asset: string): string {
 export async function generateStaticParams(): Promise<Parameters<typeof Page>[0]['params'][]> {
   return SupportedCollections.flatMap(([caip2, type]) => {
     return getFrontmatterCollection(caip2, type).map((frontmatter) => {
-      const [caip2, type, reference] = decodeCaip19(frontmatter.path);
-      return {
-        caip2,
-        asset: `${type}:${reference}`,
-      };
+      const [caip2, asset] = frontmatter.path.split('/');
+      return { caip2, asset };
     });
   });
 }
@@ -62,7 +58,7 @@ export default async function Page(props: {
   };
 }): Promise<ReactElement> {
   const caip19 = asCaip19(props.params.caip2, props.params.asset);
-  const frontmatterContent = getFrontmatterContent(caip19);
+  const frontmatterContent = await getFrontmatterContent(caip19);
   if (frontmatterContent === undefined) {
     return notFound();
   }
