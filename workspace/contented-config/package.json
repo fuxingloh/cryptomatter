@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "main": "./index.mjs",
+  "scripts": {
+    "build": ""
+  },
   "dependencies": {
     "@contentedjs/contented": "^7.1.0",
     "@contentedjs/contented-pipeline-md": "^7.1.0",
