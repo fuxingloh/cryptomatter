@@ -1,4 +1,7 @@
-import { decodeCaip19 } from './caip19';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+import { requireCryptoFrontmatter } from './require';
 
 export interface FrontmatterLink {
   name: string;
@@ -33,6 +36,10 @@ export interface FrontmatterIndex {
   };
 }
 
+export interface FrontmatterContent extends FrontmatterIndex {
+  html: string;
+}
+
 export const SupportedCollections = [
   ['eip155:1', 'erc20'],
   ['eip155:10', 'erc20'],
@@ -46,43 +53,13 @@ export const SupportedCollections = [
 ];
 
 /**
- * Statically import (via CJS require) @crypto-frontmatter module with CAIP-2 and Asset TYPE
- * This is a workaround to allow dynamic import of @crypto-frontmatter module for use within webpack.
- *
- * All @crypto-frontmatter modules are statically mapped here and must be installed as a project dependency
- * if you want to use it.
- * For example, you must install @crypto-frontmatter/eip155-1-erc20 if you want to use eip155:1/erc frontmatter.
- *
- * @param caip2 {string}
- * @param type {string}
- * @param path {string}
- * @return {any}
+ * Decode CAIP-19 into CAIP-2, Asset TYPE, and Asset REFERENCE
+ * @return {[string, string, string]}
  */
-export function requireCryptoFrontmatter(caip2: string, type: string, path: string): any {
-  /* eslint-disable no-undef */
-  switch (`${caip2}/${type}`) {
-    case 'eip155:1/erc20':
-      return require('@crypto-frontmatter/eip155-1-erc20/dist/Frontmatter/' + path);
-    case 'eip155:10/erc20':
-      return require('@crypto-frontmatter/eip155-10-erc20/dist/Frontmatter/' + path);
-    case 'eip155:56/erc20':
-      return require('@crypto-frontmatter/eip155-56-erc20/dist/Frontmatter/' + path);
-    case 'eip155:137/erc20':
-      return require('@crypto-frontmatter/eip155-137-erc20/dist/Frontmatter/' + path);
-    case 'eip155:8453/erc20':
-      return require('@crypto-frontmatter/eip155-8453-erc20/dist/Frontmatter/' + path);
-    case 'eip155:42161/erc20':
-      return require('@crypto-frontmatter/eip155-42161-erc20/dist/Frontmatter/' + path);
-    case 'eip155:42220/erc20':
-      return require('@crypto-frontmatter/eip155-42220-erc20/dist/Frontmatter/' + path);
-    case 'eip155:43114/erc20':
-      return require('@crypto-frontmatter/eip155-43114-erc20/dist/Frontmatter/' + path);
-    case 'eip155:1313161554/erc20':
-      return require('@crypto-frontmatter/eip155-1313161554-erc20/dist/Frontmatter/' + path);
-    default:
-      throw new Error(`Unknown CAIP-2: ${caip2} and Asset TYPE: ${type}`);
-  }
-  /* eslint-enable no-undef */
+export function decodeCaip19(caip19: string): string[] {
+  const [caip2, asset] = caip19.split('/');
+  const [type, reference] = asset.split(':');
+  return [caip2, type, reference];
 }
 
 /**
@@ -110,4 +87,38 @@ export function getFrontmatterIndex(caip19: string): FrontmatterIndex | undefine
     const [, , aReference] = decodeCaip19(value.path);
     return aReference.toLowerCase() === reference.toLowerCase();
   });
+}
+
+/**
+ * Get FrontmatterContent using CAIP-19, returns undefined if not found
+ * This includes the HTML content of the Frontmatter.
+ *
+ * @param caip19 {string}
+ * @see FrontmatterContent.html
+ * @return {FrontmatterContent | undefined}
+ */
+export async function getFrontmatterContent(caip19: string): Promise<FrontmatterContent | undefined> {
+  const [caip2, type, reference] = decodeCaip19(caip19);
+  const collection = getFrontmatterCollection(caip2, type);
+  const index = collection.find((value: FrontmatterIndex) => {
+    const [, , aReference] = decodeCaip19(value.path);
+    return aReference.toLowerCase() === reference.toLowerCase();
+  });
+  if (index === undefined) {
+    return undefined;
+  }
+
+  const [caip2Type, caip2Reference] = caip2.split(':');
+  const path = join(
+    'node_modules',
+    '@crypto-frontmatter',
+    `${caip2Type}-${caip2Reference}-${type}`,
+    'dist',
+    'Frontmatter',
+    `${index.fileId}.json`,
+  );
+  const contents = await readFile(path, {
+    encoding: 'utf-8',
+  });
+  return JSON.parse(contents);
 }
