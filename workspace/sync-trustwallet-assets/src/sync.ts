@@ -89,7 +89,10 @@ export class DefaultSync extends Sync {
   async write(dir: string, info: Partial<Info>): Promise<void> {
     const namespace = this.getNamespace(info);
     await mkdir(`${this.to}/${namespace}`, { recursive: true });
-    await copyFile(`${this.from}/${dir}/logo.png`, `${this.to}/${namespace}/logo.png`);
+
+    if (await hasFile(`${this.from}/${dir}/logo.png`)) {
+      await copyFile(`${this.from}/${dir}/logo.png`, `${this.to}/${namespace}/logo.png`);
+    }
     await writeFile(
       `${this.to}/${namespace}/README.md`,
       [
