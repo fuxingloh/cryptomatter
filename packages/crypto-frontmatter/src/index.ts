@@ -1,7 +1,6 @@
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-
-import { requireCryptoFrontmatter } from './require';
 
 export interface FrontmatterLink {
   name: string;
@@ -30,8 +29,8 @@ export interface FrontmatterIndex {
     decimals: number;
     title?: string;
     description?: string;
-    tags: string[];
-    links: FrontmatterLink[];
+    tags?: string[];
+    links?: FrontmatterLink[];
     images: FrontmatterImage[];
   };
 }
@@ -53,40 +52,58 @@ export const SupportedCollections = [
 ];
 
 /**
- * Decode CAIP-19 into CAIP-2, Asset TYPE, and Asset REFERENCE
+ * Decode CAIP-19 into CAIP-2, Asset NAMESPACE, and Asset REFERENCE
  * @return {[string, string, string]}
  */
 export function decodeCaip19(caip19: string): string[] {
   const [caip2, asset] = caip19.split('/');
-  const [type, reference] = asset.split(':');
-  return [caip2, type, reference];
+  const [caip2Type, caip2Reference] = caip2.split(':');
+  const [namespace, reference] = asset.split(':');
+  return [caip2Type, caip2Reference, namespace, reference];
+}
+
+function sha256(input: string): string {
+  return createHash('sha256').update(input).digest('hex');
+}
+
+/**
+ * Encode CAIP-19 into fileId
+ * If Namespace is ERC20, the address field will be converted to lowercase.
+ */
+export function computeFileId(caip19: string): string {
+  const [caip2, asset] = caip19.split('/');
+  const [namespace, reference] = asset.split(':');
+
+  if (namespace === 'erc20') {
+    return sha256(`${caip2}/${namespace}:${reference.toLowerCase()}`);
+  }
+  return sha256(caip19);
+}
+
+export async function readCryptoFrontmatterFile(caip2: string, namespace: string, file: string): Promise<any> {
+  const [caip2Type, caip2Reference] = caip2.split(':');
+  const path = join(
+    'node_modules',
+    '@crypto-frontmatter',
+    `${caip2Type}-${caip2Reference}-${namespace}`,
+    'dist',
+    'Frontmatter',
+    file,
+  );
+  const contents = await readFile(path, {
+    encoding: 'utf-8',
+  });
+  return JSON.parse(contents);
 }
 
 /**
  * Get FrontmatterIndex collection of CAIP-2 and Asset TYPE
- * requireCryptoFrontmatter is used to statically import the `@crypto-frontmatter` module using the Node.JS require
- * architecture
- *
  * @param caip2 {string}
- * @param type {string}
+ * @param namespace {string}
  * @return {FrontmatterIndex[]}
  */
-export function getFrontmatterCollection(caip2: string, type: string): FrontmatterIndex[] {
-  return requireCryptoFrontmatter(caip2, type, 'index.json');
-}
-
-/**
- * Get a single FrontmatterIndex using CAIP-19, returns undefined if not found
- * @param caip19 {string}
- * @return {FrontmatterIndex | undefined}
- */
-export function getFrontmatterIndex(caip19: string): FrontmatterIndex | undefined {
-  const [caip2, type, reference] = decodeCaip19(caip19);
-  const collection = getFrontmatterCollection(caip2, type);
-  return collection.find((value: FrontmatterIndex) => {
-    const [, , aReference] = decodeCaip19(value.path);
-    return aReference.toLowerCase() === reference.toLowerCase();
-  });
+export async function getFrontmatterCollection(caip2: string, namespace: string): Promise<FrontmatterIndex[]> {
+  return readCryptoFrontmatterFile(caip2, namespace, 'index.json');
 }
 
 /**
@@ -98,27 +115,8 @@ export function getFrontmatterIndex(caip19: string): FrontmatterIndex | undefine
  * @return {FrontmatterContent | undefined}
  */
 export async function getFrontmatterContent(caip19: string): Promise<FrontmatterContent | undefined> {
-  const [caip2, type, reference] = decodeCaip19(caip19);
-  const collection = getFrontmatterCollection(caip2, type);
-  const index = collection.find((value: FrontmatterIndex) => {
-    const [, , aReference] = decodeCaip19(value.path);
-    return aReference.toLowerCase() === reference.toLowerCase();
-  });
-  if (index === undefined) {
-    return undefined;
-  }
-
-  const [caip2Type, caip2Reference] = caip2.split(':');
-  const path = join(
-    'node_modules',
-    '@crypto-frontmatter',
-    `${caip2Type}-${caip2Reference}-${type}`,
-    'dist',
-    'Frontmatter',
-    `${index.fileId}.json`,
-  );
-  const contents = await readFile(path, {
-    encoding: 'utf-8',
-  });
-  return JSON.parse(contents);
+  const fileId = computeFileId(caip19);
+  const [caip2, asset] = caip19.split('/');
+  const [namespace] = asset.split(':');
+  return readCryptoFrontmatterFile(caip2, namespace, `${fileId}.json`);
 }

@@ -11,9 +11,10 @@ import {
   remarkRehype,
 } from '@contentedjs/contented-pipeline-md';
 import { join } from 'node:path';
-import { copyFile, mkdir } from 'node:fs/promises';
+import { copyFile } from 'node:fs/promises';
 import { imageSize } from 'image-size';
-import { mkdirSync } from 'fs';
+import { mkdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 /**
  * To reduce complexity,
@@ -32,17 +33,21 @@ const MDProcessor = MarkdownPipeline.withProcessor((processor) => {
     .use(rehypeStringify);
 });
 
+function sha256(data) {
+  return createHash('sha256').update(data).digest('hex');
+}
+
 /**
- * @param fileContent {import('@contentedjs/contented').FileContent}
+ * @param fileId {string}
  * @param filePath {string}
  * @return {Promise<[{mine: string, path: string}]>}
  */
-const computeImageField = async (fileContent, filePath) => {
+async function computeImageField(fileId, filePath) {
   const reference = filePath.replace(/\/README\.md$/, '');
   const pngLogoPath = join('frontmatter', reference, 'logo.png');
   const size = imageSize(pngLogoPath);
 
-  const imagePath = fileContent.fileId + '.logo.png';
+  const imagePath = fileId + '.logo.png';
   await copyFile(pngLogoPath, join('dist', 'Frontmatter', imagePath));
 
   return [
@@ -56,7 +61,18 @@ const computeImageField = async (fileContent, filePath) => {
       path: imagePath,
     },
   ];
-};
+}
+
+function computeFileId(caip19) {
+  const [caip2, asset] = caip19.split('/');
+  const [namespace, reference] = asset.split(':');
+
+  if (namespace === 'erc20') {
+    return sha256(`${caip2}/${namespace}:${reference.toLowerCase()}`);
+  }
+
+  return sha256(caip19);
+}
 
 /**
  * @param options {{caip2: string, namespace: string}}
@@ -97,15 +113,11 @@ export default function config(options) {
             },
             tags: {
               type: 'string[]',
-              resolve: (value) => {
-                return value ?? [];
-              },
+              required: false,
             },
             links: {
               type: 'object',
-              resolve: (value) => {
-                return value ?? [];
-              },
+              required: false,
             },
             /**
              * Populated by computeImageField
@@ -118,15 +130,17 @@ export default function config(options) {
           transform: async (fileContent, filePath) => {
             const reference = filePath.replace(/\/README\.md$/, '');
             const caip19 = `${options.caip2}/${options.namespace}:${reference}`;
-            // Remove all non-essential fields
+            const fileId = computeFileId(caip19);
+
+            // Only return essential fields to reduce the size of the JSON file.
             return {
               path: caip19,
-              fileId: fileContent.fileId,
+              fileId: fileId,
               modifiedDate: fileContent.modifiedDate,
               type: fileContent.type,
               fields: {
                 ...fileContent.fields,
-                images: await computeImageField(fileContent, filePath),
+                images: await computeImageField(fileId, filePath),
               },
               html: fileContent.html,
             };

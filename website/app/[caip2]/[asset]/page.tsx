@@ -2,7 +2,6 @@ import {
   FrontmatterIndex,
   getFrontmatterCollection,
   getFrontmatterContent,
-  getFrontmatterIndex,
   SupportedCollections,
 } from 'crypto-frontmatter';
 import { Metadata } from 'next';
@@ -32,7 +31,7 @@ export async function generateStaticParams(): Promise<Parameters<typeof Page>[0]
 export async function generateMetadata(props: Parameters<typeof Page>[0]): Promise<Metadata> {
   const baseUrl = process.env.BASE_URL!;
   const caip19 = asCaip19(props.params.caip2, props.params.asset);
-  const frontmatterIndex: FrontmatterIndex | undefined = await getFrontmatterIndex(caip19);
+  const frontmatterIndex: FrontmatterIndex | undefined = await getFrontmatterContent(caip19);
   if (frontmatterIndex === undefined) {
     return notFound();
   }
@@ -79,7 +78,7 @@ export default async function Page(props: {
 
         <div className="border-mono-800 group/json mt-8 rounded border">
           <header className="bg-mono-950 text-mono-500 relative flex items-center justify-between rounded-t border-b px-4 py-2 text-sm">
-            <div>FrontmatterContent.json</div>
+            <div>Frontmatter.json</div>
             <div>
               <button>
                 <div className="block group-focus-within/json:hidden">▲</div>

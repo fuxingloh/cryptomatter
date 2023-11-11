@@ -55,5 +55,34 @@
     "@crypto-frontmatter/eip155-43114-erc20": "*",
     "@crypto-frontmatter/eip155-56-erc20": "*",
     "@crypto-frontmatter/eip155-8453-erc20": "*"
+  },
+  "peerDependenciesMeta": {
+    "@crypto-frontmatter/eip155-1-erc20": {
+      "optional": true
+    },
+    "@crypto-frontmatter/eip155-10-erc20": {
+      "optional": true
+    },
+    "@crypto-frontmatter/eip155-1313161554-erc20": {
+      "optional": true
+    },
+    "@crypto-frontmatter/eip155-137-erc20": {
+      "optional": true
+    },
+    "@crypto-frontmatter/eip155-42161-erc20": {
+      "optional": true
+    },
+    "@crypto-frontmatter/eip155-42220-erc20": {
+      "optional": true
+    },
+    "@crypto-frontmatter/eip155-43114-erc20": {
+      "optional": true
+    },
+    "@crypto-frontmatter/eip155-56-erc20": {
+      "optional": true
+    },
+    "@crypto-frontmatter/eip155-8453-erc20": {
+      "optional": true
+    }
   }
 }
