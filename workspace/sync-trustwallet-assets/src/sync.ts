@@ -27,7 +27,7 @@ export abstract class Sync {
     protected readonly to: string,
   ) {}
 
-  async sync() {
+  async sync(filter: (info: Partial<Info>) => boolean): Promise<void> {
     for (const dir of await readdir(this.from)) {
       const info = JSON.parse(
         await readFile(`${this.from}/${dir}/info.json`, {
@@ -36,15 +36,15 @@ export abstract class Sync {
       ) as Partial<Info>;
 
       if (!(await this.shouldWrite(dir, info))) continue;
+      if (!filter(info)) continue;
       await this.write(dir, info);
     }
   }
 
   async shouldWrite(dir: string, info: Partial<Info>): Promise<boolean> {
-    // Make sure logo.png and info.json exists
-    const hasFromLogo = await hasFile(`${this.from}/${dir}/logo.png`);
+    // Make sure info.json exists
     const hasFromInfo = await hasFile(`${this.from}/${dir}/info.json`);
-    if (!hasFromLogo || !hasFromInfo) return false;
+    if (!hasFromInfo) return false;
 
     // If README.md and logo.png do not exist on the other side, write it
     const namespace = this.getNamespace(info);
@@ -85,7 +85,7 @@ function hasFile(filepath: string): Promise<boolean> {
   );
 }
 
-export class Eip155Erc20Sync extends Sync {
+export class DefaultSync extends Sync {
   async write(dir: string, info: Partial<Info>): Promise<void> {
     const namespace = this.getNamespace(info);
     await mkdir(`${this.to}/${namespace}`, { recursive: true });

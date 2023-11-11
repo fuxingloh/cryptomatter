@@ -13,7 +13,7 @@ import {
 import { join } from 'node:path';
 import { copyFile } from 'node:fs/promises';
 import { imageSize } from 'image-size';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
 /**
@@ -45,6 +45,10 @@ function sha256(data) {
 async function computeImageField(fileId, filePath) {
   const reference = filePath.replace(/\/README\.md$/, '');
   const pngLogoPath = join('frontmatter', reference, 'logo.png');
+  if (existsSync(pngLogoPath) === false) {
+    return [];
+  }
+
   const size = imageSize(pngLogoPath);
 
   const imagePath = fileId + '.logo.png';
