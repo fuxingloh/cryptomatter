@@ -49,6 +49,8 @@ export const SupportedCollections = [
   ['eip155:42220', 'erc20'],
   ['eip155:43114', 'erc20'],
   ['eip155:1313161554', 'erc20'],
+  ['tip474:728126428', 'trc10'],
+  ['tip474:728126428', 'trc20'],
 ];
 
 /**

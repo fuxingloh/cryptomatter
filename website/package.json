@@ -28,6 +28,8 @@
     "@crypto-frontmatter/eip155-43114-erc20": "workspace:*",
     "@crypto-frontmatter/eip155-56-erc20": "workspace:*",
     "@crypto-frontmatter/eip155-8453-erc20": "workspace:*",
+    "@crypto-frontmatter/tip474-728126428-trc10": "workspace:*",
+    "@crypto-frontmatter/tip474-728126428-trc20": "workspace:*",
     "@heroicons/react": "^2.0.18",
     "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
