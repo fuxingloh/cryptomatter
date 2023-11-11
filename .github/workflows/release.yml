@@ -46,7 +46,7 @@ jobs:
 
       - run: pnpm -r exec pnpm version ${{ needs.Version.outputs.result }} --git-tag-version=false
 
-      - run: pnpm turbo run build
+      - run: pnpm turbo run build --filter "./packages/*"
 
       - run: npm config set "//registry.npmjs.org/:_authToken" "\${CRYPTO_FRONTMATTER_NPM_TOKEN}" --location=global
 
