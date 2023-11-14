@@ -42,7 +42,7 @@ it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFC
             width: 512,
             height: 512,
           },
-          path: expect.stringMatching(/[0-f]{64}\.logo\.png/),
+          path: expect.stringMatching(/[0-9a-f]{64}\.png/),
         },
       ],
     },
