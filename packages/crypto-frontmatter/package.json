@@ -19,6 +19,9 @@
       ]
     }
   },
+  "bin": {
+    "crypto-frontmatter": "./cli.js"
+  },
   "files": [
     "dist"
   ],
@@ -39,6 +42,9 @@
   },
   "jest": {
     "preset": "@workspace/jest-preset"
+  },
+  "dependencies": {
+    "clipanion": "3.2.1"
   },
   "devDependencies": {
     "@crypto-frontmatter/eip155-1-erc20": "workspace:*",

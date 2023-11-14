@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build --no-lint",
     "clean": "rm -rf .next",
+    "crypto-frontmatter-mirror": "crypto-frontmatter mirror ./public/crypto-frontmatter",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start"
