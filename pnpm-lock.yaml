@@ -51,34 +51,34 @@ importers:
   packages/crypto-frontmatter:
     dependencies:
       '@crypto-frontmatter/eip155-10-erc20':
-        specifier: '*'
-        version: 0.1.2
+        specifier: workspace:*
+        version: link:../eip155-10-erc20
       '@crypto-frontmatter/eip155-1313161554-erc20':
-        specifier: '*'
-        version: 0.1.2
+        specifier: workspace:*
+        version: link:../eip155-1313161554-erc20
       '@crypto-frontmatter/eip155-137-erc20':
-        specifier: '*'
-        version: 0.1.2
+        specifier: workspace:*
+        version: link:../eip155-137-erc20
       '@crypto-frontmatter/eip155-42161-erc20':
-        specifier: '*'
-        version: 0.1.2
+        specifier: workspace:*
+        version: link:../eip155-42161-erc20
       '@crypto-frontmatter/eip155-42220-erc20':
-        specifier: '*'
-        version: 0.1.2
+        specifier: workspace:*
+        version: link:../eip155-42220-erc20
       '@crypto-frontmatter/eip155-43114-erc20':
-        specifier: '*'
-        version: 0.1.2
+        specifier: workspace:*
+        version: link:../eip155-43114-erc20
       '@crypto-frontmatter/eip155-56-erc20':
-        specifier: '*'
-        version: 0.1.2
+        specifier: workspace:*
+        version: link:../eip155-56-erc20
       '@crypto-frontmatter/eip155-8453-erc20':
-        specifier: '*'
-        version: 0.1.2
+        specifier: workspace:*
+        version: link:../eip155-8453-erc20
       '@crypto-frontmatter/tip474-728126428-trc10':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../tip474-728126428-trc10
       '@crypto-frontmatter/tip474-728126428-trc20':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../tip474-728126428-trc20
     devDependencies:
       '@crypto-frontmatter/eip155-1-erc20':
@@ -751,38 +751,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typanion
-
-  /@crypto-frontmatter/eip155-10-erc20@0.1.2:
-    resolution: {integrity: sha512-yplo/Z0YsWoEmFeaxzjs30mRKjWrrcGuGpRos8tfTB1AryqrHgEMGundBIRbl0PDHz4ulISbu+3th95hi79Xyw==}
-    dev: false
-
-  /@crypto-frontmatter/eip155-1313161554-erc20@0.1.2:
-    resolution: {integrity: sha512-I+wnlrYYLO5SeM09VcYtNFthZxjb4jUEidOoADdfg7goKrgvUWKaa3dtIqZIbbzIg/g2OzqCMCUNXT4k02G6aQ==}
-    dev: false
-
-  /@crypto-frontmatter/eip155-137-erc20@0.1.2:
-    resolution: {integrity: sha512-4+yeteZcPpVrCSqadDpyfD23LKD68ULqajOfceFi3EID4VSgHbfXyTE+GBTeODulh6X/yzcfYbbhl3g5Dbs/HA==}
-    dev: false
-
-  /@crypto-frontmatter/eip155-42161-erc20@0.1.2:
-    resolution: {integrity: sha512-h9LFSQEh9JjXTKuDz46ftKmCwZ44TOI4XXin/SvQPscTclZYW97iWVKc1EHJoj7Ymi+czoSxRRvd5DtdQGlmMw==}
-    dev: false
-
-  /@crypto-frontmatter/eip155-42220-erc20@0.1.2:
-    resolution: {integrity: sha512-MH0vnAFoGr0BDA3jvEVB0euyibX88C9petHN2e6QiIA04zD3HpWfVCWirrsb5iuh8OhQtMpI0szqD09yrVwAUw==}
-    dev: false
-
-  /@crypto-frontmatter/eip155-43114-erc20@0.1.2:
-    resolution: {integrity: sha512-pJH84fhhjkMx17/3EdTYhAGRmS/QtEiIEPzE25umxTjV+9ijNbg7DHoVZKrKX+qVj81lMEskWEn6ePvsjEKNSQ==}
-    dev: false
-
-  /@crypto-frontmatter/eip155-56-erc20@0.1.2:
-    resolution: {integrity: sha512-XVKDreWHEUPKl7qezoE1tY9sF5U0r3tC0BHAnEg11UX1Ec4pJqaPuujK/dr5Pn5XqKMQrVZNdvpDOizQwaqj7g==}
-    dev: false
-
-  /@crypto-frontmatter/eip155-8453-erc20@0.1.2:
-    resolution: {integrity: sha512-2nJscd/xcVHlk+2wy9HpXU1bXhSya9uClSaPW/MHZPszaJnb8Ip1buweFFoJy9q1Rn4gPryWVBzNFquwAergNA==}
-    dev: false
 
   /@emotion/is-prop-valid@0.8.8:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
