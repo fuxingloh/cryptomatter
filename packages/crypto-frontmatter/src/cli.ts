@@ -15,9 +15,6 @@ export class MirrorCommand extends Command {
     const collections = await getInstalledFrontmatterCollection();
     for (const collection of collections) {
       const indexArray = await getFrontmatterIndexArray(collection.caip2, collection.namespace);
-      this.context.stdout.write(
-        `Mirroring ${indexArray.length} assets in ${collection.caip2}/${collection.namespace}\n`,
-      );
       for (const frontmatterIndex of indexArray) {
         for (const frontmatterImage of frontmatterIndex.fields.images) {
           const from = getNodeModulesPath(collection.caip2, collection.namespace, frontmatterImage.path);
@@ -25,6 +22,10 @@ export class MirrorCommand extends Command {
           await copyFile(from, to);
         }
       }
+
+      this.context.stdout.write(
+        `Mirrored ${indexArray.length} files for collection "${collection.caip2}/${collection.namespace}"\n`,
+      );
     }
   }
 }

@@ -13,8 +13,10 @@ import {
 import { join } from 'node:path';
 import { copyFile } from 'node:fs/promises';
 import { imageSize } from 'image-size';
-import { mkdirSync, existsSync } from 'node:fs';
+import { mkdirSync, existsSync, createReadStream } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { promisify } from 'node:util';
+import { pipeline } from 'node:stream';
 
 /**
  * To reduce complexity,
@@ -37,6 +39,12 @@ function sha256(data) {
   return createHash('sha256').update(data).digest('hex');
 }
 
+async function generateContentHash(filePath) {
+  const hash = createHash('sha256');
+  await promisify(pipeline)(createReadStream(filePath), hash);
+  return hash.digest('hex');
+}
+
 /**
  * @param fileId {string}
  * @param filePath {string}
@@ -51,7 +59,7 @@ async function computeImageField(fileId, filePath) {
 
   const size = imageSize(pngLogoPath);
 
-  const imagePath = fileId + '.logo.png';
+  const imagePath = (await generateContentHash(pngLogoPath)) + '.png';
   await copyFile(pngLogoPath, join('dist', 'Frontmatter', imagePath));
 
   return [
