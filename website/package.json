@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "next build --no-lint",
-    "clean": "rm -rf .next",
+    "clean": "rm -rf .next public/crypto-frontmatter",
+    "crypto-frontmatter-mirror": "crypto-frontmatter mirror ./public/crypto-frontmatter",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start"

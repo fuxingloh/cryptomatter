@@ -1,8 +1,8 @@
 import {
   FrontmatterIndex,
-  getFrontmatterCollection,
   getFrontmatterContent,
-  SupportedCollections,
+  getFrontmatterIndexArray,
+  getInstalledFrontmatterCollection,
 } from 'crypto-frontmatter';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -18,10 +18,10 @@ function asCaip19(caip2: string, asset: string): string {
 
 export async function generateStaticParams(): Promise<Parameters<typeof Page>[0]['params'][]> {
   const params: Parameters<typeof Page>[0]['params'][] = [];
-  for (const [caip2, type] of SupportedCollections) {
-    const collection = await getFrontmatterCollection(caip2, type);
-    for (const frontmatter of collection) {
-      const [caip2, asset] = frontmatter.path.split('/');
+  const collections = await getInstalledFrontmatterCollection();
+  for (const { caip2, namespace } of collections) {
+    for (const index of await getFrontmatterIndexArray(caip2, namespace)) {
+      const [caip2, asset] = index.path.split('/');
       params.push({ caip2, asset });
     }
   }

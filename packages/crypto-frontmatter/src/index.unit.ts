@@ -1,9 +1,9 @@
 import { expect, it } from '@jest/globals';
 
-import { getFrontmatterCollection, getFrontmatterContent } from './index';
+import { getFrontmatterContent, getFrontmatterIndexArray, getInstalledFrontmatterCollection } from './index';
 
 it('should getFrontmatterCollection of eip155:1/erc20', async () => {
-  const collection = await getFrontmatterCollection('eip155:1', 'erc20');
+  const collection = await getFrontmatterIndexArray('eip155:1', 'erc20');
   expect(collection).toStrictEqual(
     expect.arrayContaining([
       expect.objectContaining({
@@ -42,10 +42,32 @@ it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFC
             width: 512,
             height: 512,
           },
-          path: expect.stringMatching(/[0-f]{64}\.logo\.png/),
+          path: expect.stringMatching(/[0-9a-f]{64}\.png/),
         },
       ],
     },
     html: '<h1>Dharma USD Coin</h1>',
   });
+});
+
+it('should getFrontmatterContent of eip155:1/erc20:0', async () => {
+  const frontmatterContent = await getFrontmatterContent('eip155:1/erc20:0');
+  expect(frontmatterContent).toBeUndefined();
+});
+
+it('should getInstalledFrontmatterCollection', async () => {
+  const collections = await getInstalledFrontmatterCollection();
+  expect(collections).toStrictEqual([
+    { caip2: 'eip155:1', namespace: 'erc20' },
+    { caip2: 'eip155:10', namespace: 'erc20' },
+    { caip2: 'eip155:1313161554', namespace: 'erc20' },
+    { caip2: 'eip155:137', namespace: 'erc20' },
+    { caip2: 'eip155:42161', namespace: 'erc20' },
+    { caip2: 'eip155:42220', namespace: 'erc20' },
+    { caip2: 'eip155:43114', namespace: 'erc20' },
+    { caip2: 'eip155:56', namespace: 'erc20' },
+    { caip2: 'eip155:8453', namespace: 'erc20' },
+    { caip2: 'tip474:728126428', namespace: 'trc10' },
+    { caip2: 'tip474:728126428', namespace: 'trc20' },
+  ]);
 });

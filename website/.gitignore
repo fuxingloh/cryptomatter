@@ -1,6 +1,7 @@
 # next.js
 /.next/
 /out/
+/public/crypto-frontmatter/
 
 # misc
 .DS_Store

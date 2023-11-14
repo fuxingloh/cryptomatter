@@ -19,6 +19,9 @@
       ]
     }
   },
+  "bin": {
+    "crypto-frontmatter": "./cli.js"
+  },
   "files": [
     "dist"
   ],
@@ -40,23 +43,26 @@
   "jest": {
     "preset": "@workspace/jest-preset"
   },
+  "dependencies": {
+    "clipanion": "3.2.1"
+  },
   "devDependencies": {
     "@crypto-frontmatter/eip155-1-erc20": "workspace:*",
     "@workspace/jest-preset": "workspace:*",
     "@workspace/tsconfig": "workspace:*"
   },
   "peerDependencies": {
-    "@crypto-frontmatter/eip155-1-erc20": "*",
-    "@crypto-frontmatter/eip155-10-erc20": "*",
-    "@crypto-frontmatter/eip155-1313161554-erc20": "*",
-    "@crypto-frontmatter/eip155-137-erc20": "*",
-    "@crypto-frontmatter/eip155-42161-erc20": "*",
-    "@crypto-frontmatter/eip155-42220-erc20": "*",
-    "@crypto-frontmatter/eip155-43114-erc20": "*",
-    "@crypto-frontmatter/eip155-56-erc20": "*",
-    "@crypto-frontmatter/eip155-8453-erc20": "*",
-    "@crypto-frontmatter/tip474-728126428-trc10": "*",
-    "@crypto-frontmatter/tip474-728126428-trc20": "*"
+    "@crypto-frontmatter/eip155-1-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-10-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-1313161554-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-137-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-42161-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-42220-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-43114-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-56-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-8453-erc20": "workspace:*",
+    "@crypto-frontmatter/tip474-728126428-trc10": "workspace:*",
+    "@crypto-frontmatter/tip474-728126428-trc20": "workspace:*"
   },
   "peerDependenciesMeta": {
     "@crypto-frontmatter/eip155-1-erc20": {
