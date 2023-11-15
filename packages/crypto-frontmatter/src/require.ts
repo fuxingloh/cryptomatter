@@ -6,6 +6,7 @@
  * if you want to use it.
  * For example, you must install @crypto-frontmatter/eip155-1-erc20 if you want to use eip155:1/erc frontmatter.
  *
+ * @deprecated scheduled for removal
  * @param caip2 {string}
  * @param type {string}
  * @param path {string}

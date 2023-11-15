@@ -1,4 +1,4 @@
-import { FrontmatterContent, FrontmatterIndex, getFrontmatterContent } from 'crypto-frontmatter';
+import { computeFileId, FrontmatterContent } from 'crypto-frontmatter';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -8,31 +8,38 @@ import { Highlighter } from 'shiki';
 import { ContentedProse } from '@/components/contented/ContentedProse';
 import { loadHighlighter, ShikiHighlighter } from '@/components/contented/ShikiHighlighter';
 
-function asCaip19(caip2: string, asset: string): string {
-  return `${decodeURIComponent(caip2)}/${decodeURIComponent(asset)}`;
+async function getFrontmatterContent(params: {
+  caip2: string;
+  asset: string;
+}): Promise<FrontmatterContent | undefined> {
+  const caip19 = `${decodeURIComponent(params.caip2)}/${decodeURIComponent(params.asset)}`;
+  const fileId = computeFileId(caip19);
+  const response = await fetch(`${process.env.BASE_URL}/_crypto-frontmatter/${fileId}.json`);
+  if (!response.ok) {
+    return undefined;
+  }
+  return await response.json();
 }
 
 export async function generateMetadata(props: Parameters<typeof Page>[0]): Promise<Metadata> {
-  const baseUrl = process.env.BASE_URL!;
-  const caip19 = asCaip19(props.params.caip2, props.params.asset);
-  const frontmatterIndex: FrontmatterIndex | undefined = await getFrontmatterContent(caip19);
-  if (frontmatterIndex === undefined) {
+  const frontmatter = await getFrontmatterContent(props.params);
+  if (frontmatter === undefined) {
     return notFound();
   }
 
-  const title = frontmatterIndex.fields.title ?? frontmatterIndex.fields.symbol;
+  const title = frontmatter.fields.title ?? frontmatter.fields.symbol;
 
   return {
     title: title,
-    description: frontmatterIndex.fields.description,
+    description: frontmatter.fields.description,
     openGraph: {
       title: title,
-      description: frontmatterIndex.fields.description,
-      url: `${baseUrl}/${frontmatterIndex.path}`,
+      description: frontmatter.fields.description,
+      url: `${process.env.BASE_URL}/${frontmatter.path}`,
       siteName: `Crypto Frontmatter`,
       locale: 'en_US',
       type: 'article',
-      modifiedTime: new Date(frontmatterIndex.modifiedDate).toISOString(),
+      modifiedTime: new Date(frontmatter.modifiedDate).toISOString(),
     },
   };
 }
@@ -43,13 +50,12 @@ export default async function Page(props: {
     asset: string;
   };
 }): Promise<ReactElement> {
-  const caip19 = asCaip19(props.params.caip2, props.params.asset);
-  const content = await getFrontmatterContent(caip19);
-  if (content === undefined) {
+  const frontmatter = await getFrontmatterContent(props.params);
+  if (frontmatter === undefined) {
     return notFound();
   }
 
-  const image = content.fields.images?.find((image) => image.type === 'logo');
+  const image = frontmatter.fields.images?.find((image) => image.type === 'logo');
 
   return (
     <main className="flex h-full min-w-0 flex-grow flex-col">
@@ -57,17 +63,17 @@ export default async function Page(props: {
         {image !== undefined && (
           <div className="mb-6 h-12 w-12">
             <Image
-              src={`/crypto-frontmatter/${image.path}`}
-              alt={`${content.fields.symbol} Logo`}
+              src={`/_crypto-frontmatter/${image.path}`}
+              alt={`${frontmatter.fields.symbol} Logo`}
               width={image.size.width}
               height={image.size.height}
             />
           </div>
         )}
 
-        <ContentedProse html={content.html} />
+        <ContentedProse html={frontmatter.html} />
 
-        <FrontmatterJson content={content} highlighter={await loadHighlighter()} />
+        <FrontmatterJson content={frontmatter} highlighter={await loadHighlighter()} />
       </div>
     </main>
   );

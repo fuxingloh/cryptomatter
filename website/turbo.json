@@ -2,17 +2,17 @@
   "$schema": "https://turborepo.org/schema.json",
   "extends": ["//"],
   "pipeline": {
-    "crypto-frontmatter-mirror": {
+    "mirror": {
       "dependsOn": ["^build"]
     },
     "build": {
       "cache": false,
-      "dependsOn": ["^build", "crypto-frontmatter-mirror"]
+      "dependsOn": ["^build", "mirror"]
     },
     "dev": {
       "cache": false,
       "persistent": true,
-      "dependsOn": ["^build", "crypto-frontmatter-mirror"]
+      "dependsOn": ["^build", "mirror"]
     }
   }
 }

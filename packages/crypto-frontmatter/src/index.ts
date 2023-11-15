@@ -40,6 +40,7 @@ export interface FrontmatterContent extends FrontmatterIndex {
 }
 
 export interface FrontmatterCollection {
+  name: string;
   caip2: string;
   namespace: string;
 }
@@ -104,7 +105,11 @@ export async function getInstalledFrontmatterCollection(): Promise<FrontmatterCo
     const contents = await readFile(packagePath, {
       encoding: 'utf-8',
     });
-    collections.push(JSON.parse(contents).config);
+    const packageJson = JSON.parse(contents);
+    collections.push({
+      name: packageJson.name,
+      ...packageJson.config,
+    });
   }
   return collections;
 }

@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "build": "next build --no-lint",
-    "clean": "rm -rf .next public/crypto-frontmatter",
-    "crypto-frontmatter-mirror": "crypto-frontmatter mirror ./public/crypto-frontmatter",
+    "clean": "rm -rf .next public/_crypto-frontmatter",
     "dev": "next dev",
     "lint": "eslint .",
+    "mirror": "crypto-frontmatter mirror public/_crypto-frontmatter",
     "start": "next start"
   },
   "lint-staged": {
