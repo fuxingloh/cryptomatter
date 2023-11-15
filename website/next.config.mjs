@@ -14,6 +14,7 @@ const nextConfig = {
   env: {
     BASE_URL: getBaseUrl(),
   },
+  output: 'standalone',
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
