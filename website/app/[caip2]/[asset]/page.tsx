@@ -55,6 +55,7 @@ export default async function Page(props: {
     return notFound();
   }
 
+  const highlighter = await loadHighlighter();
   const image = frontmatter.fields.images?.find((image) => image.type === 'logo');
 
   return (
@@ -73,7 +74,7 @@ export default async function Page(props: {
 
         <ContentedProse html={frontmatter.html} />
 
-        <FrontmatterJson content={frontmatter} highlighter={await loadHighlighter()} />
+        <FrontmatterJson content={frontmatter} highlighter={highlighter} />
       </div>
     </main>
   );
