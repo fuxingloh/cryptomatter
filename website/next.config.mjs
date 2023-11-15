@@ -1,7 +1,18 @@
+function getBaseUrl() {
+  if (process.env.NEXT_PUBLIC_URL) {
+    return process.env.NEXT_PUBLIC_URL;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+
+  return `http://localhost:${process.env.PORT ?? 3000}`;
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    BASE_URL: process.env.NEXT_PUBLIC_URL ?? `https://${process.env.VERCEL_URL}` ?? 'https://frontmatter.levain.tech',
+    BASE_URL: getBaseUrl(),
   },
   trailingSlash: false,
   reactStrictMode: true,
