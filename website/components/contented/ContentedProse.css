@@ -182,3 +182,16 @@ button.codeblock-language-selected:focus + div.codeblock-language-options {
 .prose img {
   @apply rounded;
 }
+
+.prose pre code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+.prose pre code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  @apply mr-5 inline-block w-4 text-right;
+  color: rgba(115, 138, 148, 0.4);
+  direction: rtl;
+}
