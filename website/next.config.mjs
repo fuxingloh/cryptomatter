@@ -14,6 +14,9 @@ const nextConfig = {
   env: {
     BASE_URL: getBaseUrl(),
   },
+  experimental: {
+    serverComponentsExternalPackages: ['shiki'],
+  },
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
