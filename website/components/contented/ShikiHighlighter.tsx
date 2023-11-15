@@ -1,4 +1,5 @@
 import './ShikiHighlighter.css';
+import 'shiki/themes/css-variables.json';
 
 import { ReactElement } from 'react';
 import { getHighlighter as getShiki, Highlighter, renderToHtml } from 'shiki';
