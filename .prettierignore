@@ -8,3 +8,4 @@ node_modules
 dist
 pnpm-lock.yaml
 generated/
+website/public/_crypto-frontmatter/

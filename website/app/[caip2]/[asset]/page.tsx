@@ -3,10 +3,9 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type { ReactElement } from 'react';
-import { Highlighter } from 'shiki';
 
 import { ContentedProse } from '@/components/contented/ContentedProse';
-import { loadHighlighter, ShikiHighlighter } from '@/components/contented/ShikiHighlighter';
+import { renderHighlighterHtml } from '@/components/contented/ShikiHighlighter';
 
 async function getFrontmatterContent(params: {
   caip2: string;
@@ -73,34 +72,30 @@ export default async function Page(props: {
 
         <ContentedProse html={frontmatter.html} />
 
-        <FrontmatterJson content={frontmatter} highlighter={await loadHighlighter()} />
+        <div className="border-mono-800 group/json mt-8 rounded border">
+          <header className="bg-mono-950 text-mono-500 relative flex items-center justify-between rounded-t border-b px-4 py-2 text-sm">
+            <div>Frontmatter.json</div>
+            <div>
+              <button>
+                <div className="block group-focus-within/json:hidden">▲</div>
+                <div className="hidden group-focus-within/json:block">▼</div>
+              </button>
+              <span className="absolute inset-0 hidden cursor-pointer group-focus-within/json:block" />
+            </div>
+          </header>
+
+          <div
+            tabIndex={1}
+            className="prose max-h-40 overflow-hidden px-4 py-3 text-sm group-focus-within/json:max-h-full group-focus-within/json:overflow-x-auto"
+            dangerouslySetInnerHTML={{
+              __html: await renderHighlighterHtml({
+                code: JSON.stringify(frontmatter, null, 2),
+                language: 'json',
+              }),
+            }}
+          />
+        </div>
       </div>
     </main>
-  );
-}
-
-function FrontmatterJson(props: { content: FrontmatterContent; highlighter: Highlighter }): ReactElement {
-  return (
-    <div className="border-mono-800 group/json mt-8 rounded border">
-      <header className="bg-mono-950 text-mono-500 relative flex items-center justify-between rounded-t border-b px-4 py-2 text-sm">
-        <div>Frontmatter.json</div>
-        <div>
-          <button>
-            <div className="block group-focus-within/json:hidden">▲</div>
-            <div className="hidden group-focus-within/json:block">▼</div>
-          </button>
-          <span className="absolute inset-0 hidden cursor-pointer group-focus-within/json:block" />
-        </div>
-      </header>
-
-      <div tabIndex={1}>
-        <ShikiHighlighter
-          className="max-h-40 overflow-hidden px-4 py-3 text-sm group-focus-within/json:max-h-full group-focus-within/json:overflow-x-auto"
-          highlighter={props.highlighter}
-          code={JSON.stringify(props.content, null, 2)}
-          language="json"
-        />
-      </div>
-    </div>
   );
 }
