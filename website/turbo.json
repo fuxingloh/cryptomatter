@@ -3,6 +3,7 @@
   "extends": ["//"],
   "pipeline": {
     "mirror": {
+      "outputs": ["public/_crypto-frontmatter"],
       "dependsOn": ["^build"]
     },
     "build": {

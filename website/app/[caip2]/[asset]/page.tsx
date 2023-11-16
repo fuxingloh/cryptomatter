@@ -1,4 +1,4 @@
-import { computeFileId, FrontmatterContent } from 'crypto-frontmatter';
+import { FrontmatterContent, getFrontmatterContent as getUsingFs } from 'crypto-frontmatter';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -12,12 +12,7 @@ async function getFrontmatterContent(params: {
   asset: string;
 }): Promise<FrontmatterContent | undefined> {
   const caip19 = `${decodeURIComponent(params.caip2)}/${decodeURIComponent(params.asset)}`;
-  const fileId = computeFileId(caip19);
-  const response = await fetch(`${process.env.BASE_URL}/_crypto-frontmatter/${fileId}.json`);
-  if (!response.ok) {
-    return undefined;
-  }
-  return await response.json();
+  return getUsingFs(caip19);
 }
 
 export async function generateMetadata(props: Parameters<typeof Page>[0]): Promise<Metadata> {
