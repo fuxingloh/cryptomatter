@@ -13,7 +13,11 @@ import {
 export class MirrorCommand extends Command {
   static override paths = [[`mirror`]];
   private target = Option.String();
-  private include = Option.Array(`--include`, { required: false }) ?? ['index.json', 'frontmatter.json', 'images'];
+  private include = Option.Array(`--include`, { required: false });
+
+  private includes(type: string): boolean {
+    return this.include?.includes(type) ?? true;
+  }
 
   private async mirrorFile(collection: FrontmatterCollection, file: string): Promise<void> {
     const from = getNodeModulesPath(collection.caip2, collection.namespace, file);
@@ -27,18 +31,18 @@ export class MirrorCommand extends Command {
     for (const collection of await getInstalledFrontmatterCollection()) {
       let count = 0;
 
-      if (this.include.includes('index.json')) {
+      if (this.includes('index.json')) {
         await this.mirrorFile(collection, 'index.json');
         count++;
       }
 
       for (const index of await getFrontmatterIndexArray(collection.caip2, collection.namespace)) {
-        if (this.include.includes('frontmatter.json')) {
+        if (this.includes('frontmatter.json')) {
           await this.mirrorFile(collection, index.fileId + '.json');
           count++;
         }
 
-        if (this.include.includes('images')) {
+        if (this.includes('images')) {
           for (const image of index.fields.images) {
             await this.mirrorFile(collection, image.path);
             count++;
