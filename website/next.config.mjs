@@ -14,11 +14,6 @@ const nextConfig = {
   env: {
     BASE_URL: getBaseUrl(),
   },
-  experimental: {
-    outputFileTracingIncludes: {
-      '/[caip2]/[asset]': ['./node_modules/@crypto-frontmatter/*/dist/Frontmatter/*.json'],
-    },
-  },
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
