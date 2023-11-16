@@ -15,11 +15,6 @@ const nextConfig = {
     BASE_URL: getBaseUrl(),
   },
   output: 'standalone',
-  experimental: {
-    outputFileTracingIncludes: {
-      '/': ['./node_modules/@crypto-frontmatter/*/dist/Frontmatter/*.json'],
-    },
-  },
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
