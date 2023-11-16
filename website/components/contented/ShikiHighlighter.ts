@@ -1,15 +1,24 @@
-import { getHighlighter, Highlighter, renderToHtml } from 'shiki';
-import CssVariables from 'shiki/themes/css-variables.json';
+import { getHighlighter, Highlighter, Lang, renderToHtml } from 'shiki';
+import JsonGrammar from 'shiki/languages/json.tmLanguage.json';
+import CssVariablesTheme from 'shiki/themes/css-variables.json';
 
 let highlighter: Highlighter;
 
 /**
  * Server-side renders a code block with CSS variables
  */
-export async function renderCssVariableHtml(props: { code: string; language: string }): Promise<string> {
+export async function renderCssVariableHtml(props: { code: string; language: Lang }): Promise<string> {
   if (highlighter === undefined) {
     highlighter = await getHighlighter({
-      theme: CssVariables as any,
+      theme: CssVariablesTheme as any,
+      langs: [
+        {
+          id: 'json',
+          scopeName: 'source.json',
+          path: '-',
+          grammar: JsonGrammar as any,
+        },
+      ],
     });
   }
 
