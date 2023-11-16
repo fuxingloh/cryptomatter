@@ -3,10 +3,5 @@
   "installCommand": "pnpm install",
   "buildCommand": "pnpm turbo run build",
   "outputDirectory": ".next",
-  "framework": "nextjs",
-  "functions": {
-    "app/[caip2]/[asset]/page.tsx": {
-      "includeFiles": "./node_modules/@crypto-frontmatter/"
-    }
-  }
+  "framework": "nextjs"
 }
