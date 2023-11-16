@@ -7,7 +7,7 @@
     "clean": "rm -rf .next public/_crypto-frontmatter",
     "dev": "next dev",
     "lint": "eslint .",
-    "mirror": "crypto-frontmatter mirror public/_crypto-frontmatter",
+    "mirror": "crypto-frontmatter mirror public/_crypto-frontmatter --include images --include frontmatter.json",
     "start": "next start"
   },
   "lint-staged": {

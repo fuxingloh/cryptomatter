@@ -1,4 +1,4 @@
-import { FrontmatterContent, getFrontmatterContent as getUsingFs } from 'crypto-frontmatter';
+import { computeFileId, FrontmatterContent } from 'crypto-frontmatter';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -7,22 +7,20 @@ import type { ReactElement } from 'react';
 import { ContentedProse } from '@/components/contented/ContentedProse';
 import { renderHighlighterHtml } from '@/components/contented/ShikiHighlighter';
 
-async function getFrontmatterContent(params: {
-  caip2: string;
-  asset: string;
-}): Promise<FrontmatterContent | undefined> {
+async function getFrontmatterContent(params: { caip2: string; asset: string }): Promise<FrontmatterContent> {
   const caip19 = `${decodeURIComponent(params.caip2)}/${decodeURIComponent(params.asset)}`;
-  return getUsingFs(caip19);
+  const fileId = computeFileId(caip19);
+  const response = await fetch(`${process.env.BASE_URL}/_crypto-frontmatter/${fileId}.json`);
+  if (!response.ok) {
+    return notFound();
+  }
+  return await response.json();
 }
 
 export async function generateMetadata(props: Parameters<typeof Page>[0]): Promise<Metadata> {
   const frontmatter = await getFrontmatterContent(props.params);
-  if (frontmatter === undefined) {
-    return notFound();
-  }
 
   const title = frontmatter.fields.title ?? frontmatter.fields.symbol;
-
   return {
     title: title,
     description: frontmatter.fields.description,
@@ -45,10 +43,6 @@ export default async function Page(props: {
   };
 }): Promise<ReactElement> {
   const frontmatter = await getFrontmatterContent(props.params);
-  if (frontmatter === undefined) {
-    return notFound();
-  }
-
   const image = frontmatter.fields.images?.find((image) => image.type === 'logo');
 
   return (
@@ -69,7 +63,7 @@ export default async function Page(props: {
 
         <div className="border-mono-800 group/json mt-8 rounded border">
           <header className="bg-mono-950 text-mono-500 relative flex items-center justify-between rounded-t border-b px-4 py-2 text-sm">
-            <div>Frontmatter.json</div>
+            <div>frontmatter.json</div>
             <div>
               <button>
                 <div className="block group-focus-within/json:hidden">▲</div>
