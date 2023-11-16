@@ -18,17 +18,11 @@ export class MirrorCommand extends Command {
       const indexArray = await getFrontmatterIndexArray(collection.caip2, collection.namespace);
 
       for (const index of indexArray) {
-        const filePath = index.fileId + '.json';
-        const from = getNodeModulesPath(collection.caip2, collection.namespace, filePath);
-        const to = join(this.target, filePath);
-        count++;
-        await copyFile(from, to);
-
         for (const image of index.fields.images) {
           const from = getNodeModulesPath(collection.caip2, collection.namespace, image.path);
           const to = join(this.target, image.path);
-          count++;
           await copyFile(from, to);
+          count++;
         }
       }
 
