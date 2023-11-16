@@ -7,7 +7,7 @@ let highlighter: Highlighter;
 /**
  * Server-side renders a code block with CSS variables
  */
-export async function renderCssVariableHtml(props: { code: string; language: Lang }): Promise<string> {
+export async function renderHighlighterHtml(props: { code: string; language: Lang }): Promise<string> {
   if (highlighter === undefined) {
     highlighter = await getHighlighter({
       theme: CssVariablesTheme as any,

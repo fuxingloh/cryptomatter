@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import type { ReactElement } from 'react';
 
 import { ContentedProse } from '@/components/contented/ContentedProse';
-import { renderCssVariableHtml } from '@/components/contented/ShikiHighlighter';
+import { renderHighlighterHtml } from '@/components/contented/ShikiHighlighter';
 
 async function getFrontmatterContent(params: {
   caip2: string;
@@ -88,7 +88,7 @@ export default async function Page(props: {
             tabIndex={1}
             className="prose max-h-40 overflow-hidden px-4 py-3 text-sm group-focus-within/json:max-h-full group-focus-within/json:overflow-x-auto"
             dangerouslySetInnerHTML={{
-              __html: await renderCssVariableHtml({
+              __html: await renderHighlighterHtml({
                 code: JSON.stringify(frontmatter, null, 2),
                 language: 'json',
               }),
