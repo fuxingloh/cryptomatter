@@ -9,9 +9,9 @@
     "crypto-frontmatter": "./bin.js"
   },
   "files": [
-    "*.d.ts",
-    "*.d.ts.map",
-    "*.js"
+    "**/*.d.ts",
+    "**/*.d.ts.map",
+    "**/*.js"
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
