@@ -19,7 +19,7 @@
     "namespace": "trc20"
   },
   "devDependencies": {
-    "@contentedjs/contented": "^7.1.0",
+    "@contentedjs/contented": "^7.1.1",
     "@workspace/contented-config": "workspace:*"
   }
 }

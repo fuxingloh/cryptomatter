@@ -97,8 +97,8 @@ importers:
   packages/eip155-1-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -106,8 +106,8 @@ importers:
   packages/eip155-10-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -115,8 +115,8 @@ importers:
   packages/eip155-1313161554-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -124,8 +124,8 @@ importers:
   packages/eip155-137-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -133,8 +133,8 @@ importers:
   packages/eip155-42161-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -142,8 +142,8 @@ importers:
   packages/eip155-42220-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -151,8 +151,8 @@ importers:
   packages/eip155-43114-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -160,8 +160,8 @@ importers:
   packages/eip155-56-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -169,8 +169,8 @@ importers:
   packages/eip155-8453-erc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -178,8 +178,8 @@ importers:
   packages/tip474-728126428-trc10:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -187,8 +187,8 @@ importers:
   packages/tip474-728126428-trc20:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -287,11 +287,11 @@ importers:
   workspace/contented-config:
     dependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.0
-        version: 7.1.0(typanion@3.14.0)
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
       '@contentedjs/contented-pipeline-md':
-        specifier: ^7.1.0
-        version: 7.1.0
+        specifier: ^7.1.1
+        version: 7.1.1
       image-size:
         specifier: ^1.0.2
         version: 1.0.2
@@ -423,6 +423,15 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.23.0
+      '@jridgewell/gen-mapping': 0.3.3
+      '@jridgewell/trace-mapping': 0.3.20
+      jsesc: 2.5.2
+
+  /@babel/generator@7.23.3:
+    resolution: {integrity: sha512-keeZWAV4LU3tW0qRi19HRpabC/ilM0HRBBzf9/k8FFiG4KVpiv0FIy4hHfLfFQZNhziCTPTmd59zoyv6DNISzg==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/types': 7.23.3
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.20
       jsesc: 2.5.2
@@ -689,14 +698,22 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
+  /@babel/types@7.23.3:
+    resolution: {integrity: sha512-OZnvoH2l8PK5eUvEcUyCt/sXgr/h+UWpVuBbOljwcrAgUl6lpchoQ++PHGyQy1AtYnVA6CEq3y5xeEI10brpXw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/helper-string-parser': 7.22.5
+      '@babel/helper-validator-identifier': 7.22.20
+      to-fast-properties: 2.0.0
+
   /@bcoe/v8-coverage@0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@contentedjs/contented-pipeline-md@7.1.0:
-    resolution: {integrity: sha512-dmlwzIUhh3kYNT6hzJeglmoZcrA0HUZ8ezQWpwFTFjaYWIPDKlH2waGsm0FzHzWnGWG6REWgqXst/HVtz8Apkw==}
+  /@contentedjs/contented-pipeline-md@7.1.1:
+    resolution: {integrity: sha512-LMbUVr2hmcGR7s8VxwG/3H3yeeDtKyMZFrlm3ewIHuBNbLEQoC+auykVxdNBl4rGQkwfM+qnbKsQQm/XCQ3N7A==}
     dependencies:
-      '@contentedjs/contented-pipeline': 7.1.0
+      '@contentedjs/contented-pipeline': 7.1.1
       '@jsdevtools/rehype-toc': 3.0.2
       '@sindresorhus/slugify': 2.2.1
       hast-util-to-string: 3.0.0
@@ -706,7 +723,7 @@ packages:
       mdast-util-directive: 3.0.0
       mdast-util-to-string: 4.0.0
       minimatch: 5.1.6
-      rehype-autolink-headings: 7.0.0
+      rehype-autolink-headings: 7.1.0
       rehype-external-links: 3.0.0
       rehype-parse: 9.0.0
       rehype-slug: 6.0.0
@@ -726,27 +743,27 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@contentedjs/contented-pipeline@7.1.0:
-    resolution: {integrity: sha512-rMFrs7fkon/7TbxJHzPqoDDvkdmTt+LpFKcHdYdOhPIFwH2FN6gcKKtuC7TbhoilhYJ0xE86kJVPdz33B03WZQ==}
+  /@contentedjs/contented-pipeline@7.1.1:
+    resolution: {integrity: sha512-kqpr1t8EFcw6Pj1kHKa/IjfjUDtWKiXee+dipQ8Sna1ZUTJBlvgJXrluKnhIyADJn7sWmHwpDbSANPetYYdRAg==}
     dependencies:
       '@sindresorhus/slugify': 2.2.1
 
-  /@contentedjs/contented-processor@7.1.0:
-    resolution: {integrity: sha512-XyXlPPLiWqWErT4btnM9fkV4H5g4gqI3GGG6uZrDh3CIEkRlD+cvhzBuMfnpJpRmT4C2Oa8BDmgBnqSIkyycwg==}
+  /@contentedjs/contented-processor@7.1.1:
+    resolution: {integrity: sha512-DXvn89R6Gy6lk+a7nbyG9D0fpP3GqHScA9ClHLu2kUeT51/+nD9PW7ed9S048bEYiGpugCZdG95o7Rghe2ggUA==}
     dependencies:
-      '@babel/generator': 7.23.0
-      '@contentedjs/contented-pipeline': 7.1.0
-      '@contentedjs/contented-pipeline-md': 7.1.0
+      '@babel/generator': 7.23.3
+      '@contentedjs/contented-pipeline': 7.1.1
+      '@contentedjs/contented-pipeline-md': 7.1.1
       minimatch: 5.1.6
     transitivePeerDependencies:
       - supports-color
 
-  /@contentedjs/contented@7.1.0(typanion@3.14.0):
-    resolution: {integrity: sha512-wwLtEEwrNOdGKcXlt468HT6M+NNMyG0nXI0RFkFBsJyrOPFPgGJIjg6pCaLntQoxjn4NnD2S49RALKlVUmQdpg==}
+  /@contentedjs/contented@7.1.1(typanion@3.14.0):
+    resolution: {integrity: sha512-iKFDF5mka2W+GHDFdIlU/ZyOvMDI5iTeE4l0w36LL+twXmbQPN/VWSrxrH8AyAs4CTObeKDAvvgf2B2OaxXtMA==}
     hasBin: true
     dependencies:
-      '@contentedjs/contented-pipeline': 7.1.0
-      '@contentedjs/contented-processor': 7.1.0
+      '@contentedjs/contented-pipeline': 7.1.1
+      '@contentedjs/contented-processor': 7.1.1
       '@parcel/watcher': 2.3.0
       clipanion: 3.2.1(typanion@3.14.0)
       debounce: 1.2.1
@@ -5636,8 +5653,8 @@ packages:
       set-function-name: 2.0.1
     dev: false
 
-  /rehype-autolink-headings@7.0.0:
-    resolution: {integrity: sha512-DLskejGYHQP9v7vUW85BeYIclgfMQ1IwAMx+0lm8Sr3cME2NThgy2OdTfosmuBA68fqP5o4FK+dknpUMFvlxYQ==}
+  /rehype-autolink-headings@7.1.0:
+    resolution: {integrity: sha512-rItO/pSdvnvsP4QRB1pmPiNHUskikqtPojZKJPPPAVx9Hj8i8TwMBhofrrAYRhYOOBZH9tgmG5lPqDLuIWPWmw==}
     dependencies:
       '@types/hast': 3.0.2
       '@ungap/structured-clone': 1.2.0
