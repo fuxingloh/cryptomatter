@@ -25,3 +25,8 @@ coverage
 .contented
 
 .vercel
+
+# tsconfig.json
+packages/*/**/*.d.ts
+packages/*/**/*.d.ts.map
+packages/*/**/*.js
