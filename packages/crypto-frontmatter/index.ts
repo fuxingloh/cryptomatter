@@ -47,14 +47,17 @@ export interface FrontmatterNamespace {
 }
 
 /**
- * Decode CAIP-19 into CAIP-2, Asset NAMESPACE, and Asset REFERENCE
+ * Decode CAIP-19 3 parts:
+ * - CAIP-2
+ * - Namespace
+ * - Reference
+ *
  * @return {[string, string, string]}
  */
 export function decodeCaip19(caip19: string): string[] {
   const [caip2, asset] = caip19.split('/');
-  const [caip2Type, caip2Reference] = caip2.split(':');
   const [namespace, reference] = asset.split(':');
-  return [caip2Type, caip2Reference, namespace, reference];
+  return [caip2, namespace, reference];
 }
 
 function sha256(input: string): string {
@@ -73,8 +76,7 @@ function hasFile(filepath: string): Promise<boolean> {
  * If Namespace is ERC20, the address field will be converted to lowercase.
  */
 export function computeFileId(caip19: string): string {
-  const [caip2, asset] = caip19.split('/');
-  const [namespace, reference] = asset.split(':');
+  const [caip2, namespace, reference] = decodeCaip19(caip19);
 
   if (namespace === 'erc20' && reference) {
     return sha256(`${caip2}/${namespace}:${reference.toLowerCase()}`);
@@ -143,8 +145,7 @@ export async function getIndex(caip2: string, namespace: string): Promise<Frontm
  */
 export async function getFrontmatter(caip19: string): Promise<FrontmatterContent | undefined> {
   const fileId = computeFileId(caip19);
-  const [caip2, asset] = caip19.split('/');
-  const [namespace] = asset.split(':');
+  const [caip2, namespace] = decodeCaip19(caip19);
 
   const path = getNodeModulesPath(caip2, namespace, `${fileId}.json`);
   if (!(await hasFile(path))) {

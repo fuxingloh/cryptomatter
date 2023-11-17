@@ -1,4 +1,3 @@
 {
-  "extends": "@workspace/tsconfig",
-  "exclude": ["**/*.js"]
+  "extends": "@workspace/tsconfig"
 }

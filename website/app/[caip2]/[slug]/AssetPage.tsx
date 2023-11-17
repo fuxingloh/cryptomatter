@@ -2,13 +2,12 @@ import { computeFileId, FrontmatterContent } from 'crypto-frontmatter';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import type { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import { ContentedProse } from '@/components/contented/ContentedProse';
 import { renderHighlighterHtml } from '@/components/contented/ShikiHighlighter';
 
-async function fetchFrontmatter(params: { caip2: string; asset: string }): Promise<FrontmatterContent> {
-  const caip19 = `${decodeURIComponent(params.caip2)}/${decodeURIComponent(params.asset)}`;
+async function fetchFrontmatter(caip19: string): Promise<FrontmatterContent> {
   const fileId = computeFileId(caip19);
   const response = await fetch(`${process.env.BASE_URL}/_crypto-frontmatter/${fileId}.json`);
   if (!response.ok) {
@@ -17,8 +16,8 @@ async function fetchFrontmatter(params: { caip2: string; asset: string }): Promi
   return await response.json();
 }
 
-export async function generateMetadata(props: Parameters<typeof Page>[0]): Promise<Metadata> {
-  const frontmatter = await fetchFrontmatter(props.params);
+export async function generateMetadata(caip19: string): Promise<Metadata> {
+  const frontmatter = await fetchFrontmatter(caip19);
 
   const title = frontmatter.fields.title ?? frontmatter.fields.symbol;
   return {
@@ -36,13 +35,8 @@ export async function generateMetadata(props: Parameters<typeof Page>[0]): Promi
   };
 }
 
-export default async function Page(props: {
-  params: {
-    caip2: string;
-    asset: string;
-  };
-}): Promise<ReactElement> {
-  const frontmatter = await fetchFrontmatter(props.params);
+export async function Page(props: { caip19: string }): Promise<ReactElement> {
+  const frontmatter = await fetchFrontmatter(props.caip19);
   const image = frontmatter.fields.images?.find((image) => image.type === 'logo');
 
   return (
