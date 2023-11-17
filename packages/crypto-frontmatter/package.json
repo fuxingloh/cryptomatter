@@ -5,29 +5,17 @@
   "repository": {
     "url": "git+https://github.com/levaintech/frontmatter"
   },
-  "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*.js"
-  },
-  "typesVersions": {
-    "*": {
-      "index.d.ts": [
-        "dist/index.d.ts"
-      ],
-      "*": [
-        "dist/*"
-      ]
-    }
-  },
   "bin": {
-    "crypto-frontmatter": "./cli.js"
+    "crypto-frontmatter": "./bin.js"
   },
   "files": [
-    "dist"
+    "*.d.ts",
+    "*.d.ts.map",
+    "*.js"
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
+    "clean": "tsc --build --clean",
     "lint": "eslint .",
     "test": "jest"
   },

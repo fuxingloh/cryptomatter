@@ -5,12 +5,12 @@
       "cache": false
     },
     "build": {
-      "inputs": ["contented.config.mjs", "src/**", "frontmatter/**"],
-      "outputs": ["dist/**"],
+      "inputs": ["tsconfig.json", "tsconfig.build.json", "./**/*.ts", "frontmatter/**"],
+      "outputs": ["./**/*.js", "./**/*.d.ts", "./**/*.d.ts.map"],
       "dependsOn": ["^build"]
     },
     "test": {
-      "inputs": ["src/**", "**/*.unit.ts", "tests-i9n/**", "tests-e2e/**"],
+      "inputs": ["tsconfig.json", "./**/*.ts", "./**/*.unit.ts", "./tests-i9n/**", "./tests-e2e/**"],
       "dependsOn": ["^build"]
     },
     "lint": {
