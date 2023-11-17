@@ -30,7 +30,7 @@ export default async function Page(): Promise<ReactElement> {
             {collections.map((item) => (
               <tr className="text-mono-200 hover:bg-mono-900 relative cursor-pointer">
                 <td>
-                  <Link href={`/${item.caip2}`} className="">
+                  <Link href={`/${item.caip2}/${item.namespace}`}>
                     {item.name}
                     <div className="absolute inset-0" />
                   </Link>
