@@ -1,9 +1,7 @@
 {
   "$schema": "https://turborepo.org/schema.json",
+  "extends": ["//"],
   "pipeline": {
-    "clean": {
-      "cache": false
-    },
     "build": {
       "inputs": ["tsconfig.json", "tsconfig.build.json", "./**/*.ts"],
       "outputs": ["./**/*.js", "./**/*.d.ts", "./**/*.d.ts.map"],
@@ -12,9 +10,6 @@
     "test": {
       "inputs": ["tsconfig.json", "./**/*.ts", "./**/*.unit.ts", "./tests-i9n/**", "./tests-e2e/**"],
       "dependsOn": ["^build"]
-    },
-    "lint": {
-      "outputs": []
     }
   }
 }

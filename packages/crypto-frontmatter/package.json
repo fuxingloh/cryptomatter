@@ -35,55 +35,51 @@
     "clipanion": "3.2.1"
   },
   "devDependencies": {
-    "@crypto-frontmatter/eip155-1-erc20": "workspace:*",
+    "@crypto-frontmatter/eip155-1": "workspace:*",
     "@workspace/jest-preset": "workspace:*",
     "@workspace/tsconfig": "workspace:*"
   },
   "peerDependencies": {
-    "@crypto-frontmatter/eip155-1-erc20": "workspace:*",
-    "@crypto-frontmatter/eip155-10-erc20": "workspace:*",
-    "@crypto-frontmatter/eip155-1313161554-erc20": "workspace:*",
-    "@crypto-frontmatter/eip155-137-erc20": "workspace:*",
-    "@crypto-frontmatter/eip155-42161-erc20": "workspace:*",
-    "@crypto-frontmatter/eip155-42220-erc20": "workspace:*",
-    "@crypto-frontmatter/eip155-43114-erc20": "workspace:*",
-    "@crypto-frontmatter/eip155-56-erc20": "workspace:*",
-    "@crypto-frontmatter/eip155-8453-erc20": "workspace:*",
-    "@crypto-frontmatter/tip474-728126428-trc10": "workspace:*",
-    "@crypto-frontmatter/tip474-728126428-trc20": "workspace:*"
+    "@crypto-frontmatter/eip155-1": "workspace:*",
+    "@crypto-frontmatter/eip155-10": "workspace:*",
+    "@crypto-frontmatter/eip155-1313161554": "workspace:*",
+    "@crypto-frontmatter/eip155-137": "workspace:*",
+    "@crypto-frontmatter/eip155-42161": "workspace:*",
+    "@crypto-frontmatter/eip155-42220": "workspace:*",
+    "@crypto-frontmatter/eip155-43114": "workspace:*",
+    "@crypto-frontmatter/eip155-56": "workspace:*",
+    "@crypto-frontmatter/eip155-8453": "workspace:*",
+    "@crypto-frontmatter/tip474-728126428": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@crypto-frontmatter/eip155-1-erc20": {
+    "@crypto-frontmatter/eip155-1": {
       "optional": true
     },
-    "@crypto-frontmatter/eip155-10-erc20": {
+    "@crypto-frontmatter/eip155-10": {
       "optional": true
     },
-    "@crypto-frontmatter/eip155-1313161554-erc20": {
+    "@crypto-frontmatter/eip155-1313161554": {
       "optional": true
     },
-    "@crypto-frontmatter/eip155-137-erc20": {
+    "@crypto-frontmatter/eip155-137": {
       "optional": true
     },
-    "@crypto-frontmatter/eip155-42161-erc20": {
+    "@crypto-frontmatter/eip155-42161": {
       "optional": true
     },
-    "@crypto-frontmatter/eip155-42220-erc20": {
+    "@crypto-frontmatter/eip155-42220": {
       "optional": true
     },
-    "@crypto-frontmatter/eip155-43114-erc20": {
+    "@crypto-frontmatter/eip155-43114": {
       "optional": true
     },
-    "@crypto-frontmatter/eip155-56-erc20": {
+    "@crypto-frontmatter/eip155-56": {
       "optional": true
     },
-    "@crypto-frontmatter/eip155-8453-erc20": {
+    "@crypto-frontmatter/eip155-8453": {
       "optional": true
     },
-    "@crypto-frontmatter/tip474-728126428-trc10": {
-      "optional": true
-    },
-    "@crypto-frontmatter/tip474-728126428-trc20": {
+    "@crypto-frontmatter/tip474-728126428": {
       "optional": true
     }
   }

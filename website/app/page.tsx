@@ -1,10 +1,10 @@
 import { clsx } from 'clsx';
-import { getInstalledFrontmatterCollection } from 'crypto-frontmatter';
+import { getInstalledNamespaces } from 'crypto-frontmatter';
 import Link from 'next/link';
 import type { ReactElement } from 'react';
 
 export default async function Page(): Promise<ReactElement> {
-  const collections = await getInstalledFrontmatterCollection();
+  const namespaces = await getInstalledNamespaces();
   return (
     <main>
       <div className="mx-auto w-full overflow-x-auto">
@@ -20,23 +20,21 @@ export default async function Page(): Promise<ReactElement> {
         >
           <thead className="text-mono-600 text-sm">
             <tr>
+              <th>CAIP2/NAMESPACE</th>
               <th>PACKAGE NAME</th>
-              <th>CAIP2</th>
-              <th>NAMESPACE</th>
             </tr>
           </thead>
 
           <tbody>
-            {collections.map((item) => (
+            {namespaces.map((item) => (
               <tr className="text-mono-200 hover:bg-mono-900 relative cursor-pointer">
                 <td>
                   <Link href={`/${item.caip2}/${item.namespace}`}>
-                    {item.name}
+                    {item.caip2}/{item.namespace}
                     <div className="absolute inset-0" />
                   </Link>
                 </td>
-                <td className="">{item.caip2}</td>
-                <td>{item.namespace}</td>
+                <td>{item.package}</td>
               </tr>
             ))}
           </tbody>
