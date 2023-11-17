@@ -39,9 +39,10 @@ export interface FrontmatterContent extends FrontmatterIndex {
   html: string;
 }
 
-export interface FrontmatterCollection {
-  name: string;
+export interface FrontmatterNamespace {
+  package: string;
   caip2: string;
+  dir: string;
   namespace: string;
 }
 
@@ -75,7 +76,7 @@ export function computeFileId(caip19: string): string {
   const [caip2, asset] = caip19.split('/');
   const [namespace, reference] = asset.split(':');
 
-  if (namespace === 'erc20') {
+  if (namespace === 'erc20' && reference) {
     return sha256(`${caip2}/${namespace}:${reference.toLowerCase()}`);
   }
   return sha256(caip19);
@@ -83,35 +84,39 @@ export function computeFileId(caip19: string): string {
 
 export function getNodeModulesPath(caip2: string, namespace: string, file: string) {
   const [caip2Type, caip2Reference] = caip2.split(':');
-  return join(
-    'node_modules',
-    '@crypto-frontmatter',
-    `${caip2Type}-${caip2Reference}-${namespace}`,
-    'dist',
-    'Frontmatter',
-    file,
-  );
+  return join('node_modules', '@crypto-frontmatter', `${caip2Type}-${caip2Reference}`, `_${namespace}`, file);
 }
 
-export async function getInstalledFrontmatterCollection(): Promise<FrontmatterCollection[]> {
+export async function getInstalledNamespaces(): Promise<FrontmatterNamespace[]> {
   const scopePath = join('node_modules', '@crypto-frontmatter');
-  const collections: FrontmatterCollection[] = [];
+  const namespaces: FrontmatterNamespace[] = [];
 
   for (const dir of await readdir(scopePath)) {
-    const packagePath = join(scopePath, dir, 'package.json');
-    if (!(await hasFile(packagePath))) {
+    const indexJsonPath = join(scopePath, dir, 'index.json');
+    if (!(await hasFile(indexJsonPath))) {
       continue;
     }
-    const contents = await readFile(packagePath, {
-      encoding: 'utf-8',
-    });
-    const packageJson = JSON.parse(contents);
-    collections.push({
-      name: packageJson.name,
-      ...packageJson.config,
-    });
+    const indexJson = JSON.parse(
+      await readFile(indexJsonPath, {
+        encoding: 'utf-8',
+      }),
+    ) as {
+      package: string;
+      caip2: string;
+      namespaces: { dir: string; namespace: string }[];
+    };
+    namespaces.push(
+      ...indexJson.namespaces.map(({ dir, namespace }) => {
+        return {
+          package: indexJson.package,
+          caip2: indexJson.caip2,
+          dir,
+          namespace,
+        };
+      }),
+    );
   }
-  return collections;
+  return namespaces;
 }
 
 /**
@@ -120,7 +125,7 @@ export async function getInstalledFrontmatterCollection(): Promise<FrontmatterCo
  * @param namespace {string}
  * @return {FrontmatterIndex[]}
  */
-export async function getFrontmatterIndexArray(caip2: string, namespace: string): Promise<FrontmatterIndex[]> {
+export async function getIndex(caip2: string, namespace: string): Promise<FrontmatterIndex[]> {
   const path = getNodeModulesPath(caip2, namespace, 'index.json');
   const contents = await readFile(path, {
     encoding: 'utf-8',
@@ -136,7 +141,7 @@ export async function getFrontmatterIndexArray(caip2: string, namespace: string)
  * @see FrontmatterContent.html
  * @return {FrontmatterContent | undefined}
  */
-export async function getFrontmatterContent(caip19: string): Promise<FrontmatterContent | undefined> {
+export async function getFrontmatter(caip19: string): Promise<FrontmatterContent | undefined> {
   const fileId = computeFileId(caip19);
   const [caip2, asset] = caip19.split('/');
   const [namespace] = asset.split(':');

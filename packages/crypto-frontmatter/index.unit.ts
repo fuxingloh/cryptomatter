@@ -1,13 +1,13 @@
 import { expect, it } from '@jest/globals';
 
-import { getFrontmatterContent, getFrontmatterIndexArray, getInstalledFrontmatterCollection } from './index';
+import { getFrontmatter, getIndex, getInstalledNamespaces } from './index';
 
-it('should getFrontmatterCollection of eip155:1/erc20', async () => {
-  const collection = await getFrontmatterIndexArray('eip155:1', 'erc20');
+it('should getIndex of eip155:1/erc20', async () => {
+  const collection = await getIndex('eip155:1', 'erc20');
   expect(collection).toStrictEqual(
     expect.arrayContaining([
       expect.objectContaining({
-        type: 'Frontmatter',
+        type: '_erc20',
         path: 'eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8',
         fields: expect.any(Object),
       }),
@@ -15,11 +15,11 @@ it('should getFrontmatterCollection of eip155:1/erc20', async () => {
   );
 });
 
-it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8', async () => {
-  const frontmatterContent = await getFrontmatterContent('eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8');
+it('should getFrontmatter of eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8', async () => {
+  const frontmatterContent = await getFrontmatter('eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8');
   expect(frontmatterContent).toStrictEqual({
     fileId: expect.stringMatching(/[0-f]{64}/),
-    type: 'Frontmatter',
+    type: '_erc20',
     path: 'eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE156f6f8',
     modifiedDate: expect.any(Number),
     fields: {
@@ -50,68 +50,79 @@ it('should getFrontmatterContent of eip155:1/erc20:0x00000000008943c65cAf789FFFC
   });
 });
 
-it('should getFrontmatterContent of eip155:1/erc20:0', async () => {
-  const frontmatterContent = await getFrontmatterContent('eip155:1/erc20:0');
+it('should getFrontmatter of eip155:1/erc20:0', async () => {
+  const frontmatterContent = await getFrontmatter('eip155:1/erc20:0');
   expect(frontmatterContent).toBeUndefined();
 });
 
-it('should getInstalledFrontmatterCollection()', async () => {
-  const collections = await getInstalledFrontmatterCollection();
-  expect(collections).toStrictEqual([
+it('should getInstalledNamespaces()', async () => {
+  const namespaces = await getInstalledNamespaces();
+  expect(namespaces).toStrictEqual([
     {
       caip2: 'eip155:1',
-      name: '@crypto-frontmatter/eip155-1-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-1',
     },
     {
       caip2: 'eip155:10',
-      name: '@crypto-frontmatter/eip155-10-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-10',
     },
     {
       caip2: 'eip155:1313161554',
-      name: '@crypto-frontmatter/eip155-1313161554-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-1313161554',
     },
     {
       caip2: 'eip155:137',
-      name: '@crypto-frontmatter/eip155-137-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-137',
     },
     {
       caip2: 'eip155:42161',
-      name: '@crypto-frontmatter/eip155-42161-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-42161',
     },
     {
       caip2: 'eip155:42220',
-      name: '@crypto-frontmatter/eip155-42220-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-42220',
     },
     {
       caip2: 'eip155:43114',
-      name: '@crypto-frontmatter/eip155-43114-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-43114',
     },
     {
       caip2: 'eip155:56',
-      name: '@crypto-frontmatter/eip155-56-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-56',
     },
     {
       caip2: 'eip155:8453',
-      name: '@crypto-frontmatter/eip155-8453-erc20',
+      dir: '_erc20',
       namespace: 'erc20',
+      package: '@crypto-frontmatter/eip155-8453',
     },
     {
       caip2: 'tip474:728126428',
-      name: '@crypto-frontmatter/tip474-728126428-trc10',
+      dir: '_trc10',
       namespace: 'trc10',
+      package: '@crypto-frontmatter/tip474-728126428',
     },
     {
       caip2: 'tip474:728126428',
-      name: '@crypto-frontmatter/tip474-728126428-trc20',
+      dir: '_trc20',
       namespace: 'trc20',
+      package: '@crypto-frontmatter/tip474-728126428',
     },
   ]);
 });

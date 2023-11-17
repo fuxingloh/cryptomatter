@@ -7,7 +7,7 @@ import type { ReactElement } from 'react';
 import { ContentedProse } from '@/components/contented/ContentedProse';
 import { renderHighlighterHtml } from '@/components/contented/ShikiHighlighter';
 
-async function getFrontmatterContent(params: { caip2: string; asset: string }): Promise<FrontmatterContent> {
+async function fetchFrontmatter(params: { caip2: string; asset: string }): Promise<FrontmatterContent> {
   const caip19 = `${decodeURIComponent(params.caip2)}/${decodeURIComponent(params.asset)}`;
   const fileId = computeFileId(caip19);
   const response = await fetch(`${process.env.BASE_URL}/_crypto-frontmatter/${fileId}.json`);
@@ -18,7 +18,7 @@ async function getFrontmatterContent(params: { caip2: string; asset: string }): 
 }
 
 export async function generateMetadata(props: Parameters<typeof Page>[0]): Promise<Metadata> {
-  const frontmatter = await getFrontmatterContent(props.params);
+  const frontmatter = await fetchFrontmatter(props.params);
 
   const title = frontmatter.fields.title ?? frontmatter.fields.symbol;
   return {
@@ -42,7 +42,7 @@ export default async function Page(props: {
     asset: string;
   };
 }): Promise<ReactElement> {
-  const frontmatter = await getFrontmatterContent(props.params);
+  const frontmatter = await fetchFrontmatter(props.params);
   const image = frontmatter.fields.images?.find((image) => image.type === 'logo');
 
   return (

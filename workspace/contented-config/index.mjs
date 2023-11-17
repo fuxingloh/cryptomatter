@@ -17,6 +17,7 @@ import { mkdirSync, existsSync, createReadStream } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { promisify } from 'node:util';
 import { pipeline } from 'node:stream';
+import { readFileSync, writeFileSync } from 'fs';
 
 /**
  * To reduce complexity,
@@ -47,12 +48,13 @@ async function generateContentHash(filePath) {
 
 /**
  * @param fileId {string}
+ * @param namespace {string}
  * @param filePath {string}
  * @return {Promise<[{mine: string, path: string}]>}
  */
-async function computeImageField(fileId, filePath) {
+async function computeImageField(fileId, namespace, filePath) {
   const reference = filePath.replace(/\/README\.md$/, '');
-  const pngLogoPath = join('frontmatter', reference, 'logo.png');
+  const pngLogoPath = join('frontmatter', namespace, reference, 'logo.png');
   if (existsSync(pngLogoPath) === false) {
     return [];
   }
@@ -60,7 +62,7 @@ async function computeImageField(fileId, filePath) {
   const size = imageSize(pngLogoPath);
 
   const imagePath = (await generateContentHash(pngLogoPath)) + '.png';
-  await copyFile(pngLogoPath, join('dist', 'Frontmatter', imagePath));
+  await copyFile(pngLogoPath, join(`_${namespace}`, imagePath));
 
   return [
     {
@@ -79,7 +81,7 @@ function computeFileId(caip19) {
   const [caip2, asset] = caip19.split('/');
   const [namespace, reference] = asset.split(':');
 
-  if (namespace === 'erc20') {
+  if (namespace === 'erc20' && reference) {
     return sha256(`${caip2}/${namespace}:${reference.toLowerCase()}`);
   }
 
@@ -87,32 +89,50 @@ function computeFileId(caip19) {
 }
 
 /**
- * @param options {{caip2: string, namespace: string}}
+ * @param caip2 {string}
+ * @param pipelines {{namespace: string}[]}
  * @return {import('@contentedjs/contented').ContentedConfig}
  */
-export default function config(options) {
-  mkdirSync(join('dist', 'Frontmatter'), { recursive: true });
+export default function config(caip2, pipelines) {
+  const packageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
+
+  writeFileSync(
+    'index.json',
+    JSON.stringify({
+      package: packageJson.name,
+      caip2: caip2,
+      namespaces: pipelines.map(({ namespace }) => {
+        return {
+          dir: `_${namespace}`,
+          namespace: namespace,
+        };
+      }),
+    }),
+  );
 
   return {
     processor: {
-      outDir: 'dist',
-      pipelines: [
-        {
-          type: 'Frontmatter',
-          dir: 'frontmatter',
+      rootDir: 'frontmatter',
+      outDir: './',
+      pipelines: pipelines.map(({ namespace }) => {
+        mkdirSync(`_${namespace}`, { recursive: true });
+
+        return {
+          type: `_${namespace}`,
+          dir: namespace,
           pattern: '**/README.md',
           processor: MDProcessor,
           fields: {
             caip2: {
               type: 'string',
               resolve: () => {
-                return options.caip2;
+                return caip2;
               },
             },
             namespace: {
               type: 'string',
               resolve: () => {
-                return options.namespace;
+                return namespace;
               },
             },
             symbol: {
@@ -141,7 +161,7 @@ export default function config(options) {
           },
           transform: async (fileContent, filePath) => {
             const reference = filePath.replace(/\/README\.md$/, '');
-            const caip19 = `${options.caip2}/${options.namespace}:${reference}`;
+            const caip19 = `${caip2}/${namespace}:${reference}`;
             const fileId = computeFileId(caip19);
 
             // Only return essential fields to reduce the size of the JSON file.
@@ -152,13 +172,13 @@ export default function config(options) {
               type: fileContent.type,
               fields: {
                 ...fileContent.fields,
-                images: await computeImageField(fileId, filePath),
+                images: await computeImageField(fileId, namespace, filePath),
               },
               html: fileContent.html,
             };
           },
-        },
-      ],
+        };
+      }),
     },
   };
 }
