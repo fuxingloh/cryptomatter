@@ -9,7 +9,7 @@ export interface FrontmatterLink {
 
 export interface FrontmatterImage {
   type: string;
-  mine: string;
+  mime: string;
   size: {
     width: number;
     height: number;

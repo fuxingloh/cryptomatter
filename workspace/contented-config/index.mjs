@@ -50,30 +50,47 @@ async function generateContentHash(filePath) {
  * @param fileId {string}
  * @param namespace {string}
  * @param filePath {string}
- * @return {Promise<[{mine: string, path: string}]>}
+ * @return {Promise<[{mime: string, path: string}]>}
  */
 async function computeImageField(fileId, namespace, filePath) {
   const reference = filePath.replace(/\/README\.md$/, '');
-  const pngLogoPath = join('frontmatter', namespace, reference, 'logo.png');
-  if (existsSync(pngLogoPath) === false) {
-    return [];
+
+  async function computeAs({ type, from, ext, mime }) {
+    const pngLogoPath = join('frontmatter', namespace, reference, from);
+    if (existsSync(pngLogoPath) === false) {
+      return [];
+    }
+
+    const size = imageSize(pngLogoPath);
+    const imagePath = (await generateContentHash(pngLogoPath)) + ext;
+    await copyFile(pngLogoPath, join(`_${namespace}`, imagePath));
+
+    return [
+      {
+        type: type,
+        mime: mime,
+        size: {
+          width: size.width,
+          height: size.height,
+        },
+        path: imagePath,
+      },
+    ];
   }
 
-  const size = imageSize(pngLogoPath);
-
-  const imagePath = (await generateContentHash(pngLogoPath)) + '.png';
-  await copyFile(pngLogoPath, join(`_${namespace}`, imagePath));
-
   return [
-    {
-      type: 'logo',
-      mine: 'image/png',
-      size: {
-        width: size.width,
-        height: size.height,
-      },
-      path: imagePath,
-    },
+    ...(await computeAs({
+      type: 'icon',
+      from: 'logo.png',
+      ext: '.png',
+      mime: 'image/png',
+    })),
+    ...(await computeAs({
+      type: 'icon',
+      from: 'logo.svg',
+      ext: '.svg',
+      mime: 'image/svg+xml',
+    })),
   ];
 }
 

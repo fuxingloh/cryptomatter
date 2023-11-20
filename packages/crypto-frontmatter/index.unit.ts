@@ -36,8 +36,8 @@ it('should getFrontmatter of eip155:1/erc20:0x00000000008943c65cAf789FFFCF953bE1
       ],
       images: [
         {
-          type: 'logo',
-          mine: 'image/png',
+          type: 'icon',
+          mime: 'image/png',
           size: {
             width: 512,
             height: 512,
