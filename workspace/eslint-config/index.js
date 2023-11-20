@@ -1,6 +1,6 @@
 module.exports = [
   {
-    ignores: ['**/dist/*'],
+    ignores: ['**/*.js', '**/*.d.ts', '**/*.d.ts.map'],
   },
   require('@eslint/js').configs.recommended,
   {
