@@ -37,7 +37,7 @@ export async function generateMetadata(caip19: string): Promise<Metadata> {
 
 export async function Page(props: { caip19: string }): Promise<ReactElement> {
   const frontmatter = await fetchFrontmatter(props.caip19);
-  const image = frontmatter.fields.images?.find((image) => image.type === 'logo');
+  const image = frontmatter.fields.images?.find((image) => image.type === 'icon');
 
   return (
     <main className="flex h-full min-w-0 flex-grow flex-col">
