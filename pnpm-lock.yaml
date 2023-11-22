@@ -59,6 +59,9 @@ importers:
 
   packages/crypto-frontmatter:
     dependencies:
+      '@crypto-frontmatter/bip122-000000000019d6689c085ae165831e93':
+        specifier: workspace:*
+        version: link:../bip122-000000000019d6689c085ae165831e93
       '@crypto-frontmatter/eip155-10':
         specifier: workspace:*
         version: link:../eip155-10
@@ -192,6 +195,9 @@ importers:
 
   website:
     dependencies:
+      '@crypto-frontmatter/bip122-000000000019d6689c085ae165831e93':
+        specifier: workspace:*
+        version: link:../packages/bip122-000000000019d6689c085ae165831e93
       '@crypto-frontmatter/eip155-1':
         specifier: workspace:*
         version: link:../packages/eip155-1
