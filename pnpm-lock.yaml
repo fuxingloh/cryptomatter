@@ -48,6 +48,15 @@ importers:
         specifier: 5.2.2
         version: 5.2.2
 
+  packages/bip122-000000000019d6689c085ae165831e93:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
   packages/crypto-frontmatter:
     dependencies:
       '@crypto-frontmatter/eip155-10':

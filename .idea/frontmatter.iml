@@ -19,6 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/workspace/sync-trustwallet-assets/repo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tip474-728126428/_trc10" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tip474-728126428/_trc20" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/bip122-000000000019d6689c085ae165831e93/frontmatter" />
       <excludePattern pattern="*_slip44" />
       <excludePattern pattern="*_erc20" />
       <excludePattern pattern="*.turbo" />
