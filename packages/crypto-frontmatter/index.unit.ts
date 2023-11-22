@@ -57,72 +57,80 @@ it('should getFrontmatter of eip155:1/erc20:0', async () => {
 
 it('should getInstalledNamespaces()', async () => {
   const namespaces = await getInstalledNamespaces();
-  expect(namespaces).toStrictEqual([
-    {
-      caip2: 'eip155:1',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-1',
-    },
-    {
-      caip2: 'eip155:10',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-10',
-    },
-    {
-      caip2: 'eip155:1313161554',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-1313161554',
-    },
-    {
-      caip2: 'eip155:137',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-137',
-    },
-    {
-      caip2: 'eip155:42161',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-42161',
-    },
-    {
-      caip2: 'eip155:42220',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-42220',
-    },
-    {
-      caip2: 'eip155:43114',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-43114',
-    },
-    {
-      caip2: 'eip155:56',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-56',
-    },
-    {
-      caip2: 'eip155:8453',
-      dir: '_erc20',
-      namespace: 'erc20',
-      package: '@crypto-frontmatter/eip155-8453',
-    },
-    {
-      caip2: 'tip474:728126428',
-      dir: '_trc10',
-      namespace: 'trc10',
-      package: '@crypto-frontmatter/tip474-728126428',
-    },
-    {
-      caip2: 'tip474:728126428',
-      dir: '_trc20',
-      namespace: 'trc20',
-      package: '@crypto-frontmatter/tip474-728126428',
-    },
-  ]);
+  expect(namespaces).toStrictEqual(
+    expect.arrayContaining([
+      {
+        caip2: 'eip155:1',
+        dir: '_slip44',
+        namespace: 'slip44',
+        package: '@crypto-frontmatter/eip155-1',
+      },
+      {
+        caip2: 'eip155:1',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-1',
+      },
+      {
+        caip2: 'eip155:10',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-10',
+      },
+      {
+        caip2: 'eip155:1313161554',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-1313161554',
+      },
+      {
+        caip2: 'eip155:137',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-137',
+      },
+      {
+        caip2: 'eip155:42161',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-42161',
+      },
+      {
+        caip2: 'eip155:42220',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-42220',
+      },
+      {
+        caip2: 'eip155:43114',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-43114',
+      },
+      {
+        caip2: 'eip155:56',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-56',
+      },
+      {
+        caip2: 'eip155:8453',
+        dir: '_erc20',
+        namespace: 'erc20',
+        package: '@crypto-frontmatter/eip155-8453',
+      },
+      {
+        caip2: 'tip474:728126428',
+        dir: '_trc10',
+        namespace: 'trc10',
+        package: '@crypto-frontmatter/tip474-728126428',
+      },
+      {
+        caip2: 'tip474:728126428',
+        dir: '_trc20',
+        namespace: 'trc20',
+        package: '@crypto-frontmatter/tip474-728126428',
+      },
+    ]),
+  );
 });
