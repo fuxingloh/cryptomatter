@@ -262,8 +262,8 @@ importers:
         specifier: ^0.33.0
         version: 0.33.0
       shiki:
-        specifier: ^0.14.5
-        version: 0.14.5
+        specifier: ^0.14.6
+        version: 0.14.6
     devDependencies:
       '@tailwindcss/forms':
         specifier: ^0.5.7
@@ -734,7 +734,7 @@ packages:
       remark-gfm: 4.0.0
       remark-parse: 11.0.0
       remark-rehype: 11.0.0
-      shiki: 0.14.5
+      shiki: 0.14.6
       to-vfile: 8.0.0
       unified: 11.0.4
       unist-util-map: 4.0.0
@@ -5994,8 +5994,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  /shiki@0.14.5:
-    resolution: {integrity: sha512-1gCAYOcmCFONmErGTrS1fjzJLA7MGZmKzrBNX7apqSwhyITJg2O102uFzXUeBxNnEkDA9vHIKLyeKq0V083vIw==}
+  /shiki@0.14.6:
+    resolution: {integrity: sha512-R4koBBlQP33cC8cpzX0hAoOURBHJILp4Aaduh2eYi+Vj8ZBqtK/5SWNEHBS3qwUMu8dqOtI/ftno3ESfNeVW9g==}
     dependencies:
       ansi-sequence-parser: 1.1.1
       jsonc-parser: 3.2.0
