@@ -272,8 +272,8 @@ importers:
         specifier: ^0.5.10
         version: 0.5.10(tailwindcss@3.3.6)
       '@types/react':
-        specifier: 18.2.39
-        version: 18.2.39
+        specifier: 18.2.43
+        version: 18.2.43
       '@workspace/eslint-config-next':
         specifier: workspace:*
         version: link:../workspace/eslint-config-next
@@ -1823,8 +1823,8 @@ packages:
     resolution: {integrity: sha512-mxSnDQxPqsZxmeShFH+uwQ4kO4gcJcGahjjMFeLbKE95IAZiiZyiEepGZjtXJ7hN/yfu0bu9xN2ajcU0JcxX6A==}
     dev: true
 
-  /@types/react@18.2.39:
-    resolution: {integrity: sha512-Oiw+ppED6IremMInLV4HXGbfbG6GyziY3kqAwJYOR0PNbkYDmLWQA3a95EhdSmamsvbkJN96ZNN+YD+fGjzSBA==}
+  /@types/react@18.2.43:
+    resolution: {integrity: sha512-nvOV01ZdBdd/KW6FahSbcNplt2jCJfyWdTos61RYHV+FVv5L/g9AOX1bmbVcWcLFL8+KHQfh1zVIQrud6ihyQA==}
     dependencies:
       '@types/prop-types': 15.7.10
       '@types/scheduler': 0.16.6
