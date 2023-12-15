@@ -20,6 +20,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/tip474-728126428/_trc10" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tip474-728126428/_trc20" />
       <excludeFolder url="file://$MODULE_DIR$/packages/bip122-000000000019d6689c085ae165831e93/frontmatter" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/bip122-279b1a87aedc7b9471d4ad4e5f12967a/_dst" />
       <excludePattern pattern="*_slip44" />
       <excludePattern pattern="*_erc20" />
       <excludePattern pattern="*.turbo" />
