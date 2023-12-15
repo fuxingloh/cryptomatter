@@ -18,7 +18,7 @@ importers:
         specifier: ^0.2.29
         version: 0.2.29(@swc/core@1.3.100)
       '@types/node':
-        specifier: ^18.18.6
+        specifier: ^18.19.3
         version: 18.19.3
       '@workspace/eslint-config':
         specifier: workspace:*
@@ -57,14 +57,29 @@ importers:
         specifier: workspace:*
         version: link:../../workspace/contented-config
 
+  packages/bip122-279b1a87aedc7b9471d4ad4e5f12967a:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
   packages/crypto-frontmatter:
     dependencies:
       '@crypto-frontmatter/bip122-000000000019d6689c085ae165831e93':
         specifier: workspace:*
         version: link:../bip122-000000000019d6689c085ae165831e93
+      '@crypto-frontmatter/bip122-279b1a87aedc7b9471d4ad4e5f12967a':
+        specifier: workspace:*
+        version: link:../bip122-279b1a87aedc7b9471d4ad4e5f12967a
       '@crypto-frontmatter/eip155-10':
         specifier: workspace:*
         version: link:../eip155-10
+      '@crypto-frontmatter/eip155-1130':
+        specifier: workspace:*
+        version: link:../eip155-1130
       '@crypto-frontmatter/eip155-1313161554':
         specifier: workspace:*
         version: link:../eip155-1313161554
@@ -113,6 +128,15 @@ importers:
         version: link:../../workspace/contented-config
 
   packages/eip155-10:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.1
+        version: 7.1.1(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
+  packages/eip155-1130:
     devDependencies:
       '@contentedjs/contented':
         specifier: ^7.1.1
@@ -198,12 +222,18 @@ importers:
       '@crypto-frontmatter/bip122-000000000019d6689c085ae165831e93':
         specifier: workspace:*
         version: link:../packages/bip122-000000000019d6689c085ae165831e93
+      '@crypto-frontmatter/bip122-279b1a87aedc7b9471d4ad4e5f12967a':
+        specifier: workspace:*
+        version: link:../packages/bip122-279b1a87aedc7b9471d4ad4e5f12967a
       '@crypto-frontmatter/eip155-1':
         specifier: workspace:*
         version: link:../packages/eip155-1
       '@crypto-frontmatter/eip155-10':
         specifier: workspace:*
         version: link:../packages/eip155-10
+      '@crypto-frontmatter/eip155-1130':
+        specifier: workspace:*
+        version: link:../packages/eip155-1130
       '@crypto-frontmatter/eip155-1313161554':
         specifier: workspace:*
         version: link:../packages/eip155-1313161554

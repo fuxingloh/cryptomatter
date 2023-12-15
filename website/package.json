@@ -21,8 +21,10 @@
   },
   "dependencies": {
     "@crypto-frontmatter/bip122-000000000019d6689c085ae165831e93": "workspace:*",
+    "@crypto-frontmatter/bip122-279b1a87aedc7b9471d4ad4e5f12967a": "workspace:*",
     "@crypto-frontmatter/eip155-1": "workspace:*",
     "@crypto-frontmatter/eip155-10": "workspace:*",
+    "@crypto-frontmatter/eip155-1130": "workspace:*",
     "@crypto-frontmatter/eip155-1313161554": "workspace:*",
     "@crypto-frontmatter/eip155-137": "workspace:*",
     "@crypto-frontmatter/eip155-42161": "workspace:*",
