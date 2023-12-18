@@ -19,7 +19,7 @@
     "@types/node": "^18.19.3",
     "@workspace/eslint-config": "workspace:*",
     "@workspace/prettier-config": "workspace:*",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "husky": "^8.0.3",
     "jest": "29.7.0",
     "lint-staged": "^15.2.0",
