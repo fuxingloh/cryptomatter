@@ -33,7 +33,7 @@
     "@crypto-frontmatter/eip155-56": "workspace:*",
     "@crypto-frontmatter/eip155-8453": "workspace:*",
     "@crypto-frontmatter/tip474-728126428": "workspace:*",
-    "@heroicons/react": "^2.0.18",
+    "@heroicons/react": "^2.1.1",
     "@vercel/analytics": "^1.1.1",
     "clsx": "^2.0.0",
     "crypto-frontmatter": "workspace:*",
