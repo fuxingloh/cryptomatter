@@ -35,7 +35,7 @@
     "@crypto-frontmatter/tip474-728126428": "workspace:*",
     "@heroicons/react": "^2.1.1",
     "@vercel/analytics": "^1.1.1",
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.0",
     "crypto-frontmatter": "workspace:*",
     "dayjs": "^1.11.10",
     "framer-motion": "10.16.16",
