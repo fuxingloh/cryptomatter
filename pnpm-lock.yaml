@@ -51,8 +51,8 @@ importers:
   packages/bip122-000000000019d6689c085ae165831e93:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -60,8 +60,8 @@ importers:
   packages/bip122-279b1a87aedc7b9471d4ad4e5f12967a:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -121,8 +121,8 @@ importers:
   packages/eip155-1:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -130,8 +130,8 @@ importers:
   packages/eip155-10:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -139,8 +139,8 @@ importers:
   packages/eip155-1130:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -148,8 +148,8 @@ importers:
   packages/eip155-1313161554:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -157,8 +157,8 @@ importers:
   packages/eip155-137:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -166,8 +166,8 @@ importers:
   packages/eip155-42161:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -175,8 +175,8 @@ importers:
   packages/eip155-42220:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -184,8 +184,8 @@ importers:
   packages/eip155-43114:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -193,8 +193,8 @@ importers:
   packages/eip155-56:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -202,8 +202,8 @@ importers:
   packages/eip155-8453:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -211,8 +211,8 @@ importers:
   packages/tip474-728126428:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -317,11 +317,11 @@ importers:
   workspace/contented-config:
     dependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.1
-        version: 7.1.1(typanion@3.14.0)
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
       '@contentedjs/contented-pipeline-md':
-        specifier: ^7.1.1
-        version: 7.1.1
+        specifier: ^7.1.2
+        version: 7.1.2
       image-size:
         specifier: ^1.1.0
         version: 1.1.0
@@ -723,10 +723,10 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@contentedjs/contented-pipeline-md@7.1.1:
-    resolution: {integrity: sha512-LMbUVr2hmcGR7s8VxwG/3H3yeeDtKyMZFrlm3ewIHuBNbLEQoC+auykVxdNBl4rGQkwfM+qnbKsQQm/XCQ3N7A==}
+  /@contentedjs/contented-pipeline-md@7.1.2:
+    resolution: {integrity: sha512-xPSvVVBqToXOEWAdmyjvgQkMzUwme7PsfNL68WVTf4C32jT8qW5tvTuOe/0x0xClxcPRA0p2Jy/L6EvhBd2OgQ==}
     dependencies:
-      '@contentedjs/contented-pipeline': 7.1.1
+      '@contentedjs/contented-pipeline': 7.1.2
       '@jsdevtools/rehype-toc': 3.0.2
       '@sindresorhus/slugify': 2.2.1
       hast-util-to-string: 3.0.0
@@ -756,27 +756,27 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@contentedjs/contented-pipeline@7.1.1:
-    resolution: {integrity: sha512-kqpr1t8EFcw6Pj1kHKa/IjfjUDtWKiXee+dipQ8Sna1ZUTJBlvgJXrluKnhIyADJn7sWmHwpDbSANPetYYdRAg==}
+  /@contentedjs/contented-pipeline@7.1.2:
+    resolution: {integrity: sha512-H/80QIW4Rfea3ETkEx3ddShvQXHQwa5R+JvkArthiLa3vr7qc0kttEZTaVmWCR7rYBHf6yLY1ct8+qYybzIawQ==}
     dependencies:
       '@sindresorhus/slugify': 2.2.1
 
-  /@contentedjs/contented-processor@7.1.1:
-    resolution: {integrity: sha512-DXvn89R6Gy6lk+a7nbyG9D0fpP3GqHScA9ClHLu2kUeT51/+nD9PW7ed9S048bEYiGpugCZdG95o7Rghe2ggUA==}
+  /@contentedjs/contented-processor@7.1.2:
+    resolution: {integrity: sha512-Mx89FH7AjCHrw3MJkbkYXEdJ08Bli12UkNDfSwjjqoi0TfVnyn2dNGRLo/fhPjQrHq8VthWH7M2iJj/Yz5pDWg==}
     dependencies:
       '@babel/generator': 7.23.6
-      '@contentedjs/contented-pipeline': 7.1.1
-      '@contentedjs/contented-pipeline-md': 7.1.1
+      '@contentedjs/contented-pipeline': 7.1.2
+      '@contentedjs/contented-pipeline-md': 7.1.2
       minimatch: 5.1.6
     transitivePeerDependencies:
       - supports-color
 
-  /@contentedjs/contented@7.1.1(typanion@3.14.0):
-    resolution: {integrity: sha512-iKFDF5mka2W+GHDFdIlU/ZyOvMDI5iTeE4l0w36LL+twXmbQPN/VWSrxrH8AyAs4CTObeKDAvvgf2B2OaxXtMA==}
+  /@contentedjs/contented@7.1.2(typanion@3.14.0):
+    resolution: {integrity: sha512-rAULKGDVNg8OJvJNXtBFe7uTbkMlLst4yYW5Gu978InSbbs/whvpWMAnxInqsXM4jBHZlLIHDQC1sXlpO3YpDw==}
     hasBin: true
     dependencies:
-      '@contentedjs/contented-pipeline': 7.1.1
-      '@contentedjs/contented-processor': 7.1.1
+      '@contentedjs/contented-pipeline': 7.1.2
+      '@contentedjs/contented-processor': 7.1.2
       '@parcel/watcher': 2.3.0
       clipanion: 3.2.1(typanion@3.14.0)
       debounce: 1.2.1

@@ -16,7 +16,7 @@
     "clean": "rm -rf index.js index.d.ts index.json _*/"
   },
   "devDependencies": {
-    "@contentedjs/contented": "^7.1.1",
+    "@contentedjs/contented": "^7.1.2",
     "@workspace/contented-config": "workspace:*"
   }
 }
