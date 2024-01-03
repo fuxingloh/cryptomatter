@@ -9,6 +9,6 @@
   "dependencies": {
     "@contentedjs/contented": "^7.1.2",
     "@contentedjs/contented-pipeline-md": "^7.1.2",
-    "image-size": "^1.1.0"
+    "image-size": "^1.1.1"
   }
 }
