@@ -4,6 +4,6 @@
   "main": "./index.js",
   "dependencies": {
     "prettier-plugin-packagejson": "^2.4.9",
-    "prettier-plugin-tailwindcss": "^0.5.10"
+    "prettier-plugin-tailwindcss": "^0.5.11"
   }
 }
