@@ -7,6 +7,7 @@
     "dependencyDashboardApproval": false
   },
   "rangeStrategy": "bump",
+  "prHourlyLimit": 1,
   "packageRules": [
     {
       "matchPackageNames": ["node", "npm", "pnpm", "yarn", "typescript", "@types/node"],
@@ -16,6 +17,10 @@
     {
       "matchPackagePatterns": ["^@contentedjs/"],
       "groupName": "@contentedjs"
+    },
+    {
+      "matchPackagePatterns": ["^@eslint/", "^eslint$"],
+      "groupName": "@eslint"
     }
   ]
 }
