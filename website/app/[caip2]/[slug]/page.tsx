@@ -37,6 +37,12 @@ export default async function Page(props: {
     slug: string;
   };
 }): Promise<ReactElement> {
+  if (props.params.caip2.startsWith('_')) {
+    // This route conflicts with public/_crypto-frontmatter static assets.
+    // This is an early termination to avoid unnecessary processing.
+    return notFound();
+  }
+
   const path = `${decodeURIComponent(props.params.caip2)}/${decodeURIComponent(props.params.slug)}`;
   const [caip2, namespace, reference] = decodeCaip19(path);
 
