@@ -127,12 +127,21 @@ export async function getInstalledNamespaces(): Promise<FrontmatterNamespace[]> 
  * @param namespace {string}
  * @return {FrontmatterIndex[]}
  */
-export async function getIndex(caip2: string, namespace: string): Promise<FrontmatterIndex[]> {
+export async function getIndex(caip2: string, namespace: string): Promise<FrontmatterIndex[] | undefined> {
   const path = getNodeModulesPath(caip2, namespace, 'index.json');
-  const contents = await readFile(path, {
-    encoding: 'utf-8',
-  });
-  return JSON.parse(contents);
+  try {
+    const contents = await readFile(path, {
+      encoding: 'utf-8',
+    });
+    return JSON.parse(contents);
+  } catch (err: any) {
+    // If file not found, return undefined
+    if (err.code === 'ENOENT') {
+      return undefined;
+    }
+
+    throw err;
+  }
 }
 
 /**

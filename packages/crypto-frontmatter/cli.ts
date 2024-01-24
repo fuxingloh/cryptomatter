@@ -26,7 +26,7 @@ export class MirrorCommand extends Command {
     for (const namespace of await getInstalledNamespaces()) {
       let count = 0;
 
-      for (const frontmatter of await getIndex(namespace.caip2, namespace.namespace)) {
+      for (const frontmatter of (await getIndex(namespace.caip2, namespace.namespace))!) {
         if (this.includes('frontmatter.json')) {
           await this.mirrorFile(namespace, frontmatter.fileId + '.json');
           count++;

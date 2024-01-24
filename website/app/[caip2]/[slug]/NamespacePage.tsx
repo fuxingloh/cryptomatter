@@ -2,6 +2,7 @@ import { clsx } from 'clsx';
 import { getIndex } from 'crypto-frontmatter';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { ReactElement } from 'react';
 
 export async function generateMetadata(caip2: string, namespace: string): Promise<Metadata> {
@@ -21,6 +22,10 @@ export async function generateMetadata(caip2: string, namespace: string): Promis
 
 export async function Page(props: { caip2: string; namespace: string }): Promise<ReactElement> {
   const index = await getIndex(props.caip2, props.namespace);
+  if (index === undefined) {
+    return notFound();
+  }
+
   return (
     <main>
       <div className="mx-auto w-full overflow-x-auto pb-48">
