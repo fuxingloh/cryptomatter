@@ -46,11 +46,11 @@ export abstract class Sync {
     const hasFromInfo = await hasFile(`${this.from}/${dir}/info.json`);
     if (!hasFromInfo) return false;
 
-    // If README.md and logo.png do not exist on the other side, write it
+    // If README.md and icon.png do not exist on the other side, write it
     const namespace = this.getNamespace(info);
-    const hasToLogo = await hasFile(`${this.to}/${namespace}/logo.png`);
+    const hasToIcon = await hasFile(`${this.to}/${namespace}/icon.png`);
     const hasToReadme = await hasFile(`${this.to}/${namespace}/README.md`);
-    if (!hasToLogo || !hasToReadme) return true;
+    if (!hasToIcon || !hasToReadme) return true;
 
     // Otherwise, allow overwriting if the author is Frontmatter Bot
     const name = await getAuthorName(`${this.to}/${namespace}/README.md`);
@@ -91,7 +91,7 @@ export class DefaultSync extends Sync {
     await mkdir(`${this.to}/${namespace}`, { recursive: true });
 
     if (await hasFile(`${this.from}/${dir}/logo.png`)) {
-      await copyFile(`${this.from}/${dir}/logo.png`, `${this.to}/${namespace}/logo.png`);
+      await copyFile(`${this.from}/${dir}/logo.png`, `${this.to}/${namespace}/icon.png`);
     }
     await writeFile(
       `${this.to}/${namespace}/README.md`,

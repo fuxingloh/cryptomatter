@@ -81,13 +81,13 @@ async function computeImageField(fileId, namespace, filePath) {
   return [
     ...(await computeAs({
       type: 'icon',
-      from: 'logo.png',
+      from: 'icon.png',
       ext: '.png',
       mime: 'image/png',
     })),
     ...(await computeAs({
       type: 'icon',
-      from: 'logo.svg',
+      from: 'icon.svg',
       ext: '.svg',
       mime: 'image/svg+xml',
     })),
