@@ -101,6 +101,9 @@ importers:
       '@crypto-frontmatter/eip155-8453':
         specifier: workspace:*
         version: link:../eip155-8453
+      '@crypto-frontmatter/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp':
+        specifier: workspace:*
+        version: link:../solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp
       '@crypto-frontmatter/tip474-728126428':
         specifier: workspace:*
         version: link:../tip474-728126428
@@ -208,6 +211,15 @@ importers:
         specifier: workspace:*
         version: link:../../workspace/contented-config
 
+  packages/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
   packages/tip474-728126428:
     devDependencies:
       '@contentedjs/contented':
@@ -255,6 +267,9 @@ importers:
       '@crypto-frontmatter/eip155-8453':
         specifier: workspace:*
         version: link:../packages/eip155-8453
+      '@crypto-frontmatter/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp':
+        specifier: workspace:*
+        version: link:../packages/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp
       '@crypto-frontmatter/tip474-728126428':
         specifier: workspace:*
         version: link:../packages/tip474-728126428

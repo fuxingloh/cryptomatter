@@ -52,6 +52,7 @@
     "@crypto-frontmatter/eip155-43114": "workspace:*",
     "@crypto-frontmatter/eip155-56": "workspace:*",
     "@crypto-frontmatter/eip155-8453": "workspace:*",
+    "@crypto-frontmatter/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp": "workspace:*",
     "@crypto-frontmatter/tip474-728126428": "workspace:*"
   },
   "peerDependenciesMeta": {
@@ -89,6 +90,9 @@
       "optional": true
     },
     "@crypto-frontmatter/eip155-8453": {
+      "optional": true
+    },
+    "@crypto-frontmatter/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp": {
       "optional": true
     },
     "@crypto-frontmatter/tip474-728126428": {

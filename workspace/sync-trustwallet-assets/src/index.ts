@@ -50,6 +50,10 @@ export async function sync(): Promise<void> {
     join(cwd, 'repo/blockchains/tron/assets'),
     join(cwd, '../../packages/tip474-728126428/frontmatter/trc20'),
   ).sync((info) => info.type === 'TRC20');
+  await new DefaultSync(
+    join(cwd, 'repo/blockchains/solana/assets'),
+    join(cwd, '../../packages/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp/frontmatter/token'),
+  ).sync((info) => info.type === 'SPL');
 }
 
 void sync();
