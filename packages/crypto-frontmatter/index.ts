@@ -86,7 +86,8 @@ export function computeFileId(caip19: string): string {
 
 export function getNodeModulesPath(caip2: string, namespace: string, file: string) {
   const [caip2Type, caip2Reference] = caip2.split(':');
-  return join('node_modules', '@crypto-frontmatter', `${caip2Type}-${caip2Reference}`, `_${namespace}`, file);
+  const packageName = `${caip2Type}-${caip2Reference}`.toLowerCase();
+  return join('node_modules', '@crypto-frontmatter', packageName, `_${namespace}`, file);
 }
 
 export async function getInstalledNamespaces(): Promise<FrontmatterNamespace[]> {
