@@ -9,7 +9,7 @@ export default config('solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp', [
   {
     namespace: 'slip44',
   },
-  // {
-  //   namespace: 'token',
-  // }
+  {
+    namespace: 'token',
+  },
 ]);
