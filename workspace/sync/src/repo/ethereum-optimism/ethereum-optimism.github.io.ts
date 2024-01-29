@@ -1,6 +1,8 @@
 import { copyFile, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
+import { getAddress } from 'ethers';
+
 import { README } from '../../README';
 import { hasFile, SyncCommand } from '../../SyncCommand';
 
@@ -28,12 +30,12 @@ export class EthereumOptimism extends SyncCommand<Data> {
   async execute(): Promise<number | void> {
     await this.walkDir('repo/data', {
       filter: (data) => !!data.tokens.ethereum,
-      toPath: (data) => `../../packages/eip155-1/frontmatter/erc20/${data.tokens.ethereum.address}`,
+      toPath: (data) => `../../packages/eip155-1/frontmatter/erc20/${getAddress(data.tokens.ethereum.address)}`,
     });
 
     await this.walkDir('repo/data', {
       filter: (data) => !!data.tokens.optimism,
-      toPath: (data) => `../../packages/eip155-10/frontmatter/erc20/${data.tokens.optimism.address}`,
+      toPath: (data) => `../../packages/eip155-10/frontmatter/erc20/${getAddress(data.tokens.optimism.address)}`,
       toREADME: (data) => {
         const initial = this.toREADME(data);
         return {
@@ -49,7 +51,7 @@ export class EthereumOptimism extends SyncCommand<Data> {
 
     await this.walkDir('repo/data', {
       filter: (data) => !!data.tokens.base,
-      toPath: (data) => `../../packages/eip155-8453/frontmatter/erc20/${data.tokens.base.address}`,
+      toPath: (data) => `../../packages/eip155-8453/frontmatter/erc20/${getAddress(data.tokens.base.address)}`,
       toREADME: (data) => {
         const initial = this.toREADME(data);
         return {
