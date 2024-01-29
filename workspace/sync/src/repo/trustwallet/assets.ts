@@ -1,7 +1,8 @@
 import { copyFile, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { hasFile, README, SyncCommand } from '../../SyncCommand';
+import { README } from '../../README';
+import { hasFile, SyncCommand } from '../../SyncCommand';
 
 interface Info {
   name: string;
@@ -93,8 +94,8 @@ export class TrustWalletAssets extends SyncCommand<Info> {
     ) as Info;
   }
 
-  async write(data: Info, fromPath: string, toPath: string): Promise<void> {
-    await super.write(data, fromPath, toPath);
+  async write(data: Info, fromPath: string, toPath: string, readme: README): Promise<void> {
+    await super.write(data, fromPath, toPath, readme);
 
     const logoPath = join(fromPath, 'logo.png');
     if (await hasFile(logoPath)) {
