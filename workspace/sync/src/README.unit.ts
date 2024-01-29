@@ -134,7 +134,6 @@ it.each([
     readme: {
       title: 'ETH',
       frontmatter: {
-        symbol: 'ETHA',
         decimals: 18,
       },
     },
