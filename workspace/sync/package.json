@@ -1,12 +1,12 @@
 {
-  "name": "@workspace/sync-trustwallet-assets",
+  "name": "@workspace/sync",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "lint": "eslint .",
-    "sync": "node dist/index.js"
+    "sync": "node dist/bin.js"
   },
   "lint-staged": {
     "*": [
@@ -18,6 +18,7 @@
     ]
   },
   "dependencies": {
+    "clipanion": "3.2.1",
     "yaml": "^2.3.4"
   },
   "devDependencies": {

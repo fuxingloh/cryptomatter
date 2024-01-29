@@ -6,8 +6,8 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/sync-trustwallet-assets.yml
-      - workspace/sync-trustwallet-assets/**/*
+      - .github/workflows/sync.yml
+      - workspace/sync/**/*
   schedule:
     - cron: '0 0 * * *'
 
@@ -22,6 +22,11 @@ jobs:
   main:
     runs-on: ubuntu-latest
     environment: FRONTMATTER_BOT
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - trustwallet/assets
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
@@ -33,14 +38,17 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - run: pnpm turbo run build
+        working-directory: workspace/sync
+
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
-          path: workspace/sync-trustwallet-assets/repo
-          repository: trustwallet/assets
+          path: workspace/sync/repo
+          repository: ${{ matrix.repo }}
           ref: master
 
-      - run: pnpm turbo run sync
-        working-directory: workspace/sync-trustwallet-assets
+      - run: pnpm run sync ${{ matrix.repo }}
+        working-directory: workspace/sync
 
       - id: app
         uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
@@ -51,13 +59,13 @@ jobs:
       - uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38 # v5.0.2
         with:
           token: ${{ steps.app.outputs.token }}
-          commit-message: 'chore(sync): trustwallet/assets'
-          title: 'chore(sync): trustwallet/assets'
+          commit-message: 'chore(sync): ${{ matrix.repo }}'
+          title: 'chore(sync): ${{ matrix.repo }}'
           committer: Frontmatter Bot <frontmatter-bot@users.noreply.github.com>
           author: Frontmatter Bot <frontmatter-bot@users.noreply.github.com>
           body: |
             #### What this PR does / why we need it:
 
-            Sync latest changes from `trustwallet/assets` repository.
+            Sync latest changes from `${{ matrix.repo }}` repository using `@workspace/sync`.
 
-          branch: sync/trustwallet/assets
+          branch: sync/${{ matrix.repo }}
