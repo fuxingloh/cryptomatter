@@ -14,6 +14,10 @@ interface Data {
     string,
     {
       address: string;
+      overrides?: {
+        name: string;
+        symbol: string;
+      };
     }
   >;
 }
@@ -25,6 +29,38 @@ export class EthereumOptimism extends SyncCommand<Data> {
     await this.walkDir('repo/data', {
       filter: (data) => !!data.tokens.ethereum,
       toPath: (data) => `../../packages/eip155-1/frontmatter/erc20/${data.tokens.ethereum.address}`,
+    });
+
+    await this.walkDir('repo/data', {
+      filter: (data) => !!data.tokens.optimism,
+      toPath: (data) => `../../packages/eip155-10/frontmatter/erc20/${data.tokens.optimism.address}`,
+      toREADME: (data) => {
+        const initial = this.toREADME(data);
+        return {
+          ...initial,
+          title: data.tokens.optimism.overrides?.name ?? initial.title,
+          frontmatter: {
+            ...initial.frontmatter,
+            symbol: data.tokens.optimism.overrides?.symbol ?? initial.frontmatter.symbol,
+          },
+        };
+      },
+    });
+
+    await this.walkDir('repo/data', {
+      filter: (data) => !!data.tokens.base,
+      toPath: (data) => `../../packages/eip155-8453/frontmatter/erc20/${data.tokens.base.address}`,
+      toREADME: (data) => {
+        const initial = this.toREADME(data);
+        return {
+          ...initial,
+          title: data.tokens.base.overrides?.name ?? initial.title,
+          frontmatter: {
+            ...initial.frontmatter,
+            symbol: data.tokens.base.overrides?.symbol ?? initial.frontmatter.symbol,
+          },
+        };
+      },
     });
   }
 

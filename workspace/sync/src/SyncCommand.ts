@@ -14,6 +14,7 @@ export abstract class SyncCommand<Data> extends Command {
     options: {
       toPath: (data: Data) => string;
       filter: (data: Data) => boolean;
+      toREADME?: (data: Data) => README;
     },
   ): Promise<void> {
     for (const entry of await readdir(dir)) {
@@ -24,7 +25,7 @@ export abstract class SyncCommand<Data> extends Command {
       if (!options.filter(data)) continue;
 
       const toPath = options.toPath(data);
-      const readme = this.toREADME(data);
+      const readme = (options.toREADME ?? this.toREADME)(data);
       if (!validate(readme)) {
         this.context.stdout.write(`Invalid README for ${toPath}, ${getValidateErrors()}\n`);
         continue;
