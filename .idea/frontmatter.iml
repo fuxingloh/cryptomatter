@@ -16,13 +16,13 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/eip155-1313161554/frontmatter" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tip474-728126428/frontmatter" />
       <excludeFolder url="file://$MODULE_DIR$/website/public/_crypto-frontmatter" />
-      <excludeFolder url="file://$MODULE_DIR$/workspace/sync-trustwallet-assets/repo" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tip474-728126428/_trc10" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tip474-728126428/_trc20" />
       <excludeFolder url="file://$MODULE_DIR$/packages/bip122-000000000019d6689c085ae165831e93/frontmatter" />
       <excludeFolder url="file://$MODULE_DIR$/packages/bip122-279b1a87aedc7b9471d4ad4e5f12967a/_dst" />
       <excludeFolder url="file://$MODULE_DIR$/packages/bip122-279b1a87aedc7b9471d4ad4e5f12967a/frontmatter" />
       <excludeFolder url="file://$MODULE_DIR$/packages/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp/frontmatter" />
+      <excludeFolder url="file://$MODULE_DIR$/workspace/sync/repo" />
       <excludePattern pattern="*_slip44" />
       <excludePattern pattern="*_erc20" />
       <excludePattern pattern="*.turbo" />

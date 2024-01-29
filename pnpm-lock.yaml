@@ -400,8 +400,11 @@ importers:
         specifier: ^0.5.11
         version: 0.5.11(prettier@3.2.4)
 
-  workspace/sync-trustwallet-assets:
+  workspace/sync:
     dependencies:
+      clipanion:
+        specifier: 3.2.1
+        version: 3.2.1(typanion@3.14.0)
       yaml:
         specifier: ^2.3.4
         version: 2.3.4
