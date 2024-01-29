@@ -1,27 +1,20 @@
 ---
 symbol: FOUR
 decimals: 18
+tags:
+  - governance
+  - staking
 links:
   - name: website
-    url: https://4thtech.io/
+    url: https://the4thpillar.io/
   - name: explorer
     url: https://polygonscan.com/token/0x48cBc913dE09317dF2365e6827Df50dA083701D5
   - name: twitter
-    url: https://twitter.com/4thtechProject
+    url: https://twitter.com/4pfour
   - name: coingecko
     url: https://coingecko.com/en/coins/the-4th-pillar
-  - name: medium
-    url: https://medium.com/the4thpillar
-  - name: telegram
-    url: https://t.me/the4thpillarofficial
-  - name: youtube
-    url: https://youtube.com/c/4thpillartechnologies
-  - name: whitepaper
-    url: https://github.com/4thtech/static-assets/raw/main/pdf/whitepaper.pdf
-  - name: coinmarketcap
-    url: https://coinmarketcap.com/currencies/4thpillar-technologies/
 ---
 
 # The 4th Pillar Token
 
-FOUR is 4thTech ecosystem utility token used as the primary means to enable services such as data file and instant messages wallet to wallet exchange.
+FOUR token is a technical and incentive component dedicated to; (1) RTA (i.e. right-to-access), and; (2) MTO (i.e. multiple-transfer option) models in the ecosystem of Web3 communication.

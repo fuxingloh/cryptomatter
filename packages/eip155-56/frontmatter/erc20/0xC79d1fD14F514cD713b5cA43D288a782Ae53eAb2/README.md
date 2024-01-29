@@ -3,27 +3,25 @@ symbol: XLD
 decimals: 18
 links:
   - name: website
-    url: https://www.xceldefi.com
+    url: https://www.xcelpay.io
   - name: explorer
     url: https://bscscan.com/token/0xC79d1fD14F514cD713b5cA43D288a782Ae53eAb2
   - name: github
-    url: https://github.com/XcelDefi
+    url: https://github.com/xceltripinc/
   - name: whitepaper
-    url: https://www.xceldefi.com/whitepaper
+    url: https://xcelpay.io/whitepaper
   - name: telegram
     url: https://t.me/XcelToken
   - name: twitter
-    url: https://twitter.com/XcelDefi
+    url: https://twitter.com/XcelPayWallet
   - name: medium
-    url: https://xceldefi.medium.com
-  - name: discord
-    url: https://discord.com/channels/843873130808213524
+    url: https://medium.com/xcellab-magazine
   - name: facebook
-    url: https://facebook.com/XcelDefiOfficial
+    url: https://facebook.com/xcelpay
   - name: youtube
-    url: https://youtube.com/channel/UCJwGB8JGkh15KBV8a5NwsJA
+    url: https://youtube.com/@xcelpay
 ---
 
-# XcelDefi
+# XcelPay
 
-XcelDefi is native token of XcelLab ecosystem and is the governance token for XcelSwap, a decentralised exchange built to power the future of finance by the XcelLab ecosystem. Users can vote by holding and staking XcelDefi and propose changes in the mechanics of XcelSwap.
+XLD is the native token of XcelPay ecosystem. It's a key part of an ecosystem designed to integrate blockchain technology into everyday transactions and experiences. From secure asset management in XcelPay Wallet to real-world applications in XcelTrip, XcelPay (XLD) is paving the way for a more inclusive, accessible, and practical use of cryptocurrencies in daily life.

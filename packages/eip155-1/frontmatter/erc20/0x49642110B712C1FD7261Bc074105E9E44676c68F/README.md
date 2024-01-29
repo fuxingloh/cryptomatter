@@ -5,17 +5,19 @@ tags:
   - memes
 links:
   - name: website
-    url: https://dinolfg.com/
+    url: https://dinolfg.com
   - name: explorer
-    url: https://etherscan.io/token/0x49642110b712c1fd7261bc074105e9e44676c68f
-  - name: coinmarketcap
-    url: https://coinmarketcap.com/currencies/dinolfg/
+    url: https://etherscan.io/token/0x49642110B712C1FD7261Bc074105E9E44676c68F
   - name: twitter
     url: https://twitter.com/DinoLFG
   - name: telegram
     url: https://t.me/OfficialDinoLFG
+  - name: coinmarketcap
+    url: https://coinmarketcap.com/currencies/dinolfg
+  - name: coingecko
+    url: https://coingecko.com/coins/dinolfg
 ---
 
-# DinoLFG
+# DinoLFG (DINO)
 
-$Dino is a Meme Coin.
+$DINO - Building Bridges Between Crypto, Games, and Financial Adventure!

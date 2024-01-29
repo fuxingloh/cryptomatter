@@ -1,13 +1,29 @@
 ---
 symbol: MOONLIGHT
 decimals: 9
+tags:
+  - dapp
 links:
   - name: website
-    url: https://moonlighttoken.com/
+    url: https://bubblemaps.io
   - name: explorer
-    url: https://bscscan.com/token/0xb1ced2e320e3f4c8e3511b1dc59203303493f382
+    url: https://bscscan.com/token/0xB1CeD2e320E3f4C8e3511B1DC59203303493F382
+  - name: twitter
+    url: https://twitter.com/bubblemaps
+  - name: telegram
+    url: https://t.me/bubblemaps
+  - name: telegram_news
+    url: https://t.me/BubblemapsNEWS
+  - name: medium
+    url: https://bubblemaps.medium.com/
+  - name: youtube
+    url: https://youtube.com/@Bubblemaps
+  - name: coinmarketcap
+    url: https://coinmarketcap.com/currencies/moonlight-token/
+  - name: coingecko
+    url: https://coingecko.com/en/coins/moonlight-token
 ---
 
 # Moonlight Token
 
-Moonlight is a comprehensive set of analytical tools for the BSC network.
+Hold Moonlight Token to get premium access to Bubblemaps
