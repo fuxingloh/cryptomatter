@@ -20,4 +20,4 @@ links:
 
 # PLANET
 
-$PLANET is the native token of a platform using the blockchain to address the world’s most pressing sustainability challenges. The 'Join Our Planet' movement is driven by an unwavering commitment to the world's most pressing challenges, outlined by the 17 Sustainable Development Goals (SDGs) set forth by the United Nations.
+A state of the art platform to tokenize Real-World Assets (RWA), bringing yields into the web3, all while striving for sustainable growth #RWA #ReFi

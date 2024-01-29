@@ -1,17 +1,29 @@
 ---
 symbol: CHAIN
 decimals: 18
+tags:
+  - gamefi
 links:
   - name: website
-    url: https://chaingames.io
+    url: https://chaingames.io/
   - name: explorer
-    url: https://etherscan.io/token/0xC4C2614E694cF534D407Ee49F8E44D125E4681c4
+    url: https://etherscan.io/token/0xc4c2614e694cf534d407ee49f8e44d125e4681c4
+  - name: twitter
+    url: https://twitter.com/realchaingames
+  - name: telegram
+    url: https://t.me/chaingames
   - name: github
     url: https://github.com/Chain-Games
-  - name: whitepaper
-    url: https://chaingames.io/wp-content/uploads/2020/08/Chain_Games-White-Paper-Aug-2020v4.pdf
+  - name: discord
+    url: https://discord.com/invite/wAyMde8
+  - name: reddit
+    url: https://reddit.com/r/chaingames/
+  - name: youtube
+    url: https://youtube.com/channel/UC6HPAdSdpzTIn4DGryr315Q
+  - name: facebook
+    url: https://facebook.com/realchaingames/
 ---
 
 # Chain Games
 
-Chain Games is a blockchain integrated gaming platform that incorporates non-custodial decentralized smart contract based wagering on games of skill.
+Chain Games is a blockchain-integrated Web3 gaming network that allows for decentralized game of skills contests with real crypto payouts.
