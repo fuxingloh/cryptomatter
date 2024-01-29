@@ -43,6 +43,10 @@ jobs:
 
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
+          # PLEASE be aware that this is a security risk when you allow untrusted repositories to be checked out.
+          # While `pnpm run sync` is executed such that we're only reading files which pose no security risk,
+          # it's nonetheless possible through other means to execute arbitrary code
+          # when you attempt to do "TOO MUCH" outside its intended use case.
           path: workspace/sync/repo
           repository: ${{ matrix.repo }}
           ref: master
