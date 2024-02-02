@@ -61,13 +61,13 @@ jobs:
           app_id: ${{ secrets.FRONTMATTER_BOT_APP_ID }}
           private_key: ${{ secrets.FRONTMATTER_BOT_PRIVATE_KEY }}
 
-      - uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38 # v5.0.2
+      - uses: peter-evans/create-pull-request@b1ddad2c994a25fbc81a28b3ec0e368bb2021c50 # v6.0.0
         with:
           token: ${{ steps.app.outputs.token }}
           commit-message: 'chore(sync): ${{ matrix.repo }}'
           title: 'chore(sync): ${{ matrix.repo }}'
-          committer: Frontmatter Bot <frontmatter-bot@users.noreply.github.com>
-          author: Frontmatter Bot <frontmatter-bot@users.noreply.github.com>
+          committer: Frontmatter Bot <421463+frontmatter-bot[bot]@users.noreply.github.com>
+          author: Frontmatter Bot <421463+frontmatter-bot[bot]@users.noreply.github.com>
           body: |
             #### What this PR does / why we need it:
 
