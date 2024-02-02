@@ -72,16 +72,23 @@ function hasFile(filepath: string): Promise<boolean> {
 }
 
 /**
- * Encode CAIP-19 into fileId
+ * Convert CAIP-19 into fileId deterministically.
  * If Namespace is ERC20, the address field will be converted to lowercase.
  */
-export function computeFileId(caip19: string): string {
+export function getFileId(caip19: string): string {
   const [caip2, namespace, reference] = decodeCaip19(caip19);
 
   if (namespace === 'erc20' && reference) {
     return sha256(`${caip2}/${namespace}:${reference.toLowerCase()}`);
   }
   return sha256(caip19);
+}
+
+/**
+ * Get the index path for a given CAIP-2 and Namespace
+ */
+export function getIndexPath(caip2: string, namespace: string): string {
+  return `index.${sha256(`${caip2}/${namespace}`)}.json`;
 }
 
 export function getNodeModulesPath(caip2: string, namespace: string, file: string) {
@@ -124,6 +131,8 @@ export async function getInstalledNamespaces(): Promise<FrontmatterNamespace[]> 
 
 /**
  * Get the collection FrontmatterIndex with CAIP-2 and Asset TYPE
+ * Using readFile (node_modules/@crypto-frontmatter/{caip2}/_{namespace}/index.json)
+ *
  * @param caip2 {string}
  * @param namespace {string}
  * @return {FrontmatterIndex[]}
@@ -148,13 +157,14 @@ export async function getIndex(caip2: string, namespace: string): Promise<Frontm
 /**
  * Get FrontmatterContent using CAIP-19, returns undefined if not found
  * This includes the HTML content of the Frontmatter.
+ * Using readFile (node_modules/@crypto-frontmatter/{caip2}/_{namespace}/{fileId}.json)
  *
  * @param caip19 {string}
  * @see FrontmatterContent.html
  * @return {FrontmatterContent | undefined}
  */
 export async function getFrontmatter(caip19: string): Promise<FrontmatterContent | undefined> {
-  const fileId = computeFileId(caip19);
+  const fileId = getFileId(caip19);
   const [caip2, namespace] = decodeCaip19(caip19);
 
   const path = getNodeModulesPath(caip2, namespace, `${fileId}.json`);

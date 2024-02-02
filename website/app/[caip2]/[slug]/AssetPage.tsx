@@ -1,4 +1,4 @@
-import { computeFileId, FrontmatterContent } from 'crypto-frontmatter';
+import { FrontmatterContent, getFileId } from 'crypto-frontmatter';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -8,7 +8,7 @@ import { ContentedProse } from '@/components/contented/ContentedProse';
 import { renderHighlighterHtml } from '@/components/contented/ShikiHighlighter';
 
 async function fetchFrontmatter(caip19: string): Promise<FrontmatterContent> {
-  const fileId = computeFileId(caip19);
+  const fileId = getFileId(caip19);
   const response = await fetch(`${process.env.BASE_URL}/_crypto-frontmatter/${fileId}.json`);
   if (!response.ok) {
     return notFound();

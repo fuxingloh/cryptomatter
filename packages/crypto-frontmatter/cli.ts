@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 import { Command, Option, runExit } from 'clipanion';
 
-import { FrontmatterNamespace, getIndex, getInstalledNamespaces, getNodeModulesPath } from './index';
+import { FrontmatterNamespace, getIndex, getIndexPath, getInstalledNamespaces, getNodeModulesPath } from './index';
 
 export class MirrorCommand extends Command {
   static override paths = [[`mirror`]];
@@ -14,9 +14,9 @@ export class MirrorCommand extends Command {
     return this.include?.includes(type) ?? true;
   }
 
-  private async mirrorFile(namespace: FrontmatterNamespace, file: string): Promise<void> {
+  private async mirrorFile(namespace: FrontmatterNamespace, file: string, toPath: string = file): Promise<void> {
     const from = getNodeModulesPath(namespace.caip2, namespace.namespace, file);
-    const to = join(this.target, file);
+    const to = join(this.target, toPath);
     await copyFile(from, to);
   }
 
@@ -25,6 +25,12 @@ export class MirrorCommand extends Command {
 
     for (const namespace of await getInstalledNamespaces()) {
       let count = 0;
+
+      if (this.includes('index.json')) {
+        const toPath = getIndexPath(namespace.caip2, namespace.namespace);
+        await this.mirrorFile(namespace, 'index.json', toPath);
+        count++;
+      }
 
       for (const frontmatter of (await getIndex(namespace.caip2, namespace.namespace))!) {
         if (this.includes('frontmatter.json')) {
