@@ -66,8 +66,6 @@ jobs:
           token: ${{ steps.app.outputs.token }}
           commit-message: 'chore(sync): ${{ matrix.repo }}'
           title: 'chore(sync): ${{ matrix.repo }}'
-          committer: Frontmatter Bot <421463+frontmatter-bot[bot]@users.noreply.github.com>
-          author: Frontmatter Bot <421463+frontmatter-bot[bot]@users.noreply.github.com>
           body: |
             #### What this PR does / why we need it:
 

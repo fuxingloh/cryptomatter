@@ -2,9 +2,6 @@
   "name": "crypto-frontmatter",
   "version": "0.0.0",
   "private": false,
-  "repository": {
-    "url": "git+https://github.com/levaintech/frontmatter"
-  },
   "bin": {
     "crypto-frontmatter": "./bin.js"
   },
