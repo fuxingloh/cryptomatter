@@ -56,7 +56,7 @@ jobs:
       - run: pnpm -r publish --access public --tag latest --no-git-checks
         env:
           CRYPTO_FRONTMATTER_NPM_TOKEN: ${{ secrets.CRYPTO_FRONTMATTER_NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+      #          NPM_CONFIG_PROVENANCE: true
 
       - run: npm config delete "//registry.npmjs.org/:_authToken" --location=global
         if: always()
