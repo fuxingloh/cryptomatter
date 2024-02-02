@@ -21,7 +21,7 @@ export default async function Page(): Promise<ReactElement> {
           <thead className="text-mono-600 text-sm">
             <tr>
               <th>CAIP2/NAMESPACE</th>
-              <th>PACKAGE NAME</th>
+              <th>NPM PACKAGE NAME</th>
             </tr>
           </thead>
 
