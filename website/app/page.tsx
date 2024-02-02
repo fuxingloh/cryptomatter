@@ -28,8 +28,8 @@ export default async function Page(): Promise<ReactElement> {
           <tbody>
             {namespaces.map((item) => (
               <tr key={`${item.caip2}/${item.namespace}`} className="text-mono-200 hover:bg-mono-950">
-                <td className="!py-0">
-                  <Link href={`/${item.caip2}/${item.namespace}`} className="block w-full py-2.5">
+                <td>
+                  <Link href={`/${item.caip2}/${item.namespace}`} className="-my-2.5 block py-2.5">
                     {item.caip2}/{item.namespace}
                   </Link>
                 </td>

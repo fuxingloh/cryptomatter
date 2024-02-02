@@ -51,8 +51,8 @@ export async function Page(props: { caip2: string; namespace: string }): Promise
           <tbody>
             {index.map((item) => (
               <tr key={item.path} className="text-mono-200 hover:bg-mono-950">
-                <td className="!py-0">
-                  <Link href={`/${item.path}`} className="block w-full py-2.5">
+                <td>
+                  <Link href={`/${item.path}`} className="-my-2.5 block py-2.5">
                     {item.path}
                   </Link>
                 </td>
