@@ -3,4 +3,4 @@ symbol: USDT
 decimals: 8
 ---
 
-# dUSDT (Wrapped Tether)
+# Tether USD (Wrapped Token)

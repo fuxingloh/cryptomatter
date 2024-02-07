@@ -3,4 +3,6 @@ symbol: ETH-DFI
 decimals: 8
 ---
 
-# dETH-DFI (Ether-DFI LP Token)
+# Ether-DeFiChain (LP Token)
+
+The LP token of Wrapped Ether and DFI.
