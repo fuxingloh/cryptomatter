@@ -95,6 +95,9 @@ importers:
       '@crypto-frontmatter/eip155-43114':
         specifier: workspace:*
         version: link:../eip155-43114
+      '@crypto-frontmatter/eip155-5':
+        specifier: workspace:*
+        version: link:../eip155-5
       '@crypto-frontmatter/eip155-56':
         specifier: workspace:*
         version: link:../eip155-56
@@ -193,6 +196,15 @@ importers:
         specifier: workspace:*
         version: link:../../workspace/contented-config
 
+  packages/eip155-5:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
   packages/eip155-56:
     devDependencies:
       '@contentedjs/contented':
@@ -261,6 +273,9 @@ importers:
       '@crypto-frontmatter/eip155-43114':
         specifier: workspace:*
         version: link:../packages/eip155-43114
+      '@crypto-frontmatter/eip155-5':
+        specifier: workspace:*
+        version: link:../packages/eip155-5
       '@crypto-frontmatter/eip155-56':
         specifier: workspace:*
         version: link:../packages/eip155-56
