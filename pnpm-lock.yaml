@@ -77,6 +77,9 @@ importers:
       '@crypto-frontmatter/eip155-10':
         specifier: workspace:*
         version: link:../eip155-10
+      '@crypto-frontmatter/eip155-11155111':
+        specifier: workspace:*
+        version: link:../eip155-11155111
       '@crypto-frontmatter/eip155-1130':
         specifier: workspace:*
         version: link:../eip155-1130
@@ -101,6 +104,9 @@ importers:
       '@crypto-frontmatter/eip155-56':
         specifier: workspace:*
         version: link:../eip155-56
+      '@crypto-frontmatter/eip155-80001':
+        specifier: workspace:*
+        version: link:../eip155-80001
       '@crypto-frontmatter/eip155-8453':
         specifier: workspace:*
         version: link:../eip155-8453
@@ -134,6 +140,15 @@ importers:
         version: link:../../workspace/contented-config
 
   packages/eip155-10:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
+  packages/eip155-11155111:
     devDependencies:
       '@contentedjs/contented':
         specifier: ^7.1.2
@@ -214,6 +229,15 @@ importers:
         specifier: workspace:*
         version: link:../../workspace/contented-config
 
+  packages/eip155-80001:
+    devDependencies:
+      '@contentedjs/contented':
+        specifier: ^7.1.2
+        version: 7.1.2(typanion@3.14.0)
+      '@workspace/contented-config':
+        specifier: workspace:*
+        version: link:../../workspace/contented-config
+
   packages/eip155-8453:
     devDependencies:
       '@contentedjs/contented':
@@ -255,6 +279,9 @@ importers:
       '@crypto-frontmatter/eip155-10':
         specifier: workspace:*
         version: link:../packages/eip155-10
+      '@crypto-frontmatter/eip155-11155111':
+        specifier: workspace:*
+        version: link:../packages/eip155-11155111
       '@crypto-frontmatter/eip155-1130':
         specifier: workspace:*
         version: link:../packages/eip155-1130
@@ -279,6 +306,9 @@ importers:
       '@crypto-frontmatter/eip155-56':
         specifier: workspace:*
         version: link:../packages/eip155-56
+      '@crypto-frontmatter/eip155-80001':
+        specifier: workspace:*
+        version: link:../packages/eip155-80001
       '@crypto-frontmatter/eip155-8453':
         specifier: workspace:*
         version: link:../packages/eip155-8453
