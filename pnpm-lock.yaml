@@ -92,6 +92,9 @@ importers:
       '@crypto-frontmatter/bip122-000000000933ea01ad0ee984209779ba':
         specifier: workspace:*
         version: link:../bip122-000000000933ea01ad0ee984209779ba
+      '@crypto-frontmatter/bip122-034ac8c88a1a9b846750768c1ad6f295':
+        specifier: workspace:*
+        version: link:../bip122-034ac8c88a1a9b846750768c1ad6f295
       '@crypto-frontmatter/bip122-279b1a87aedc7b9471d4ad4e5f12967a':
         specifier: workspace:*
         version: link:../bip122-279b1a87aedc7b9471d4ad4e5f12967a
@@ -294,6 +297,9 @@ importers:
       '@crypto-frontmatter/bip122-000000000933ea01ad0ee984209779ba':
         specifier: workspace:*
         version: link:../packages/bip122-000000000933ea01ad0ee984209779ba
+      '@crypto-frontmatter/bip122-034ac8c88a1a9b846750768c1ad6f295':
+        specifier: workspace:*
+        version: link:../packages/bip122-034ac8c88a1a9b846750768c1ad6f295
       '@crypto-frontmatter/bip122-279b1a87aedc7b9471d4ad4e5f12967a':
         specifier: workspace:*
         version: link:../packages/bip122-279b1a87aedc7b9471d4ad4e5f12967a
