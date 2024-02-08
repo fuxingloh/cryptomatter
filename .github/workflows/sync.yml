@@ -16,7 +16,8 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 jobs:
   main:
@@ -61,6 +62,7 @@ jobs:
       #          app_id: ${{ secrets.SYNC_APP_ID }}
       #          private_key: ${{ secrets.SYNC_PRIVATE_KEY }}
 
+      # permission is set to `write` for `pull-requests` and `contents`
       - uses: peter-evans/create-pull-request@b1ddad2c994a25fbc81a28b3ec0e368bb2021c50 # v6.0.0
         with:
           #          token: ${{ steps.app.outputs.token }}
