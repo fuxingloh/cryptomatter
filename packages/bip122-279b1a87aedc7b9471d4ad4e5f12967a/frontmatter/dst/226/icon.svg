@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg fill="none" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<svg width="256" height="256" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
     <path d="m0 18c0-9.9411 8.0589-18 18-18 9.9411 0 18 8.0589 18 18 0 9.9411-8.0589 18-18 18-9.9411 0-18-8.0589-18-18z"
           clip-rule="evenodd" fill="#F5F5F5" fill-rule="evenodd"/>
     <g clip-path="url(#d)">

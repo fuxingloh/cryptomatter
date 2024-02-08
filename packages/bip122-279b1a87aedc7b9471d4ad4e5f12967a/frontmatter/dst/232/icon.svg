@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<svg width="256" height="256" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#b)">
         <g clip-path="url(#a)">
             <path d="m24 48c13.255 0 24-10.745 24-24s-10.745-24-24-24-24 10.745-24 24 10.745 24 24 24z" fill="#F1F3F4"/>
