@@ -5,8 +5,15 @@
       "cache": false
     },
     "build": {
-      "inputs": ["contented.config.mjs", "frontmatter/**", "tsconfig.json", "tsconfig.build.json", "./**/*.ts"],
-      "outputs": ["_*/", "index.js", "index.d.ts", "index.json", "./**/*.js", "./**/*.d.ts", "./**/*.d.ts.map"],
+      "inputs": [
+        "contented.config.mjs",
+        "frontmatter/**",
+        "tsconfig.json",
+        "package.json",
+        "tsconfig.build.json",
+        "./**/*.ts"
+      ],
+      "outputs": ["_*/*", "index.js", "index.d.ts", "index.json", "./**/*.js", "./**/*.d.ts", "./**/*.d.ts.map"],
       "dependsOn": ["^build"]
     },
     "test": {
