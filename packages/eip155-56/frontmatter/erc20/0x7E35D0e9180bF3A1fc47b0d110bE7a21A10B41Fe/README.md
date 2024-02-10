@@ -5,7 +5,7 @@ tags:
   - nft
 links:
   - name: website
-    url: https://www.ovr.ai/
+    url: https://www.overthereality.ai/
   - name: explorer
     url: https://bscscan.com/token/0x7e35d0e9180bf3a1fc47b0d110be7a21a10b41fe
   - name: telegram
@@ -13,7 +13,7 @@ links:
   - name: twitter
     url: https://twitter.com/OVRtheReality
   - name: facebook
-    url: https://facebook.com/OVRmetaverse/
+    url: https://facebook.com/Overmetaverse
   - name: telegram_news
     url: https://t.me/ovrannouncements
   - name: medium
