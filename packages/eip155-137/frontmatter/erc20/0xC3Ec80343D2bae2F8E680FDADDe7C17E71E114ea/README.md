@@ -5,7 +5,7 @@ links:
   - name: website
     url: http://mantradao.com
   - name: explorer
-    url: https://etherscan.io/token/0x3593D125a4f7849a1B059E64F4517A86Dd60c95d
+    url: https://polygonscan.com/token/0xc3ec80343d2bae2f8e680fdadde7c17e71e114ea
   - name: github
     url: https://github.com/Mantradao
   - name: twitter

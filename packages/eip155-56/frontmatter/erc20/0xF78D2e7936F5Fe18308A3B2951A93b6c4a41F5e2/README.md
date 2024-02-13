@@ -5,7 +5,7 @@ links:
   - name: website
     url: http://mantradao.com
   - name: explorer
-    url: https://etherscan.io/token/0x3593D125a4f7849a1B059E64F4517A86Dd60c95d
+    url: https://bscscan.com/token/0xf78d2e7936f5fe18308a3b2951a93b6c4a41f5e2
   - name: github
     url: https://github.com/Mantradao
   - name: twitter
@@ -18,6 +18,6 @@ links:
     url: https://coingecko.com/en/coins/mantra-dao/
 ---
 
-# MANTRA
+# Binance-Peg MANTRA
 
 MANTRA DAO leverages the wisdom of the crowd to create a community-governed, transparent, and decentralized ecosystem for Web 3.0
