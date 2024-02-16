@@ -5,7 +5,7 @@ links:
   - name: website
     url: https://shapeshift.com/fox-token
   - name: explorer
-    url: https://optimistic.etherscan.io/token/0xF1a0DA3367BC7aa04F8D94BA57B862ff37CeD174
+    url: https://polygonscan.com/token/0x65A05DB8322701724c197AF82C9CaE41195B0aA8
   - name: twitter
     url: https://twitter.com/shapeshift_io
   - name: telegram
