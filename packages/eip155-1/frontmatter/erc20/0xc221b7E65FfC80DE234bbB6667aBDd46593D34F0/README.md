@@ -1,8 +1,8 @@
 ---
-symbol: wCFG
+symbol: CFG
 decimals: 18
 tags:
-  - wrapped
+  - defi
 links:
   - name: website
     url: https://centrifuge.io/
@@ -10,14 +10,16 @@ links:
     url: https://etherscan.io/token/0xc221b7e65ffc80de234bbb6667abdd46593d34f0
   - name: twitter
     url: https://twitter.com/centrifuge
-  - name: telegram
-    url: https://t.me/centrifuge_chat
   - name: github
     url: https://github.com/centrifuge
   - name: coinmarketcap
-    url: https://coinmarketcap.com/currencies/wrapped-centrifuge/
+    url: https://coinmarketcap.com/currencies/centrifuge/
+  - name: coingecko
+    url: https://coingecko.com/en/coins/centrifuge
+  - name: bridge
+    url: https://bridge.centrifuge.io/
 ---
 
-# Wrapped Centrifuge
+# Centrifuge
 
-The Centrifuge Token (CFG) guides the development of Centrifuge using an on-chain governance mechanism.
+The Centrifuge Token (CFG) guides the development of Centrifuge using an onchain governance mechanism. This is an ERC20 wrapped token of CFG deployed on Ethereum and backed 1:1 by CFG on Centrifuge Chain.

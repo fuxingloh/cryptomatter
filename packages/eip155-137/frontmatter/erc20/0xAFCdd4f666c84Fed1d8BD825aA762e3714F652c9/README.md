@@ -14,7 +14,7 @@ links:
   - name: website
     url: https://vitainu.org
   - name: explorer
-    url: https://bscscan.com/token/0xfebe8c1ed424dbf688551d4e2267e7a53698f0aa
+    url: https://polygonscan.com/token/0xAFCdd4f666c84Fed1d8BD825aA762e3714F652c9
   - name: twitter
     url: https://twitter.com/vitainucoin
   - name: github
@@ -40,7 +40,7 @@ links:
   - name: coingecko
     url: https://coingecko.com/en/coins/vita-inu
   - name: source_code
-    url: https://bscscan.com/address/0xfebe8c1ed424dbf688551d4e2267e7a53698f0aa#code
+    url: https://polygonscan.com/address/0xAFCdd4f666c84Fed1d8BD825aA762e3714F652c9#code
 ---
 
 # Vita Inu
