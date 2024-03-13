@@ -9,5 +9,3 @@ links:
 ---
 
 # Theta Network
-
---
