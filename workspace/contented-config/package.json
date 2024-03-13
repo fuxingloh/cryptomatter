@@ -7,8 +7,8 @@
     "build": ""
   },
   "dependencies": {
-    "@contentedjs/contented": "^7.1.2",
-    "@contentedjs/contented-pipeline-md": "^7.1.2",
+    "@contentedjs/contented": "^8.0.1",
+    "@contentedjs/contented-pipeline-md": "^8.0.1",
     "image-size": "^1.1.1"
   }
 }

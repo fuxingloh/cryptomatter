@@ -51,8 +51,8 @@ importers:
   packages/bip122-000000000019d6689c085ae165831e93:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -60,8 +60,8 @@ importers:
   packages/bip122-000000000933ea01ad0ee984209779ba:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -69,8 +69,8 @@ importers:
   packages/bip122-034ac8c88a1a9b846750768c1ad6f295:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -78,8 +78,8 @@ importers:
   packages/bip122-279b1a87aedc7b9471d4ad4e5f12967a:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -160,8 +160,8 @@ importers:
   packages/eip155-1:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -169,8 +169,8 @@ importers:
   packages/eip155-10:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -178,8 +178,8 @@ importers:
   packages/eip155-11155111:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -187,8 +187,8 @@ importers:
   packages/eip155-1130:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -196,8 +196,8 @@ importers:
   packages/eip155-1313161554:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -205,8 +205,8 @@ importers:
   packages/eip155-137:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -214,8 +214,8 @@ importers:
   packages/eip155-42161:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -223,8 +223,8 @@ importers:
   packages/eip155-42220:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -232,8 +232,8 @@ importers:
   packages/eip155-43114:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -241,8 +241,8 @@ importers:
   packages/eip155-5:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -250,8 +250,8 @@ importers:
   packages/eip155-56:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -259,8 +259,8 @@ importers:
   packages/eip155-80001:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -268,8 +268,8 @@ importers:
   packages/eip155-8453:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -277,8 +277,8 @@ importers:
   packages/solana-5eykt4usfv8p8njdtrepy1vzqkqzkvdp:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -286,8 +286,8 @@ importers:
   packages/tip474-2494104990:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -295,8 +295,8 @@ importers:
   packages/tip474-728126428:
     devDependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@workspace/contented-config':
         specifier: workspace:*
         version: link:../../workspace/contented-config
@@ -422,11 +422,11 @@ importers:
   workspace/contented-config:
     dependencies:
       '@contentedjs/contented':
-        specifier: ^7.1.2
-        version: 7.1.2(typanion@3.14.0)
+        specifier: ^8.0.1
+        version: 8.0.1(typanion@3.14.0)
       '@contentedjs/contented-pipeline-md':
-        specifier: ^7.1.2
-        version: 7.1.2
+        specifier: ^8.0.1
+        version: 8.0.1
       image-size:
         specifier: ^1.1.1
         version: 1.1.1
@@ -844,14 +844,14 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@contentedjs/contented-pipeline-md@7.1.2:
-    resolution: {integrity: sha512-xPSvVVBqToXOEWAdmyjvgQkMzUwme7PsfNL68WVTf4C32jT8qW5tvTuOe/0x0xClxcPRA0p2Jy/L6EvhBd2OgQ==}
+  /@contentedjs/contented-pipeline-md@8.0.1:
+    resolution: {integrity: sha512-BIwRDMHtWHCKUJmy+yC6gFjagi8EJz+eqoHeWEDxvATVk3cFkWy6+CkRbQ7qgtxq4AoqaRzQCjBmrnLSHfri7g==}
     dependencies:
-      '@contentedjs/contented-pipeline': 7.1.2
+      '@contentedjs/contented-pipeline': 8.0.1
       '@jsdevtools/rehype-toc': 3.0.2
       '@sindresorhus/slugify': 2.2.1
       hast-util-to-string: 3.0.0
-      hastscript: 8.0.0
+      hastscript: 9.0.0
       js-yaml: 4.1.0
       lodash: 4.17.21
       mdast-util-directive: 3.0.0
@@ -867,7 +867,7 @@ packages:
       remark-frontmatter: 5.0.0
       remark-gfm: 4.0.0
       remark-parse: 11.0.0
-      remark-rehype: 11.0.0
+      remark-rehype: 11.1.0
       shiki: 0.14.7
       to-vfile: 8.0.0
       unified: 11.0.4
@@ -877,30 +877,30 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@contentedjs/contented-pipeline@7.1.2:
-    resolution: {integrity: sha512-H/80QIW4Rfea3ETkEx3ddShvQXHQwa5R+JvkArthiLa3vr7qc0kttEZTaVmWCR7rYBHf6yLY1ct8+qYybzIawQ==}
+  /@contentedjs/contented-pipeline@8.0.1:
+    resolution: {integrity: sha512-n4o8cLkadYgztHSWbRNKtz4YpPauAAMxMOQyJEPnx5vgRL8gKighDPcSDY/RU9s7PUuhcenEhNdNn7w3dpxgHQ==}
     dependencies:
       '@sindresorhus/slugify': 2.2.1
 
-  /@contentedjs/contented-processor@7.1.2:
-    resolution: {integrity: sha512-Mx89FH7AjCHrw3MJkbkYXEdJ08Bli12UkNDfSwjjqoi0TfVnyn2dNGRLo/fhPjQrHq8VthWH7M2iJj/Yz5pDWg==}
+  /@contentedjs/contented-processor@8.0.1:
+    resolution: {integrity: sha512-+RoL+ScpXWtX1x4K4dJuPFB6XhzsUDLV5QGNiJAwfqnwOcMCmrYsdYe289TQPGaXqte1bgkK6x0h1vt9X9MBwA==}
     dependencies:
       '@babel/generator': 7.23.6
-      '@contentedjs/contented-pipeline': 7.1.2
-      '@contentedjs/contented-pipeline-md': 7.1.2
+      '@contentedjs/contented-pipeline': 8.0.1
+      '@contentedjs/contented-pipeline-md': 8.0.1
       minimatch: 5.1.6
     transitivePeerDependencies:
       - supports-color
 
-  /@contentedjs/contented@7.1.2(typanion@3.14.0):
-    resolution: {integrity: sha512-rAULKGDVNg8OJvJNXtBFe7uTbkMlLst4yYW5Gu978InSbbs/whvpWMAnxInqsXM4jBHZlLIHDQC1sXlpO3YpDw==}
+  /@contentedjs/contented@8.0.1(typanion@3.14.0):
+    resolution: {integrity: sha512-cPMcMeY7U6tp9ZyROpbbWqONz0+rQzfRIB0t/zXJRsNwWc5Enmbc19Yg13Oz4N8o7HR8fUIV66i6iklhWVQP5w==}
     hasBin: true
     dependencies:
-      '@contentedjs/contented-pipeline': 7.1.2
-      '@contentedjs/contented-processor': 7.1.2
-      '@parcel/watcher': 2.3.0
+      '@contentedjs/contented-pipeline': 8.0.1
+      '@contentedjs/contented-processor': 8.0.1
+      '@parcel/watcher': 2.4.1
       clipanion: 3.2.1(typanion@3.14.0)
-      debounce: 1.2.1
+      debounce: 2.0.0
       ignore-walk: 6.0.4
     transitivePeerDependencies:
       - supports-color
@@ -1558,104 +1558,104 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.16.0
 
-  /@parcel/watcher-android-arm64@2.3.0:
-    resolution: {integrity: sha512-f4o9eA3dgk0XRT3XhB0UWpWpLnKgrh1IwNJKJ7UJek7eTYccQ8LR7XUWFKqw6aEq5KUNlCcGvSzKqSX/vtWVVA==}
+  /@parcel/watcher-android-arm64@2.4.1:
+    resolution: {integrity: sha512-LOi/WTbbh3aTn2RYddrO8pnapixAziFl6SMxHM69r3tvdSm94JtCenaKgk1GRg5FJ5wpMCpHeW+7yqPlvZv7kg==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [android]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-darwin-arm64@2.3.0:
-    resolution: {integrity: sha512-mKY+oijI4ahBMc/GygVGvEdOq0L4DxhYgwQqYAz/7yPzuGi79oXrZG52WdpGA1wLBPrYb0T8uBaGFo7I6rvSKw==}
+  /@parcel/watcher-darwin-arm64@2.4.1:
+    resolution: {integrity: sha512-ln41eihm5YXIY043vBrrHfn94SIBlqOWmoROhsMVTSXGh0QahKGy77tfEywQ7v3NywyxBBkGIfrWRHm0hsKtzA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-darwin-x64@2.3.0:
-    resolution: {integrity: sha512-20oBj8LcEOnLE3mgpy6zuOq8AplPu9NcSSSfyVKgfOhNAc4eF4ob3ldj0xWjGGbOF7Dcy1Tvm6ytvgdjlfUeow==}
+  /@parcel/watcher-darwin-x64@2.4.1:
+    resolution: {integrity: sha512-yrw81BRLjjtHyDu7J61oPuSoeYWR3lDElcPGJyOvIXmor6DEo7/G2u1o7I38cwlcoBHQFULqF6nesIX3tsEXMg==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-freebsd-x64@2.3.0:
-    resolution: {integrity: sha512-7LftKlaHunueAEiojhCn+Ef2CTXWsLgTl4hq0pkhkTBFI3ssj2bJXmH2L67mKpiAD5dz66JYk4zS66qzdnIOgw==}
+  /@parcel/watcher-freebsd-x64@2.4.1:
+    resolution: {integrity: sha512-TJa3Pex/gX3CWIx/Co8k+ykNdDCLx+TuZj3f3h7eOjgpdKM+Mnix37RYsYU4LHhiYJz3DK5nFCCra81p6g050w==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-linux-arm-glibc@2.3.0:
-    resolution: {integrity: sha512-1apPw5cD2xBv1XIHPUlq0cO6iAaEUQ3BcY0ysSyD9Kuyw4MoWm1DV+W9mneWI+1g6OeP6dhikiFE6BlU+AToTQ==}
+  /@parcel/watcher-linux-arm-glibc@2.4.1:
+    resolution: {integrity: sha512-4rVYDlsMEYfa537BRXxJ5UF4ddNwnr2/1O4MHM5PjI9cvV2qymvhwZSFgXqbS8YoTk5i/JR0L0JDs69BUn45YA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-linux-arm64-glibc@2.3.0:
-    resolution: {integrity: sha512-mQ0gBSQEiq1k/MMkgcSB0Ic47UORZBmWoAWlMrTW6nbAGoLZP+h7AtUM7H3oDu34TBFFvjy4JCGP43JlylkTQA==}
+  /@parcel/watcher-linux-arm64-glibc@2.4.1:
+    resolution: {integrity: sha512-BJ7mH985OADVLpbrzCLgrJ3TOpiZggE9FMblfO65PlOCdG++xJpKUJ0Aol74ZUIYfb8WsRlUdgrZxKkz3zXWYA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-linux-arm64-musl@2.3.0:
-    resolution: {integrity: sha512-LXZAExpepJew0Gp8ZkJ+xDZaTQjLHv48h0p0Vw2VMFQ8A+RKrAvpFuPVCVwKJCr5SE+zvaG+Etg56qXvTDIedw==}
+  /@parcel/watcher-linux-arm64-musl@2.4.1:
+    resolution: {integrity: sha512-p4Xb7JGq3MLgAfYhslU2SjoV9G0kI0Xry0kuxeG/41UfpjHGOhv7UoUDAz/jb1u2elbhazy4rRBL8PegPJFBhA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-linux-x64-glibc@2.3.0:
-    resolution: {integrity: sha512-P7Wo91lKSeSgMTtG7CnBS6WrA5otr1K7shhSjKHNePVmfBHDoAOHYRXgUmhiNfbcGk0uMCHVcdbfxtuiZCHVow==}
+  /@parcel/watcher-linux-x64-glibc@2.4.1:
+    resolution: {integrity: sha512-s9O3fByZ/2pyYDPoLM6zt92yu6P4E39a03zvO0qCHOTjxmt3GHRMLuRZEWhWLASTMSrrnVNWdVI/+pUElJBBBg==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-linux-x64-musl@2.3.0:
-    resolution: {integrity: sha512-+kiRE1JIq8QdxzwoYY+wzBs9YbJ34guBweTK8nlzLKimn5EQ2b2FSC+tAOpq302BuIMjyuUGvBiUhEcLIGMQ5g==}
+  /@parcel/watcher-linux-x64-musl@2.4.1:
+    resolution: {integrity: sha512-L2nZTYR1myLNST0O632g0Dx9LyMNHrn6TOt76sYxWLdff3cB22/GZX2UPtJnaqQPdCRoszoY5rcOj4oMTtp5fQ==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-win32-arm64@2.3.0:
-    resolution: {integrity: sha512-35gXCnaz1AqIXpG42evcoP2+sNL62gZTMZne3IackM+6QlfMcJLy3DrjuL6Iks7Czpd3j4xRBzez3ADCj1l7Aw==}
+  /@parcel/watcher-win32-arm64@2.4.1:
+    resolution: {integrity: sha512-Uq2BPp5GWhrq/lcuItCHoqxjULU1QYEcyjSO5jqqOK8RNFDBQnenMMx4gAl3v8GiWa59E9+uDM7yZ6LxwUIfRg==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-win32-ia32@2.3.0:
-    resolution: {integrity: sha512-FJS/IBQHhRpZ6PiCjFt1UAcPr0YmCLHRbTc00IBTrelEjlmmgIVLeOx4MSXzx2HFEy5Jo5YdhGpxCuqCyDJ5ow==}
+  /@parcel/watcher-win32-ia32@2.4.1:
+    resolution: {integrity: sha512-maNRit5QQV2kgHFSYwftmPBxiuK5u4DXjbXx7q6eKjq5dsLXZ4FJiVvlcw35QXzk0KrUecJmuVFbj4uV9oYrcw==}
     engines: {node: '>= 10.0.0'}
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher-win32-x64@2.3.0:
-    resolution: {integrity: sha512-dLx+0XRdMnVI62kU3wbXvbIRhLck4aE28bIGKbRGS7BJNt54IIj9+c/Dkqb+7DJEbHUZAX1bwaoM8PqVlHJmCA==}
+  /@parcel/watcher-win32-x64@2.4.1:
+    resolution: {integrity: sha512-+DvS92F9ezicfswqrvIRM2njcYJbd5mb9CUgtrHCHmvn7pPPa+nMDRu1o1bYYz/l5IB2NVGNJWiH7h1E58IF2A==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@parcel/watcher@2.3.0:
-    resolution: {integrity: sha512-pW7QaFiL11O0BphO+bq3MgqeX/INAk9jgBldVDYjlQPO4VddoZnF22TcF9onMhnLVHuNqBJeRf+Fj7eezi/+rQ==}
+  /@parcel/watcher@2.4.1:
+    resolution: {integrity: sha512-HNjmfLQEVRZmHRET336f20H/8kOozUGwk7yajvsonjNxbj2wBTK1WsQuHkD5yYh9RxFGL2EyDHryOihOwUoKDA==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       detect-libc: 1.0.3
@@ -1663,18 +1663,18 @@ packages:
       micromatch: 4.0.5
       node-addon-api: 7.0.0
     optionalDependencies:
-      '@parcel/watcher-android-arm64': 2.3.0
-      '@parcel/watcher-darwin-arm64': 2.3.0
-      '@parcel/watcher-darwin-x64': 2.3.0
-      '@parcel/watcher-freebsd-x64': 2.3.0
-      '@parcel/watcher-linux-arm-glibc': 2.3.0
-      '@parcel/watcher-linux-arm64-glibc': 2.3.0
-      '@parcel/watcher-linux-arm64-musl': 2.3.0
-      '@parcel/watcher-linux-x64-glibc': 2.3.0
-      '@parcel/watcher-linux-x64-musl': 2.3.0
-      '@parcel/watcher-win32-arm64': 2.3.0
-      '@parcel/watcher-win32-ia32': 2.3.0
-      '@parcel/watcher-win32-x64': 2.3.0
+      '@parcel/watcher-android-arm64': 2.4.1
+      '@parcel/watcher-darwin-arm64': 2.4.1
+      '@parcel/watcher-darwin-x64': 2.4.1
+      '@parcel/watcher-freebsd-x64': 2.4.1
+      '@parcel/watcher-linux-arm-glibc': 2.4.1
+      '@parcel/watcher-linux-arm64-glibc': 2.4.1
+      '@parcel/watcher-linux-arm64-musl': 2.4.1
+      '@parcel/watcher-linux-x64-glibc': 2.4.1
+      '@parcel/watcher-linux-x64-musl': 2.4.1
+      '@parcel/watcher-win32-arm64': 2.4.1
+      '@parcel/watcher-win32-ia32': 2.4.1
+      '@parcel/watcher-win32-x64': 2.4.1
 
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -2810,8 +2810,9 @@ packages:
     resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: false
 
-  /debounce@1.2.1:
-    resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
+  /debounce@2.0.0:
+    resolution: {integrity: sha512-xRetU6gL1VJbs85Mc4FoEGSjQxzpdxRyFhe3lmWFyy2EzydIcD4xzUvRJMD+NPDfMwKNhxa3PvsIOU32luIWeA==}
+    engines: {node: '>=18'}
 
   /debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
@@ -3982,6 +3983,15 @@ packages:
 
   /hastscript@8.0.0:
     resolution: {integrity: sha512-dMOtzCEd3ABUeSIISmrETiKuyydk1w0pa+gE/uormcTpSYuaNJPbX1NU3JLyscSLjwAQM8bWMhhIlnCqnRvDTw==}
+    dependencies:
+      '@types/hast': 3.0.3
+      comma-separated-tokens: 2.0.3
+      hast-util-parse-selector: 4.0.0
+      property-information: 6.4.0
+      space-separated-tokens: 2.0.2
+
+  /hastscript@9.0.0:
+    resolution: {integrity: sha512-jzaLBGavEDKHrc5EfFImKN7nZKKBdSLIdGvCwDZ9TfzbF2ffXiov8CKE445L2Z1Ek2t/m4SKQ2j6Ipv7NyUolw==}
     dependencies:
       '@types/hast': 3.0.3
       comma-separated-tokens: 2.0.3
@@ -6213,8 +6223,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /remark-rehype@11.0.0:
-    resolution: {integrity: sha512-vx8x2MDMcxuE4lBmQ46zYUDfcFMmvg80WYX+UNLeG6ixjdCCLcw1lrgAukwBTuOFsS78eoAedHGn9sNM0w7TPw==}
+  /remark-rehype@11.1.0:
+    resolution: {integrity: sha512-z3tJrAs2kIs1AqIIy6pzHmAHlF1hWQ+OdY4/hv+Wxe35EhyLKcajL33iUEn3ScxtFox9nUvRufR/Zre8Q08H/g==}
     dependencies:
       '@types/hast': 3.0.3
       '@types/mdast': 4.0.3
