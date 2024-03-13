@@ -7,7 +7,7 @@
     "dependencyDashboardApproval": false
   },
   "rangeStrategy": "bump",
-  "prHourlyLimit": 1,
+  "prHourlyLimit": 2,
   "packageRules": [
     {
       "matchPackageNames": ["node", "npm", "pnpm", "yarn", "typescript", "@types/node"],

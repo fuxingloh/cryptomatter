@@ -112,9 +112,14 @@ export class TrustWalletAssets extends SyncCommand<Info> {
         links: createLinks(data),
       },
       title: data.name,
-      body: data.description !== '-' ? data.description : '',
+      body: hasDescription(data) ? data.description : '',
     };
   }
+}
+
+function hasDescription(info: Info): boolean {
+  if (!info.description) return false;
+  return info.description.replaceAll(/[-—_.]/, '').trim() !== '';
 }
 
 function createLinks(info: Partial<Info>): README['frontmatter']['links'] {

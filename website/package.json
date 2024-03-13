@@ -41,13 +41,13 @@
     "@crypto-frontmatter/tip474-2494104990": "workspace:*",
     "@crypto-frontmatter/tip474-728126428": "workspace:*",
     "@heroicons/react": "^2.1.1",
-    "@vercel/analytics": "^1.1.3",
+    "@vercel/analytics": "^1.2.2",
     "clsx": "^2.1.0",
     "crypto-frontmatter": "workspace:*",
     "dayjs": "^1.11.10",
-    "framer-motion": "11.0.3",
+    "framer-motion": "11.0.12",
     "html-to-react": "^1.7.0",
-    "next": "14.1.0",
+    "next": "14.1.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "^0.33.2",
@@ -56,9 +56,9 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/react": "18.2.51",
+    "@types/react": "18.2.65",
     "@workspace/eslint-config-next": "workspace:*",
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.18",
     "tailwindcss": "^3.4.1"
   }
 }
