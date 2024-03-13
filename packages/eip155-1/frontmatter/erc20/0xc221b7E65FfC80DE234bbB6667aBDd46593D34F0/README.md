@@ -16,8 +16,6 @@ links:
     url: https://coinmarketcap.com/currencies/centrifuge/
   - name: coingecko
     url: https://coingecko.com/en/coins/centrifuge
-  - name: bridge
-    url: https://bridge.centrifuge.io/
 ---
 
 # Centrifuge
