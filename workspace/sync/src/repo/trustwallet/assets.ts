@@ -119,7 +119,7 @@ export class TrustWalletAssets extends SyncCommand<Info> {
 
 function hasDescription(info: Info): boolean {
   if (!info.description) return false;
-  return info.description.replaceAll(/[-—_.]/, '').trim() !== '';
+  return info.description.replaceAll(/[-—_.]/g, '').trim() !== '';
 }
 
 function createLinks(info: Partial<Info>): README['frontmatter']['links'] {
