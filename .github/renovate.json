@@ -9,8 +9,7 @@
   "rangeStrategy": "bump",
   "packageRules": [
     {
-      "matchPackageNames": ["node", "npm", "pnpm", "yarn", "typescript", "@types/node"],
-      "groupName": "engines",
+      "matchPackageNames": ["node", "typescript", "@types/node", "@types/react"],
       "enabled": false
     },
     {
