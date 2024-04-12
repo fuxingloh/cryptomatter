@@ -47,7 +47,7 @@
     "dayjs": "^1.11.10",
     "framer-motion": "11.0.25",
     "html-to-react": "^1.7.0",
-    "next": "14.1.4",
+    "next": "14.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "^0.33.3",
