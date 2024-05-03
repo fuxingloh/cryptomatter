@@ -14,4 +14,4 @@ links:
 
 # ATOS
 
-ԭ������ATOSHI���ǻ����������ڵ��̡��罻����Ϸ����֤�����ڵ���ҵ����Ӧ���������ۺϽ����������Ŀ����ͨ����������ֲ�ʽ�˱�����������һ��ȫ��Χ�ڵ���������̬Ӧ����ϵ���������Ի���Ӧ�ó���������������������ʵ���ҵ��
+ATOSHI is a cryptocurrency created for diverse usage between countries, a new cryptocurrency for ordinary people, which you can “mine” by your phone. ATOS may be the best option to store value, increase value and ease the life for the people of the world.

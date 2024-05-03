@@ -1,33 +1,35 @@
 ---
-symbol: QRDO
+symbol: OPEN
 decimals: 8
+tags:
+  - defi
 links:
   - name: website
-    url: https://qredo.com/
+    url: https://opencustody.org/
   - name: explorer
     url: https://etherscan.io/token/0x4123a133ae3c521fd134d7b13a2dec35b56c2463
   - name: twitter
-    url: https://twitter.com/QredoNetwork
+    url: https://twitter.com/opencustody
   - name: telegram
-    url: https://t.me/QredoNetwork
+    url: https://t.me/OpenCustody
   - name: telegram_news
-    url: https://t.me/qredoannouncements
+    url: https://t.me/OpenCustody_News
   - name: whitepaper
-    url: https://qredo.com/qredo-white-paper
+    url: https://docs.opencustody.org/
   - name: youtube
-    url: https://youtube.com/c/qredonetwork
+    url: https://youtube.com/channel/UCyMjpYXfzkam99yuPDiaqmQ
   - name: coingecko
     url: https://coingecko.com/en/coins/qredo
   - name: coinmarketcap
     url: https://coinmarketcap.com/currencies/qredo/
   - name: blog
-    url: https://qredo.com/media-center
+    url: https://opencustody.org/blog
   - name: discord
     url: https://discord.com/invite/bgVPvf6
   - name: docs
-    url: https://support.qredo.com/
+    url: https://docs.opencustody.org/
 ---
 
-# Qredo
+# Open Custody Protocol
 
-Qredo is a blockchain infrastructure that delivers interoperability, fast settlement, and decentralized custody.
+Open Custody Protocol brings an omnichain primitive for modular custody.
