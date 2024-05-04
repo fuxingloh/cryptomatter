@@ -1,5 +1,5 @@
 ---
-symbol: USDC
+symbol: USDbC
 decimals: 6
 tags:
   - stablecoin

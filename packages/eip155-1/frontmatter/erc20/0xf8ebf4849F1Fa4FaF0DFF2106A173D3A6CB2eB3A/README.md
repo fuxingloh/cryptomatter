@@ -11,7 +11,7 @@ links:
   - name: telegram
     url: https://t.me/TrollETH
   - name: coinmarketcap
-    url: https://coinmarketcap.com/currencies/troll/
+    url: https://coinmarketcap.com/currencies/troll-new/
 ---
 
 # TROLL

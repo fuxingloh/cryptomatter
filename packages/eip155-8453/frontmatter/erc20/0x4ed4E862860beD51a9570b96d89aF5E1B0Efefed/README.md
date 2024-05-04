@@ -1,5 +1,5 @@
 ---
-symbol: BAL
+symbol: DEGEN
 decimals: 18
 tags:
   - defi

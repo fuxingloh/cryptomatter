@@ -1,6 +1,8 @@
 ---
 symbol: OM
 decimals: 18
+tags:
+  - governance
 links:
   - name: website
     url: http://mantradao.com
