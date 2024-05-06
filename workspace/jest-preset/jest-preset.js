@@ -1,5 +1,5 @@
 module.exports = {
-  testRegex: '.*\\.(unit|i9n|e2e)\\.ts$',
+  testRegex: '.*\\.test\\.ts$',
   reporters: ['default', 'github-actions'],
   moduleFileExtensions: ['ts', 'js', 'mjs', 'cjs', 'json'],
   transform: {
