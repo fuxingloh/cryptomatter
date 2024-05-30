@@ -1,6 +1,6 @@
 ---
 symbol: DEBT
-decimals: 18
+decimals: 8
 links:
   - name: website
     url: https://www.thedebtbox.com
