@@ -15,9 +15,9 @@ links:
   - name: telegram
     url: https://t.me/DogeGF_Official
   - name: discord
-    url: https://discord.com/invite/Tjr8AvFBTP
+    url: https://discord.com/invite/EwKuFDCA5V
 ---
 
 # DogeGF
 
-DogeGF is a peer-to-peer community governed by reciprocity.
+Warm-hearted community fuelled by the magic of reciprocity.

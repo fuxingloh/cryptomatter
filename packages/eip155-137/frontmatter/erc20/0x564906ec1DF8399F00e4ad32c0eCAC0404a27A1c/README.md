@@ -18,12 +18,10 @@ links:
     url: https://ambire.medium.com
   - name: telegram
     url: https://t.me/AmbireOfficial
-  - name: discord
-    url: https://discord.com/invite/nMBGJsb
   - name: facebook
     url: https://facebook.com/AmbireAdEx
   - name: whitepaper
-    url: https://ambire.notion.site/ambire/Ambire-Wallet-Whitepaper-d502e54caf584fe7a67f9b0a018cd10f
+    url: https://ambire.com/whitepaper
   - name: coinmarketcap
     url: https://coinmarketcap.com/currencies/ambire-wallet
   - name: coingecko
