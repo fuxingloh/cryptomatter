@@ -3,11 +3,15 @@ symbol: SUN
 decimals: 18
 links:
   - name: website
-    url: https://sun.io
+    url: https://sun.io/#/home
   - name: explorer
-    url: https://tronscan.io/#/token20/TSSMHYeV2uE9qYH95DqyoCuNCzEL1NvU3S
+    url: https://tronscan.org/#/token20/TSSMHYeV2uE9qYH95DqyoCuNCzEL1NvU3S
+  - name: twitter
+    url: https://twitter.com/defi_sunio
+  - name: coinmarketcap
+    url: https://coinmarketcap.com/currencies/sun-token/
 ---
 
-# SUN
+# Sun
 
-SUN is a social experiment, which focuses on the DeFi potential of TRON.
+The SUN.io platform is TRON's first one-stop platform that supports stablecoin swap, token mining and self-governance.

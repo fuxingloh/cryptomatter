@@ -1,5 +1,5 @@
 ---
-symbol: GMT
+symbol: GOMINING
 decimals: 18
 tags:
   - defi
@@ -32,6 +32,6 @@ links:
     url: https://youtube.com/channel/UCl98r2sL8dO058XWToApIJw
 ---
 
-# Gomining
+# GoMining
 
 Gomining is an exchange token backed by a Top 10 global bitcoin mining project.
