@@ -6,6 +6,10 @@ links:
     url: https://quidax.com
   - name: explorer
     url: https://bscscan.com/token/0x9e3a9F1612028eeE48F85cA85f8Bed2f37d76848
+  - name: twitter
+    url: https://twitter.com/QuidaxGlobal
+  - name: telegram
+    url: https://t.me/QDXToken
 ---
 
 # Quidax Token
