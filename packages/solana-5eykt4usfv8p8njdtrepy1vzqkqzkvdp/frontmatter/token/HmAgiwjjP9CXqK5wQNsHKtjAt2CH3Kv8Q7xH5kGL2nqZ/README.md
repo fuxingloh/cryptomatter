@@ -1,6 +1,8 @@
 ---
 symbol: Barron
-decimals: 9
+decimals: 6
+tags:
+  - memes
 links:
   - name: website
     url: https://www.barrontrvmp.com/
