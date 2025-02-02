@@ -8,8 +8,8 @@ links:
     url: https://etherscan.io/token/0xf939e0a03fb07f59a73314e73794be0e57ac1b4e
   - name: telegram
     url: https://t.me/curvefi
-  - name: twitter
-    url: https://twitter.com/CurveFinance
+  - name: x
+    url: https://x.com/CurveFinance
 ---
 
 # Curve.Fi USD Stablecoin

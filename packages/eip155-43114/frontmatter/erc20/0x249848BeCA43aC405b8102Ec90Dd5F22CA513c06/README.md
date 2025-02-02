@@ -12,8 +12,8 @@ links:
     url: https://coinmarketcap.com/currencies/curve-dao-token/
   - name: coingecko
     url: https://coingecko.com/en/coins/curve-dao-token/
-  - name: twitter
-    url: https://twitter.com/CurveFinance
+  - name: x
+    url: https://x.com/CurveFinance
 ---
 
 # Curve DAO Token

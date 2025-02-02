@@ -8,8 +8,8 @@ links:
     url: https://bonfida.org/#/
   - name: explorer
     url: https://solscan.io/token/EchesyfXePKdLtoiZSL8pBe8Myagyy8ZRqsACNCFGnvp
-  - name: twitter
-    url: https://twitter.com/bonfida
+  - name: x
+    url: https://x.com/bonfida
   - name: coinmarketcap
     url: https://coinmarketcap.com/ru/currencies/bonfida/
   - name: coingecko
