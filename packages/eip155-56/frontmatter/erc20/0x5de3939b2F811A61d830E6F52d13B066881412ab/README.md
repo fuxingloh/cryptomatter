@@ -8,8 +8,8 @@ links:
     url: https://bscscan.com/token/0x5de3939b2F811A61d830E6F52d13B066881412ab
   - name: github
     url: https://github.com/ProtonProtocol
-  - name: twitter
-    url: https://twitter.com/protonxpr
+  - name: x
+    url: https://x.com/protonxpr
   - name: reddit
     url: https://reddit.com/r/ProtonChain/
   - name: telegram

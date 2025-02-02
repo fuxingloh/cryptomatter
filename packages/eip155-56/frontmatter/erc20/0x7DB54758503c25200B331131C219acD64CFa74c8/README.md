@@ -8,8 +8,8 @@ links:
     url: https://classicusdc.com
   - name: explorer
     url: https://bscscan.com/token/0x7DB54758503c25200B331131C219acD64CFa74c8
-  - name: twitter
-    url: https://twitter.com/Classic_USDC
+  - name: x
+    url: https://x.com/Classic_USDC
   - name: telegram
     url: https://t.me/classicusdc
   - name: facebook

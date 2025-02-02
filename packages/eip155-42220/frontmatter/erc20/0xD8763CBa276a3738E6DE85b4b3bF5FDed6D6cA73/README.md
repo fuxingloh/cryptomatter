@@ -8,8 +8,8 @@ links:
     url: https://celo.org
   - name: explorer
     url: https://explorer.bitquery.io/celo_rc1/token/0xd8763cba276a3738e6de85b4b3bf5fded6d6ca73
-  - name: twitter
-    url: https://twitter.com/CeloOrg
+  - name: x
+    url: https://x.com/CeloOrg
   - name: telegram
     url: https://t.me/celoplatform
   - name: github

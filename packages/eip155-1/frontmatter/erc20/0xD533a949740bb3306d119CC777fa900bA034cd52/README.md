@@ -11,8 +11,8 @@ links:
     url: https://etherscan.io/token/0xD533a949740bb3306d119CC777fa900bA034cd52
   - name: github
     url: https://github.com/curvefi/curve-contract
-  - name: twitter
-    url: https://twitter.com/CurveFinance
+  - name: x
+    url: https://x.com/CurveFinance
   - name: telegram
     url: https://t.me/curvefi
   - name: coingecko
