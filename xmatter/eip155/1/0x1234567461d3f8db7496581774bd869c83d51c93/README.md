@@ -8,7 +8,8 @@ name: BitClave
 provenance: "https://github.com/trustwallet/assets"
 standards:
   - erc20
-color: "#bec1b9"
+color: "#ecc13d"
 icons:
+  - icon.svg
   - icon.png
 ---

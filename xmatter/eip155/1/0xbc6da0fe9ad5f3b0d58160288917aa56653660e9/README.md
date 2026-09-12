@@ -6,6 +6,7 @@ standards:
 symbol: ALUSD
 decimals: 18
 icons:
+  - icon.svg
   - icon.png
-color: "#ecbe98"
+color: "#2d2a29"
 ---
